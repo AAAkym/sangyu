@@ -1,0 +1,110 @@
+/* AI 健康报告页（设计令牌化）：警告橙/信息蓝语义化 + 免责声明警示底 */
+.report-scope {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+  font-size: var(--font-desc);
+}
+
+.generate-btn {
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-foreground);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.generate-btn::after {
+  border: none;
+}
+
+/* 数据不足横幅：警告软底 + 深警告文字（对比度 ≥4.5:1） */
+.banner-insufficient {
+  background-color: var(--color-warning-soft);
+  color: var(--color-warning-text);
+  font-weight: 600;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+  font-size: var(--font-base);
+}
+
+.report-summary {
+  line-height: 1.7;
+}
+
+/* 建议条目：info 灰底 / warning 橙软底深字 */
+.advice {
+  background-color: var(--color-muted);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.advice--warning {
+  background-color: var(--color-warning-soft);
+}
+
+.advice--warning .advice__text {
+  color: var(--color-warning-text);
+  font-weight: 600;
+}
+
+.advice__text {
+  line-height: 1.7;
+  font-size: var(--font-base);
+}
+
+.advice__evidence {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1rpx dashed var(--color-border);
+}
+
+.advice__evidence-item {
+  font-size: var(--font-desc);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.advice__hint {
+  margin-top: var(--space-xs);
+  font-size: var(--font-desc);
+  color: var(--color-info);
+}
+
+/* 数据来源折叠区 */
+.report-source-title {
+  font-size: var(--font-base);
+  font-weight: 600;
+}
+
+/* 历史报告 */
+.disclaimer {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background-color: var(--color-warning-soft);
+  border: 1rpx solid var(--color-warning);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--font-base);
+  line-height: 1.7;
+}
+
+/* 设计稿 health-report：文档式头部（品牌色顶条） */
+.page-title {
+  border-top: 8rpx solid var(--color-primary);
+  padding-top: var(--space-md);
+}
+
+/* 长建议溢出防御（特大字号/长文本） */
+.report-summary,
+.advice__text {
+  overflow-wrap: anywhere;
+}

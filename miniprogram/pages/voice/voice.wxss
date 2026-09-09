@@ -1,0 +1,214 @@
+/* 语音陪伴 · 打字聊天（设计令牌化：暖琥珀气泡 + 适老化输入区） */
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: var(--color-bg);
+  padding: 0;
+}
+
+/* Hero：琥珀头图 + 回复来源小字（答辩展示降级设计） */
+.chat-hero {
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.chat-brand {
+  font-size: 34rpx;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.chat-source {
+  font-size: var(--font-desc);
+  opacity: 0.9;
+}
+
+/* 消息列表 */
+.chat-list {
+  flex: 1;
+  min-height: 0;
+}
+
+.chat-list-inner {
+  padding: var(--space-md) var(--space-lg);
+  padding-bottom: calc(240rpx + env(safe-area-inset-bottom));
+}
+
+.bubble {
+  max-width: 82%;
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  box-sizing: border-box;
+}
+
+.bubble--ai {
+  background-color: var(--color-card);
+  border-left: 8rpx solid var(--color-primary);
+  box-shadow: var(--shadow-1);
+}
+
+.bubble--user {
+  margin-left: auto;
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-bottom-right-radius: var(--radius-sm);
+}
+
+.bubble-meta {
+  font-size: var(--font-desc);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.bubble--user .bubble-meta {
+  color: var(--color-primary-foreground);
+  opacity: 0.9;
+}
+
+.bubble-text {
+  font-size: var(--font-base);
+  line-height: 1.7;
+  word-break: break-all;
+}
+
+.typing-bubble {
+  color: var(--color-text-tertiary);
+  font-size: var(--font-desc);
+}
+
+/* 输入区：高度 ≥112rpx，发送中禁用 */
+.chat-input-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: var(--space-sm) var(--space-lg);
+  padding-bottom: calc(var(--space-sm) + env(safe-area-inset-bottom));
+  background-color: var(--color-card);
+  border-top: 1rpx solid var(--color-border);
+}
+
+.chat-input {
+  flex: 1;
+  height: 112rpx;
+  padding: 0 var(--space-md);
+  background-color: var(--color-input-bg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+}
+
+.chat-send {
+  margin-left: var(--space-sm);
+  width: 168rpx;
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-foreground);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  padding: 0;
+}
+
+.chat-send::after {
+  border: none;
+}
+
+.chat-send[disabled] {
+  color: var(--color-primary-foreground);
+  background-color: var(--sangyu-primary-300);
+}
+
+
+/* 语音包：三条竖线按钮 + 右侧滑入面板 */
+.pack-btn {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 12rpx 20rpx;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.pack-line {
+  width: 6rpx;
+  height: 28rpx;
+  border-radius: 3rpx;
+  background-color: var(--color-primary-foreground);
+}
+
+.pack-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(42, 35, 22, 0.35);
+  z-index: 48;
+}
+
+.pack-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 78%;
+  max-width: 560rpx;
+  background-color: var(--color-card);
+  z-index: 49;
+  padding: var(--space-lg) var(--space-md);
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 250ms var(--ease-out);
+  overflow-y: auto;
+}
+
+.pack-panel--open {
+  transform: translateX(0);
+}
+
+.pack-title {
+  font-size: var(--font-title);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.pack-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 112rpx;
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-md);
+  background-color: var(--color-muted);
+}
+
+.pack-item--playing {
+  background-color: var(--sangyu-primary-100);
+}
+
+.pack-item-text {
+  font-size: var(--font-base);
+  color: var(--color-text);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.pack-stop {
+  font-size: var(--font-desc);
+  color: var(--color-danger);
+  flex-shrink: 0;
+  margin-left: var(--space-sm);
+}

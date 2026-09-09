@@ -1,0 +1,19 @@
+[
+  {
+    "id": "rm_demo_001",
+    "elderOpenid": "mock_elder_001",
+    "title": "晨间服药提醒",
+    "time": "08:00",
+    "note": "",
+    "lastTakenAt": "2026-08-31T10:47:01.922Z",
+    "createdAt": "2026-08-29T11:47:01.922Z"
+  },
+  {
+    "id": "rm_demo_002",
+    "elderOpenid": "mock_elder_001",
+    "title": "晚间服药提醒",
+    "time": "20:00",
+    "note": "",
+    "createdAt": "2026-08-29T11:47:01.922Z"
+  }
+]

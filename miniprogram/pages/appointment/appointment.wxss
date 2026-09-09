@@ -1,0 +1,87 @@
+/* 服务预约页（设计令牌化） */
+.appointment-type {
+  padding: var(--space-xs) 0 var(--space-md);
+}
+
+.appointment-detail {
+  width: 100%;
+  height: 160rpx;
+  box-sizing: border-box;
+  padding: var(--space-md);
+  background-color: var(--color-input-bg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-desc);
+}
+
+.appointment-btn {
+  margin-top: var(--space-md);
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-foreground);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  box-shadow: var(--shadow-button);
+}
+
+.appointment-btn::after {
+  border: none;
+}
+
+/* 预约状态胶囊（待处理琥珀 / 已完成绿） */
+.appt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.appt-status {
+  font-size: 26rpx;
+  font-weight: 600;
+  padding: 4rpx 16rpx;
+  border-radius: var(--radius-full);
+}
+
+.appt-status--pending {
+  color: var(--color-warning-text);
+  background-color: var(--color-warning-soft);
+}
+
+.appt-status--done {
+  color: var(--color-success);
+  background-color: var(--color-success-soft);
+}
+
+/* 空状态（图标占位 + 指引） */
+.empty-block {
+  background-color: var(--color-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-ico {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: var(--radius-full);
+  background-color: var(--color-muted);
+  color: var(--color-text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44rpx;
+  margin-bottom: var(--space-md);
+}
+
+.empty-text {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  text-align: center;
+  font-size: var(--font-base);
+}

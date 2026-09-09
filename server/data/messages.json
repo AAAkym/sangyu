@@ -1,0 +1,26 @@
+[
+  {
+    "id": "msg_demo_001",
+    "fromOpenid": "mock_family_001",
+    "toOpenid": "mock_elder_001",
+    "text": "爷爷今天降温，记得添衣",
+    "readAt": "2026-08-31T11:27:01.922Z",
+    "createdAt": "2026-08-31T06:47:01.922Z"
+  },
+  {
+    "id": "msg_demo_002",
+    "fromOpenid": "mock_family_001",
+    "toOpenid": "mock_elder_001",
+    "text": "周末我回家看您，给您带了您爱吃的糕点",
+    "createdAt": "2026-08-30T09:47:01.922Z",
+    "readAt": "2026-08-31T11:47:02.393Z"
+  },
+  {
+    "id": "msg_1788176822382_zko8qj",
+    "fromOpenid": "mock_family_001",
+    "toOpenid": "mock_elder_001",
+    "text": "爷爷降温了记得添衣（smoke）",
+    "createdAt": "2026-08-31T11:47:02.382Z",
+    "readAt": "2026-08-31T11:47:02.393Z"
+  }
+]

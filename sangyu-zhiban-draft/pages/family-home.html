@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家属首页</title>
+    <style id="theme-vars">
+/* ============================================================
+   桑榆智伴 — 暖琥珀适老化设计令牌 (DRAFT)
+   Brand: Warm Honey Amber (暖琥珀色) · Soft Ivory (柔象牙白)
+   色调从深红枫叶转为偏黄暖琥珀，更明亮温暖
+   ============================================================ */
+
+:root {
+  /* ---- Brand Primary Hue: Warm Honey Amber (暖琥珀/蜂蜜金) ---- */
+  --sangyu-primary: #B5832E;
+  --sangyu-primary-50: #FBF5EC;
+  --sangyu-primary-100: #F5E6CC;
+  --sangyu-primary-200: #E8CC99;
+  --sangyu-primary-300: #D4B366;
+  --sangyu-primary-400: #C49A3D;
+  --sangyu-primary-500: #B5832E;
+  --sangyu-primary-600: #9A6E25;
+  --sangyu-primary-700: #7A561D;
+  --sangyu-primary-800: #5C4116;
+  --sangyu-primary-900: #3D2B0F;
+
+  /* ---- Neutral Warm Scale (暖中性色, 琥珀底调) ---- */
+  --sangyu-neutral-0: #FFFFFF;
+  --sangyu-neutral-50: #FFF9F0;
+  --sangyu-neutral-100: #F5EFE2;
+  --sangyu-neutral-200: #E8DDC8;
+  --sangyu-neutral-300: #D5C5A8;
+  --sangyu-neutral-400: #B8A580;
+  --sangyu-neutral-500: #8A7A5C;
+  --sangyu-neutral-600: #6B5D44;
+  --sangyu-neutral-700: #4A3F2E;
+  --sangyu-neutral-800: #2A2316;
+  --sangyu-neutral-900: #1A150F;
+
+  /* ---- State Colors (语义状态色, 非品牌色) ---- */
+  --state-success: #2D7A3D;
+  --state-warning: #C49A3D;
+  --state-error: #C62828;
+  --state-info: #1A6B8C;
+  --state-error-50: #FDECEC;
+  --state-error-200: #F3C9C9;
+  --state-warning-fg: #8A6A1F;
+
+  /* ============================================================
+     Light Mode — 柔象牙白基底 (家属端、信息密集页)
+     ============================================================ */
+
+  /* Semantic brand-prefixed tokens */
+  --sangyu-background: #FFF9F0;
+  --sangyu-foreground: #2A2316;
+  --sangyu-card: #FFFFFF;
+  --sangyu-card-foreground: #2A2316;
+  --sangyu-popover: #FFFFFF;
+  --sangyu-popover-foreground: #2A2316;
+  --sangyu-primary-foreground: #FFF9F0;
+  --sangyu-muted: #F5EFE2;
+  --sangyu-muted-foreground: #6B5D44;
+  --sangyu-border: #E8DDC8;
+  --sangyu-input: #F5EFE2;
+  --sangyu-ring: #B5832E;
+
+  /* Non-prefixed semantic aliases */
+  --background: #FFF9F0;
+  --foreground: #2A2316;
+  --card: #FFFFFF;
+  --card-foreground: #2A2316;
+  --popover: #FFFFFF;
+  --popover-foreground: #2A2316;
+  --primary: #B5832E;
+  --primary-foreground: #FFF9F0;
+  --muted: #F5EFE2;
+  --muted-foreground: #6B5D44;
+  --border: #E8DDC8;
+  --input: #F5EFE2;
+  --ring: #B5832E;
+
+  /* Radius scale (restrained: 4/8/16/9999) */
+  --sangyu-radius-small: 4px;
+  --sangyu-radius-medium: 8px;
+  --sangyu-radius-large: 16px;
+  --sangyu-radius-full: 9999px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows — 克制深度, 琥珀底调 */
+  --sangyu-shadow-1: 0 1px 2px rgba(61, 43, 15, 0.05), 0 1px 1px rgba(61, 43, 15, 0.03);
+  --sangyu-shadow-2: 0 4px 16px -4px rgba(61, 43, 15, 0.10), 0 2px 4px -2px rgba(61, 43, 15, 0.06);
+  --sangyu-shadow-3: 0 16px 48px -16px rgba(61, 43, 15, 0.18);
+  --shadow-1: 0 1px 2px rgba(61, 43, 15, 0.05), 0 1px 1px rgba(61, 43, 15, 0.03);
+  --shadow-2: 0 4px 16px -4px rgba(61, 43, 15, 0.10), 0 2px 4px -2px rgba(61, 43, 15, 0.06);
+  --shadow-3: 0 16px 48px -16px rgba(61, 43, 15, 0.18);
+}
+
+/* ============================================================
+   Dark Mode — 深琥珀棕基底 (老人端、情感主导页)
+   ============================================================ */
+html.dark {
+  --sangyu-background: #2A2316;
+  --sangyu-foreground: #FFF9F0;
+  --sangyu-card: #3D2B0F;
+  --sangyu-card-foreground: #FFF9F0;
+  --sangyu-popover: #3D2B0F;
+  --sangyu-popover-foreground: #FFF9F0;
+  --sangyu-primary: #D4B366;
+  --sangyu-primary-foreground: #2A2316;
+  --sangyu-muted: #4A3F2E;
+  --sangyu-muted-foreground: #D5C5A8;
+  --sangyu-border: #5C4116;
+  --sangyu-input: #4A3F2E;
+  --sangyu-ring: #D4B366;
+
+  --background: #2A2316;
+  --foreground: #FFF9F0;
+  --card: #3D2B0F;
+  --card-foreground: #FFF9F0;
+  --popover: #3D2B0F;
+  --popover-foreground: #FFF9F0;
+  --primary: #D4B366;
+  --primary-foreground: #2A2316;
+  --muted: #4A3F2E;
+  --muted-foreground: #D5C5A8;
+  --border: #5C4116;
+  --input: #4A3F2E;
+  --ring: #D4B366;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --sangyu-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --sangyu-shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+  --sangyu-shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.45);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.45);
+}
+
+/* ============================================================
+   Typography — 适老化大字体系
+   ============================================================ */
+
+body {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.text-display {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.text-h1 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: clamp(24px, 6vw, 32px);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.text-h2 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-h3 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.text-body-lg {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+
+.text-numeric {
+  font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+  }
+  @layer base {
+    body { background: var(--background); color: var(--foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--background); }
+      .text-background { color: var(--background); }
+      .border-background { border-color: var(--background); }
+      .ring-background { --tw-ring-color: var(--background); }
+      .bg-foreground { background-color: var(--foreground); }
+      .text-foreground { color: var(--foreground); }
+      .border-foreground { border-color: var(--foreground); }
+      .ring-foreground { --tw-ring-color: var(--foreground); }
+      .bg-card { background-color: var(--card); }
+      .text-card { color: var(--card); }
+      .border-card { border-color: var(--card); }
+      .ring-card { --tw-ring-color: var(--card); }
+      .bg-card-foreground { background-color: var(--card-foreground); }
+      .text-card-foreground { color: var(--card-foreground); }
+      .border-card-foreground { border-color: var(--card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--card-foreground); }
+      .bg-popover { background-color: var(--popover); }
+      .text-popover { color: var(--popover); }
+      .border-popover { border-color: var(--popover); }
+      .ring-popover { --tw-ring-color: var(--popover); }
+      .bg-popover-foreground { background-color: var(--popover-foreground); }
+      .text-popover-foreground { color: var(--popover-foreground); }
+      .border-popover-foreground { border-color: var(--popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--popover-foreground); }
+      .bg-primary { background-color: var(--primary); }
+      .text-primary { color: var(--primary); }
+      .border-primary { border-color: var(--primary); }
+      .ring-primary { --tw-ring-color: var(--primary); }
+      .bg-primary-foreground { background-color: var(--primary-foreground); }
+      .text-primary-foreground { color: var(--primary-foreground); }
+      .border-primary-foreground { border-color: var(--primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--primary-foreground); }
+      .bg-muted { background-color: var(--muted); }
+      .text-muted { color: var(--muted); }
+      .border-muted { border-color: var(--muted); }
+      .ring-muted { --tw-ring-color: var(--muted); }
+      .bg-muted-foreground { background-color: var(--muted-foreground); }
+      .text-muted-foreground { color: var(--muted-foreground); }
+      .border-muted-foreground { border-color: var(--muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--muted-foreground); }
+      .bg-border { background-color: var(--border); }
+      .text-border { color: var(--border); }
+      .border-border { border-color: var(--border); }
+      .ring-border { --tw-ring-color: var(--border); }
+      .bg-input { background-color: var(--input); }
+      .text-input { color: var(--input); }
+      .border-input { border-color: var(--input); }
+      .ring-input { --tw-ring-color: var(--input); }
+      .bg-ring { background-color: var(--ring); }
+      .text-ring { color: var(--ring); }
+      .border-ring { border-color: var(--ring); }
+      .ring-ring { --tw-ring-color: var(--ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <style id="critical-layout">
+      /* 关键布局CSS — 家属监测仪表盘, 静态渲染保底, 暖琥珀适老, 仅使用令牌变量 */
+      .app-bar{border-bottom:1px solid var(--border);}
+      .brand-mark{color:var(--primary);}
+      .alert-strip{background-color:var(--state-error);color:var(--card);}
+      .alert-icon-chip{background-color:color-mix(in srgb,var(--card) 22%,transparent);}
+      .status-card{background-color:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);}
+      .avatar-ring{border:2px solid var(--sangyu-primary-200);}
+      .online-dot{width:8px;height:8px;border-radius:9999px;background-color:var(--state-success);display:inline-block;flex-shrink:0;}
+      .health-panel{background-color:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+      .metric-alert{background-color:var(--state-error-50);}
+      .metric-divider{border-top:1px solid var(--border);}
+      .metric-split{display:grid;grid-template-columns:1fr 1fr;}
+      .metric-split>.metric-cell:first-child{border-right:1px solid var(--border);}
+      .trend-chip{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;padding:2px 8px;border-radius:9999px;line-height:1.4;}
+      .trend-up{background-color:var(--state-error-50);color:var(--state-error);}
+      .trend-flat{background-color:var(--sangyu-primary-50);color:var(--muted-foreground);}
+      .trend-ok{background-color:var(--sangyu-primary-50);color:var(--state-success);}
+      .action-primary{background-color:var(--primary);color:var(--primary-foreground);border-radius:var(--radius-lg);min-height:56px;box-shadow:var(--shadow-2);}
+      .action-secondary{background-color:var(--card);color:var(--foreground);border:1px solid var(--border);border-radius:var(--radius-lg);min-height:52px;}
+      .report-row{background-color:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);}
+      .badge-dot{min-width:18px;height:18px;border-radius:9999px;background-color:var(--state-error);color:var(--card);font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px;}
+      .tabular{font-variant-numeric:tabular-nums;}
+    </style>
+    <main class="bg-[var(--background)] min-h-screen pb-24">
+
+      <!-- 顶部品牌栏 — 克制留白, 琥珀色字标传递品牌 -->
+      <header class="app-bar sticky top-0 z-30 bg-[var(--card)]">
+        <div class="w-full max-w-md mx-auto px-4 h-[56px] flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <svg class="w-7 h-7 brand-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <span class="brand-mark text-[19px] font-bold tracking-tight">桑榆智伴</span>
+            <span class="text-[13px] text-[var(--muted-foreground)]">· 家属端</span>
+          </div>
+          <a href="#" class="relative inline-flex items-center justify-center w-9 h-9 rounded-full text-[var(--muted-foreground)]" aria-label="预警中心，3条未读">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+            <span class="badge-dot absolute -top-0.5 -right-0.5">3</span>
+          </a>
+        </div>
+      </header>
+
+      <div class="w-full max-w-md mx-auto px-4 pt-4 space-y-4">
+
+        <!-- 1. 紧急预警横幅 — 实体红条, 屏幕阅读器优先播报 -->
+        <div class="alert-strip rounded-[var(--radius-md)] px-4 py-3" role="alert" aria-live="assertive">
+          <div class="flex items-center gap-3">
+            <span class="alert-icon-chip shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="text-[17px] font-bold leading-tight">紧急：老人心率异常</p>
+              <p class="text-[14px] leading-snug opacity-90 mt-0.5">当前心率 112 bpm，超出安全范围</p>
+            </div>
+            <a href="#" class="shrink-0 inline-flex items-center gap-1 text-[14px] font-semibold underline underline-offset-2">
+              立即查看
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. 老人状态卡 — 姓名 + 设备在线 + 最后同步 -->
+        <section aria-label="老人状态摘要" class="status-card p-4">
+          <div class="flex items-center gap-3.5">
+            <span class="avatar-ring shrink-0 w-[60px] h-[60px] rounded-full inline-block overflow-hidden">
+              <svg viewBox="0 0 64 64" class="w-full h-full block" role="img" aria-label="王大爷">
+                <circle cx="32" cy="32" r="32" fill="var(--sangyu-primary-100)"/>
+                <circle cx="32" cy="25" r="11" fill="var(--sangyu-primary-300)"/>
+                <path d="M11 57c0-11.6 9.4-20 21-20s21 8.4 21 20z" fill="var(--sangyu-primary-300)"/>
+              </svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-baseline gap-2">
+                <h1 class="text-[24px] font-bold text-[var(--foreground)] leading-none">王大爷</h1>
+                <span class="text-[16px] text-[var(--muted-foreground)]">78岁</span>
+              </div>
+              <div class="flex items-center gap-2 mt-2 text-[15px]">
+                <span class="inline-flex items-center gap-1.5 font-semibold text-[var(--state-success)]">
+                  <span class="online-dot"></span>设备在线
+                </span>
+                <span class="text-[var(--border)]">·</span>
+                <span class="inline-flex items-center gap-1 text-[var(--muted-foreground)]">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>在家中
+                </span>
+              </div>
+              <div class="text-[14px] text-[var(--muted-foreground)] mt-1.5 tabular">最后同步 · 2分钟前</div>
+            </div>
+            <a href="tel:" class="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full bg-[var(--sangyu-primary-50)] text-[var(--primary)]" aria-label="电话联系王大爷">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+          </div>
+        </section>
+
+        <!-- 3. 今日健康监测 — 仪表盘一体面板, 边框分隔, 异常心率红色强调 -->
+        <section aria-label="今日健康监测">
+          <div class="flex items-baseline justify-between mb-2">
+            <h2 class="text-[19px] font-bold text-[var(--foreground)]">今日健康监测</h2>
+            <span class="text-[13px] text-[var(--muted-foreground)] tabular">更新于 2分钟前</span>
+          </div>
+          <div class="health-panel">
+            <!-- 心率 — 异常, 红色底强调 -->
+            <div class="metric-alert px-4 py-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--state-error)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.22 12h4l1.5-3 2 5 2-8 1.5 6h6.76"/></svg>
+                  <span class="text-[15px] font-medium text-[var(--foreground)]">心率</span>
+                </div>
+                <span class="trend-chip trend-up">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"/></svg>较昨日 +12
+                </span>
+              </div>
+              <div class="flex items-baseline gap-1.5 mt-1.5">
+                <span class="tabular text-[30px] font-bold text-[var(--state-error)] leading-none">112</span>
+                <span class="text-[15px] text-[var(--muted-foreground)]">bpm</span>
+                <span class="ml-1 text-[13px] font-semibold text-[var(--state-error)]">偏快</span>
+              </div>
+            </div>
+            <!-- 血压 + 血氧 — 两列分隔 -->
+            <div class="metric-divider metric-split">
+              <div class="metric-cell px-4 py-3">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[var(--muted-foreground)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span class="text-[15px] font-medium text-[var(--foreground)]">血压</span>
+                </div>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span class="tabular text-[22px] font-bold text-[var(--foreground)] leading-none">128/82</span>
+                  <span class="text-[13px] text-[var(--muted-foreground)]">mmHg</span>
+                </div>
+                <span class="trend-chip trend-flat mt-1.5">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>平稳
+                </span>
+              </div>
+              <div class="metric-cell px-4 py-3">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[var(--muted-foreground)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></svg>
+                  <span class="text-[15px] font-medium text-[var(--foreground)]">血氧</span>
+                </div>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span class="tabular text-[22px] font-bold text-[var(--foreground)] leading-none">98</span>
+                  <span class="text-[13px] text-[var(--muted-foreground)]">%</span>
+                </div>
+                <span class="trend-chip trend-ok mt-1.5">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>正常
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 快捷操作 — 主次分级, 非等宽三卡 -->
+        <section aria-label="快捷操作">
+          <a href="tel:" class="action-primary flex items-center justify-center gap-2 font-bold text-[18px]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>联系老人
+          </a>
+          <div class="grid grid-cols-2 gap-3 mt-3">
+            <a href="#" class="action-secondary flex items-center justify-center gap-2 font-semibold text-[16px]">
+              <svg class="w-5 h-5 text-[var(--state-error)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>查看预警
+            </a>
+            <a href="#" class="action-secondary flex items-center justify-center gap-2 font-semibold text-[16px]">
+              <svg class="w-5 h-5 text-[var(--primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>预约服务
+            </a>
+          </div>
+        </section>
+
+        <!-- 5. 健康报告入口 — 列表行, 无彩色圆角图标底 -->
+        <a href="#" class="report-row flex items-center gap-3 p-4">
+          <svg class="w-5 h-5 text-[var(--primary)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-4 4 3 3-5"/></svg>
+          <div class="flex-1 min-w-0">
+            <span class="block text-[17px] font-semibold text-[var(--foreground)]">本周健康报告</span>
+            <span class="block text-[14px] text-[var(--muted-foreground)]">含心率、血压、睡眠趋势分析</span>
+          </div>
+          <svg class="w-5 h-5 text-[var(--muted-foreground)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+      </div>
+
+      <!-- 6. 底部导航 -->
+      <nav data-mobile-nav="global" class="bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]" style="padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -2px 12px -4px rgba(61,43,15,0.08)">
+      <div class="nav-inner w-full max-w-md mx-auto grid grid-cols-4 h-full">
+        <a data-nav-key="home" data-dom-id="nav-home" class="nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--primary)]" href="#">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z"/></svg>
+          <span class="nav-label text-[13px] leading-none font-semibold whitespace-nowrap">首页</span>
+        </a>
+        <a data-nav-key="health" data-dom-id="nav-health" class="nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]" href="#">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="nav-label text-[13px] leading-none font-medium whitespace-nowrap">健康</span>
+        </a>
+        <a data-nav-key="report" data-dom-id="nav-report" class="nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]" href="#">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          <span class="nav-label text-[13px] leading-none font-medium whitespace-nowrap">报告</span>
+        </a>
+        <a data-nav-key="sos" data-dom-id="nav-sos" class="nav-item nav-sos flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap" href="#" aria-label="一键求助">
+          <span class="nav-sos-circle w-[44px] h-[44px] rounded-full bg-[var(--primary)] flex items-center justify-center text-[var(--primary-foreground)]" style="box-shadow:0 4px 16px -4px rgba(61,43,15,0.10),0 2px 4px -2px rgba(61,43,15,0.06)">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <span class="nav-label text-[13px] leading-none font-semibold whitespace-nowrap text-[var(--primary)]">求助</span>
+        </a>
+      </div>
+    </nav>
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

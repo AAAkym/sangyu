@@ -1,0 +1,74 @@
+/* 家人留言墙（设计令牌化）：气泡墙 + 家属发布卡 */
+.msg-input {
+  width: 100%;
+  height: 160rpx;
+  box-sizing: border-box;
+  padding: var(--space-md);
+  background-color: var(--color-input-bg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+}
+
+.msg-count {
+  text-align: right;
+  font-size: var(--font-desc);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-xs);
+}
+
+.msg-btn {
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-foreground);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  box-shadow: var(--shadow-button);
+}
+
+.msg-btn::after {
+  border: none;
+}
+
+.section-title {
+  font-size: var(--font-title);
+  font-weight: 600;
+  margin: var(--space-md) 0;
+}
+
+/* 留言气泡：琥珀主题双色交替 */
+.bubble {
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  border: 1rpx solid var(--color-border);
+}
+
+.bubble--family {
+  background-color: var(--color-primary-soft);
+}
+
+.bubble--family-alt {
+  background-color: var(--color-card);
+  box-shadow: var(--shadow-1);
+}
+
+.bubble-head {
+  font-size: var(--font-desc);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.bubble-text {
+  font-size: var(--font-base);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+/* 长留言溢出防御（特大字号/长文本） */
+.bubble-text {
+  overflow-wrap: anywhere;
+}

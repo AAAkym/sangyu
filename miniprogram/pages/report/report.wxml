@@ -1,0 +1,66 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">AI 健康报告</view>
+  <view class="report-scope">当前查看：老人 {{elderOpenid}} 最近 7 天数据</view>
+
+  <button class="generate-btn" loading="{{generating}}" bindtap="onGenerateTap">生成最新报告</button>
+
+  <view wx:if="{{!report}}" class="placeholder">暂无报告，点击上方按钮生成。</view>
+
+  <block wx:if="{{report}}">
+    <!-- 数据不足时的明确提示（不白屏，报告本身也会说明原因） -->
+    <view wx:if="{{report.dataQuality.status === 'insufficient'}}" class="banner-insufficient">
+      数据不足，暂不能生成有效报告：最近 7 天没有健康数据。可到「健康数据」页补充记录后重新生成。
+    </view>
+
+    <view class="entry">
+      <view class="entry__title">报告周期：{{report.periodStart}} 至 {{report.periodEnd}}</view>
+      <view class="entry__desc">生成时间：{{report.generatedAtText}}</view>
+      <view class="entry__desc">数据完整度：{{report.qualityText}}</view>
+      <view class="entry__desc">生成方式：规则引擎 {{report.modelVersion}}（AI 辅助呈现，非诊断）</view>
+    </view>
+
+    <view class="entry">
+      <view class="entry__title">摘要</view>
+      <view class="report-summary">{{report.summary}}</view>
+    </view>
+
+    <view class="entry">
+      <view class="entry__title">康养建议</view>
+      <view wx:if="{{!report.advice.length}}" class="placeholder">本周无特别建议。</view>
+      <view
+        wx:for="{{report.advice}}"
+        wx:key="id"
+        class="advice {{item.level === 'warning' ? 'advice--warning' : ''}}"
+        data-index="{{index}}"
+        bindtap="onAdviceTap"
+      >
+        <view class="advice__text">{{item.level === 'warning' ? '⚠ ' : ''}}{{item.text}}</view>
+        <view wx:if="{{item.expanded}}" class="advice__evidence">
+          <view wx:if="{{!item.evidenceList.length}}" class="advice__evidence-item">依据：规则统计结果（无单条数据引用）</view>
+          <view wx:for="{{item.evidenceList}}" wx:for-item="ev" wx:key="id" class="advice__evidence-item">依据：{{ev.text}}</view>
+        </view>
+        <view class="advice__hint">{{item.expanded ? '收起依据' : '点击查看依据'}}</view>
+      </view>
+    </view>
+
+    <view class="entry" bindtap="toggleSource">
+      <view class="entry__title">数据来源 {{sourceExpanded ? '▲' : '▼'}}</view>
+      <block wx:if="{{sourceExpanded}}">
+        <view class="entry__desc">统计范围：最近 7 天，共 {{report.dataQuality.recordsCount}} 条记录，覆盖 {{report.dataQuality.daysWithData}}/{{report.dataQuality.totalDays}} 天</view>
+        <view wx:if="{{report.missingText}}" class="entry__desc">缺失日期：{{report.missingText}}</view>
+        <view class="entry__desc">指标覆盖：心率 {{report.dataQuality.metrics.heartRate.count}} 条；血压 {{report.dataQuality.metrics.bloodPressure.count}} 条；血氧 {{report.dataQuality.metrics.spo2.count}} 条（{{report.dataQuality.metrics.spo2.note}}）</view>
+        <view class="entry__desc">生成方式：本地规则引擎 {{report.modelVersion}}，未调用大模型，结论仅供健康管理参考</view>
+      </block>
+    </view>
+
+    <view wx:if="{{history.length}}" class="report-history">
+      <view class="page-title">历史报告</view>
+      <view class="entry" wx:for="{{history}}" wx:key="id" data-id="{{item.id}}" bindtap="onHistoryTap">
+        <view class="entry__title">{{item.periodStart}} 至 {{item.periodEnd}}</view>
+        <view class="entry__desc">{{item.qualityText}} · 生成于 {{item.generatedAtText}}</view>
+      </view>
+    </view>
+
+    <view class="disclaimer">{{report.disclaimer}}</view>
+  </block>
+</view>

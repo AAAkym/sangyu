@@ -1,0 +1,22 @@
+[
+  {
+    "id": "d_demo_001",
+    "elderOpenid": "mock_elder_001",
+    "deviceCode": "SB-001",
+    "boundAt": "2026-08-25T11:47:01.922Z",
+    "status": "offline",
+    "battery": 66,
+    "lastReportAt": "2026-08-31T11:47:02.309Z",
+    "unboundAt": "2026-08-31T11:47:02.315Z"
+  },
+  {
+    "id": "d_1788176822340_2wc1wj",
+    "elderOpenid": "mock_elder_001",
+    "deviceCode": "SB-006",
+    "boundAt": "2026-08-31T11:47:02.340Z",
+    "status": "offline",
+    "battery": null,
+    "lastReportAt": null,
+    "unboundAt": "2026-08-31T11:47:02.342Z"
+  }
+]

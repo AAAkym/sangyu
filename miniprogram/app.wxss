@@ -1,0 +1,372 @@
+/**
+ * 桑榆智伴 · 全局设计令牌与基础样式
+ * 来源：sangyu-zhiban-draft/colors_and_type-draft.css（最新设计稿）
+ * 品牌色由枫叶红更新为暖琥珀 Warm Honey Amber (#B5832E) + 柔象牙白 Soft Ivory (#FFF9F0)
+ * 规则：所有页面的颜色/圆角/阴影/间距/字号一律引用此处变量，页面 WXSS 禁止硬编码
+ */
+page {
+  --tabbar-height: 120rpx;
+  /* ---- 品牌主色：暖琥珀梯度 ---- */
+  --sangyu-primary-50: #FBF5EC;
+  --sangyu-primary-100: #F5E6CC;
+  --sangyu-primary-200: #E8CC99;
+  --sangyu-primary-300: #D4B366;
+  --sangyu-primary-400: #C49A3D;
+  --sangyu-primary-500: #B5832E;
+  --sangyu-primary-600: #9A6E25;
+  --sangyu-primary-700: #7A561D;
+  --sangyu-primary-800: #5C4116;
+  --sangyu-primary-900: #3D2B0F;
+
+  /* ---- 语义功能色（warning 依设计稿更新为琥珀金） ---- */
+  --color-primary: #B5832E;
+  --color-primary-foreground: #FFF9F0;
+  --color-primary-soft: #F5E6CC;
+  --color-success: #2D7A3D;
+  --color-success-soft: #E6F0E8;
+  --color-warning: #C49A3D;
+  --color-warning-text: #8A6508;
+  --color-warning-soft: #F7EFD8;
+  --color-warning-vivid: #F9A825;
+  --color-danger: #C62828;
+  --color-danger-foreground: #FFFFFF;
+  --color-danger-soft: #FBEAEA;
+  --color-info: #1A6B8C;
+  --color-info-soft: #E3EEF3;
+
+  /* ---- 背景 / 卡片 / 文字 / 边框（柔象牙白基底） ---- */
+  --color-bg: #FFF9F0;
+  --color-card: #FFFFFF;
+  --color-text: #2A2316;
+  --color-text-secondary: #6B5D44;
+  --color-text-tertiary: #6B5D44;
+  --color-border: #E8DDC8;
+  --color-muted: #F5EFE2;
+  --color-input-bg: #F5EFE2;
+
+  /* ---- 圆角（设计规范 4/8/16px → rpx） ---- */
+  --radius-sm: 8rpx;
+  --radius-md: 16rpx;
+  --radius-lg: 32rpx;
+  --radius-full: 9999rpx;
+
+  /* ---- 阴影（琥珀底调、克制深度） ---- */
+  --shadow-1: 0 2rpx 4rpx rgba(61, 43, 15, 0.05), 0 2rpx 2rpx rgba(61, 43, 15, 0.03);
+  --shadow-2: 0 8rpx 32rpx -8rpx rgba(61, 43, 15, 0.10), 0 4rpx 8rpx -4rpx rgba(61, 43, 15, 0.06);
+  --shadow-3: 0 32rpx 96rpx -32rpx rgba(61, 43, 15, 0.18);
+  --shadow-card: var(--shadow-2);
+  --shadow-button: var(--shadow-1);
+
+  /* ---- 间距（8rpx 网格，4rpx 半步） ---- */
+  --space-xs: 8rpx;
+  --space-sm: 16rpx;
+  --space-md: 24rpx;
+  --space-lg: 32rpx;
+  --space-xl: 48rpx;
+
+  /* ---- 缓动曲线（只动 transform/opacity） ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* ---- 字体 ---- */
+  --font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-base: 36rpx;
+  --font-title: 44rpx;
+  --font-desc: 28rpx;
+
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--font-base);
+  line-height: 1.65;
+}
+
+/* 字号档位：标准 / 大 / 特大（特大主文字 ≥44rpx），mine 页设置后全局生效 */
+.font-standard {
+  --font-base: 36rpx;
+  --font-title: 44rpx;
+  --font-desc: 28rpx;
+}
+
+.font-large {
+  --font-base: 40rpx;
+  --font-title: 50rpx;
+  --font-desc: 32rpx;
+}
+
+.font-xlarge {
+  --font-base: 44rpx;
+  --font-title: 54rpx;
+  --font-desc: 36rpx;
+}
+
+/* 深色主题（设计稿暗色令牌：深琥珀棕基底，供情感主导页备用）——根节点加 .theme-dark 整页切换 */
+.theme-dark {
+  --color-bg: #2A2316;
+  --color-card: #3D2B0F;
+  --color-text: #FFF9F0;
+  --color-text-secondary: #D5C5A8;
+  --color-text-tertiary: #B8A580;
+  --color-border: #5C4116;
+  --color-muted: #4A3F2E;
+  --color-input-bg: #4A3F2E;
+  --color-primary: #D4B366;
+  --color-primary-foreground: #2A2316;
+  --color-primary-soft: #5C4116;
+  --shadow-card: 0 16rpx 48rpx -16rpx rgba(0, 0, 0, 0.35);
+  --shadow-button: 0 2rpx 4rpx rgba(0, 0, 0, 0.20);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ---- 基础布局与通用组件 ---- */
+.page {
+  padding: var(--space-lg);
+  font-size: var(--font-base);
+  color: var(--color-text);
+}
+
+.page-title {
+  font-size: var(--font-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: var(--space-md);
+}
+
+/* ---- 纯 CSS 线性图标（替代 emoji：统一几何、currentColor 上色） ---- */
+.ico {
+  position: relative;
+  display: inline-block;
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.ico::before,
+.ico::after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+}
+
+/* 双横线：留言/列表 */
+.ico-lines::before {
+  width: 30rpx;
+  height: 4rpx;
+  left: 7rpx;
+  top: 14rpx;
+  box-shadow: 0 12rpx 0 currentColor;
+}
+
+/* 上升柱状图：健康/报告 */
+.ico-chart::before {
+  width: 8rpx;
+  height: 16rpx;
+  left: 6rpx;
+  top: 20rpx;
+  box-shadow: 12rpx -6rpx 0 currentColor, 24rpx -14rpx 0 currentColor;
+}
+
+/* 心电：健康 */
+.ico-pulse::before {
+  width: 34rpx;
+  height: 4rpx;
+  left: 5rpx;
+  top: 20rpx;
+  box-shadow: 0 -6rpx 0 currentColor;
+}
+
+.ico-pulse::after {
+  width: 6rpx;
+  height: 18rpx;
+  left: 19rpx;
+  top: 11rpx;
+}
+
+/* 人形：家属/邀请/陪伴 */
+.ico-person::before {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  left: 15rpx;
+  top: 6rpx;
+}
+
+.ico-person::after {
+  width: 26rpx;
+  height: 14rpx;
+  border-radius: 14rpx 14rpx 0 0;
+  left: 9rpx;
+  top: 24rpx;
+}
+
+/* 电话：联系/拨号 */
+.ico-phone::before {
+  width: 12rpx;
+  height: 26rpx;
+  border-radius: 4rpx;
+  left: 8rpx;
+  top: 9rpx;
+  transform: rotate(-25deg);
+}
+
+.ico-phone::after {
+  width: 12rpx;
+  height: 26rpx;
+  border-radius: 4rpx;
+  left: 24rpx;
+  top: 9rpx;
+  transform: rotate(25deg);
+}
+
+/* 警示三角：告警/紧急 */
+.ico-alert::before {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-left: 16rpx solid transparent;
+  border-right: 16rpx solid transparent;
+  border-bottom: 28rpx solid currentColor;
+  left: 6rpx;
+  top: 7rpx;
+}
+
+/* 时钟：提醒 */
+.ico-clock::before {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background: transparent;
+  border: 4rpx solid currentColor;
+  left: 7rpx;
+  top: 7rpx;
+}
+
+.ico-clock::after {
+  width: 4rpx;
+  height: 10rpx;
+  left: 20rpx;
+  top: 13rpx;
+}
+
+/* 设备方框：绑定/上报 */
+.ico-box::before {
+  width: 24rpx;
+  height: 34rpx;
+  border-radius: 4rpx;
+  background: transparent;
+  border: 4rpx solid currentColor;
+  left: 10rpx;
+  top: 5rpx;
+}
+
+/* 电波：语音/信号 */
+.ico-wave::before {
+  width: 6rpx;
+  height: 18rpx;
+  border-radius: 3rpx;
+  left: 10rpx;
+  top: 13rpx;
+  box-shadow: 10rpx -4rpx 0 currentColor, 20rpx 4rpx 0 currentColor;
+}
+
+/* 品牌环：桑榆智伴标识 */
+.ico-ring::before {
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 50%;
+  background: transparent;
+  border: 5rpx solid currentColor;
+  left: 9rpx;
+  top: 9rpx;
+}
+
+.ico-ring::after {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  left: 17rpx;
+  top: 17rpx;
+}
+
+/* 主按钮入口（stagger 进入：只动 transform/opacity） */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.4s var(--ease-out) backwards;
+}
+
+.fade-up-2 {
+  animation: fade-up 0.4s var(--ease-out) 0.06s backwards;
+}
+
+.fade-up-3 {
+  animation: fade-up 0.4s var(--ease-out) 0.12s backwards;
+}
+
+/* 功能入口/信息卡片（分层：留白 → 背景明度微调 → 极浅阴影；语义色边仅在异常/待处理时使用） */
+.entry {
+  background-color: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-1);
+}
+
+.entry__title {
+  font-size: var(--font-base);
+  font-weight: 600;
+}
+
+.entry__desc {
+  font-size: var(--font-desc);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.placeholder {
+  color: var(--color-text-tertiary);
+  padding: var(--space-md) 0;
+  font-size: var(--font-base);
+}
+
+/* 首页顶部设备状态小标签（家属端/老人端共用，文字颜色由页面数据注入） */
+.device-tag {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-desc);
+  font-weight: 600;
+  background-color: var(--color-card);
+  border: 2rpx solid var(--color-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-1);
+}
+
+/* 主按钮基类 */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-button);
+}
+
+/* 长文本溢出防御（特大字号/长昵称/长备注） */
+.entry__title,
+.menu-desc,
+.bubble-text,
+.rm-item .entry__title {
+  overflow-wrap: anywhere;
+}

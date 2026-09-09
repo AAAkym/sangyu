@@ -1,0 +1,45 @@
+<view class="chat-page {{fontClass}}">
+  <view class="chat-hero">
+    <view class="chat-brand">桑榆智伴 · 语音陪伴</view>
+    <view class="pack-btn" bindtap="onPackToggle" aria-label="语音包"><view class="pack-line"></view><view class="pack-line"></view><view class="pack-line"></view></view>
+    <view class="chat-source" wx:if="{{sourceText}}">{{sourceText}}</view>
+  </view>
+
+  <scroll-view class="chat-list" scroll-y scroll-into-view="{{scrollInto}}" scroll-with-animation>
+    <view class="chat-list-inner" style="{{kbHeight > 0 ? 'padding-bottom:' + (kbHeight + 40) + 'px' : ''}}">
+      <view wx:for="{{messages}}" wx:key="id" id="w{{item.id}}">
+        <view class="bubble {{item.role === 'user' ? 'bubble--user' : 'bubble--ai'}}">
+          <view class="bubble-meta">{{item.role === 'user' ? '我' : '小伴'}}</view>
+          <view class="bubble-text">{{item.text}}{{item.role === 'ai' && index === messages.length - 1 && typing ? '▍' : ''}}</view>
+        </view>
+      </view>
+      <view wx:if="{{typing}}" class="bubble bubble--ai typing-bubble">正在输入…</view>
+      <view id="msgEnd"></view>
+    </view>
+  </scroll-view>
+
+  <view class="pack-mask" wx:if="{{showPack}}" bindtap="onPackToggle"></view>
+  <view class="pack-panel {{showPack ? 'pack-panel--open' : ''}}">
+    <view class="pack-title">语音包（点击播放）</view>
+    <view class="pack-item {{playingId === item.id ? 'pack-item--playing' : ''}}" wx:for="{{packs}}" wx:key="id" data-id="{{item.id}}" bindtap="onPackItemTap">
+      <view class="pack-item-text">{{item.text}}</view>
+      <view wx:if="{{playingId === item.id}}" class="pack-stop">停止</view>
+    </view>
+  </view>
+
+  <view class="chat-input-bar" style="bottom: {{kbHeight}}px">
+    <input
+      class="chat-input"
+      value="{{input}}"
+      placeholder="跟小伴说点什么…"
+      confirm-type="send"
+      adjust-position="{{false}}"
+      disabled="{{sending}}"
+      bindinput="onInput"
+      bindfocus="onInputFocus"
+      bindkeyboardheightchange="onKeyboardHeight"
+      bindconfirm="onSend"
+    />
+    <button class="chat-send" disabled="{{sending}}" loading="{{sending}}" bindtap="onSend">发送</button>
+  </view>
+</view>

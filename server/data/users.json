@@ -1,0 +1,16 @@
+[
+  {
+    "openid": "mock_family_001",
+    "role": "family",
+    "nickname": "小王",
+    "createdAt": "2026-08-01T11:47:01.922Z",
+    "updatedAt": "2026-08-31T12:26:30.547Z"
+  },
+  {
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "nickname": "张爷爷",
+    "createdAt": "2026-08-01T11:47:01.922Z",
+    "updatedAt": "2026-08-31T12:25:42.887Z"
+  }
+]

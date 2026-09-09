@@ -1,0 +1,59 @@
+/* 自定义 tabBar（Batch 15 · P0-A）：双端统一双 tab，按角色显隐（hidden，不重建）
+   选中态多通道：主色文字 + 加粗 600 + 顶部指示条；顶部 1rpx 分隔线引用令牌 */
+
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: var(--color-card);
+  border-top: 1rpx solid var(--color-border);
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: var(--shadow-1);
+  z-index: 40;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14rpx 0 12rpx;
+  font-size: var(--font-desc);
+  color: var(--color-text-tertiary);
+  position: relative;
+  transition: color 200ms var(--ease-out), transform 200ms var(--ease-out);
+}
+
+.tab-item--active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* 选中态第二通道：顶部指示条（形状变化，不只靠颜色） */
+.tab-ind {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 48rpx;
+  height: 6rpx;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  transition: transform 200ms var(--ease-spring);
+}
+
+.tab-item--active .tab-ind {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.tab-label {
+  line-height: 1.3;
+  transition: transform 200ms var(--ease-spring);
+}
+
+.tab-item--active .tab-label {
+  transform: scale(1.06);
+}

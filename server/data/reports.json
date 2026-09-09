@@ -1,0 +1,233 @@
+[
+  {
+    "id": "rp_1788176821980_0r6xoj",
+    "elderOpenid": "mock_elder_001",
+    "periodStart": "2026-08-25",
+    "periodEnd": "2026-08-31",
+    "generatedAt": "2026-08-31T11:47:01.980Z",
+    "modelVersion": "rule-engine-v1",
+    "summary": "最近 7 天（2026-08-25 至 2026-08-31）共记录 8 条数据，覆盖 7/7 天。心率平均 85.4 次/分（最低 71、最高 125），趋势上升。血压平均高压 122.1 / 低压 79.1（最高高压 126），趋势平稳。",
+    "advice": [
+      {
+        "id": "adv_1",
+        "level": "info",
+        "text": "最近一周心率平均 85.4 次/分（区间 71~125），趋势上升。可继续保持规律测量与记录。",
+        "evidenceRefs": [
+          "h_demo_125"
+        ]
+      },
+      {
+        "id": "adv_2",
+        "level": "info",
+        "text": "血压记录处于常见参考区间（高压 122.1 / 低压 79.1），可继续保持规律测量。",
+        "evidenceRefs": []
+      }
+    ],
+    "dataQuality": {
+      "status": "good",
+      "totalDays": 7,
+      "daysWithData": 7,
+      "missingDates": [],
+      "recordsCount": 8,
+      "metrics": {
+        "heartRate": {
+          "count": 8,
+          "avg": 85.4,
+          "min": 71,
+          "max": 125,
+          "trend": "上升"
+        },
+        "bloodPressure": {
+          "count": 8,
+          "avgSystolic": 122.1,
+          "avgDiastolic": 79.1,
+          "maxSystolic": 126,
+          "trend": "平稳"
+        },
+        "spo2": {
+          "count": 0,
+          "note": "未采集（当前 Mock 数据不含血氧）"
+        }
+      }
+    },
+    "disclaimer": "本内容根据已授权数据自动生成，仅供健康管理和康养参考，不构成诊断、治疗或急救建议。如有不适或紧急情况，请及时联系医疗机构或急救服务。",
+    "evidence": [
+      {
+        "id": "h_demo_125",
+        "metric": "heartRate",
+        "value": 125,
+        "observedAt": "2026-08-31T11:37:01.922Z"
+      }
+    ]
+  },
+  {
+    "id": "rp_1788176822334_7siu06",
+    "elderOpenid": "mock_elder_001",
+    "periodStart": "2026-08-25",
+    "periodEnd": "2026-08-31",
+    "generatedAt": "2026-08-31T11:47:02.334Z",
+    "modelVersion": "rule-engine-v1",
+    "summary": "最近 7 天（2026-08-25 至 2026-08-31）共记录 20 条数据，覆盖 7/7 天。心率平均 83.2 次/分（最低 0、最高 125），趋势上升。血压平均高压 126.9 / 低压 80.4（最高高压 165），趋势平稳。",
+    "advice": [
+      {
+        "id": "adv_1",
+        "level": "info",
+        "text": "最近一周心率平均 83.2 次/分（区间 0~125），趋势上升。可继续保持规律测量与记录。",
+        "evidenceRefs": [
+          "h_demo_125"
+        ]
+      },
+      {
+        "id": "adv_2",
+        "level": "info",
+        "text": "血压记录处于常见参考区间（高压 126.9 / 低压 80.4），可继续保持规律测量。",
+        "evidenceRefs": []
+      }
+    ],
+    "dataQuality": {
+      "status": "good",
+      "totalDays": 7,
+      "daysWithData": 7,
+      "missingDates": [],
+      "recordsCount": 20,
+      "metrics": {
+        "heartRate": {
+          "count": 20,
+          "avg": 83.2,
+          "min": 0,
+          "max": 125,
+          "trend": "上升"
+        },
+        "bloodPressure": {
+          "count": 18,
+          "avgSystolic": 126.9,
+          "avgDiastolic": 80.4,
+          "maxSystolic": 165,
+          "trend": "平稳"
+        },
+        "spo2": {
+          "count": 0,
+          "note": "未采集（当前 Mock 数据不含血氧）"
+        }
+      }
+    },
+    "disclaimer": "本内容根据已授权数据自动生成，仅供健康管理和康养参考，不构成诊断、治疗或急救建议。如有不适或紧急情况，请及时联系医疗机构或急救服务。",
+    "evidence": [
+      {
+        "id": "h_demo_125",
+        "metric": "heartRate",
+        "value": 125,
+        "observedAt": "2026-08-31T11:37:01.922Z"
+      }
+    ]
+  },
+  {
+    "id": "rp_1788176822337_kri0gq",
+    "elderOpenid": "mock_elder_001",
+    "periodStart": "2026-08-25",
+    "periodEnd": "2026-08-31",
+    "generatedAt": "2026-08-31T11:47:02.337Z",
+    "modelVersion": "rule-engine-v1",
+    "summary": "最近 7 天（2026-08-25 至 2026-08-31）共记录 20 条数据，覆盖 7/7 天。心率平均 83.2 次/分（最低 0、最高 125），趋势上升。血压平均高压 126.9 / 低压 80.4（最高高压 165），趋势平稳。",
+    "advice": [
+      {
+        "id": "adv_1",
+        "level": "info",
+        "text": "最近一周心率平均 83.2 次/分（区间 0~125），趋势上升。可继续保持规律测量与记录。",
+        "evidenceRefs": [
+          "h_demo_125"
+        ]
+      },
+      {
+        "id": "adv_2",
+        "level": "info",
+        "text": "血压记录处于常见参考区间（高压 126.9 / 低压 80.4），可继续保持规律测量。",
+        "evidenceRefs": []
+      }
+    ],
+    "dataQuality": {
+      "status": "good",
+      "totalDays": 7,
+      "daysWithData": 7,
+      "missingDates": [],
+      "recordsCount": 20,
+      "metrics": {
+        "heartRate": {
+          "count": 20,
+          "avg": 83.2,
+          "min": 0,
+          "max": 125,
+          "trend": "上升"
+        },
+        "bloodPressure": {
+          "count": 18,
+          "avgSystolic": 126.9,
+          "avgDiastolic": 80.4,
+          "maxSystolic": 165,
+          "trend": "平稳"
+        },
+        "spo2": {
+          "count": 0,
+          "note": "未采集（当前 Mock 数据不含血氧）"
+        }
+      }
+    },
+    "disclaimer": "本内容根据已授权数据自动生成，仅供健康管理和康养参考，不构成诊断、治疗或急救建议。如有不适或紧急情况，请及时联系医疗机构或急救服务。",
+    "evidence": [
+      {
+        "id": "h_demo_125",
+        "metric": "heartRate",
+        "value": 125,
+        "observedAt": "2026-08-31T11:37:01.922Z"
+      }
+    ]
+  },
+  {
+    "id": "rp_1788176822338_mf36sg",
+    "elderOpenid": "mock_elder_none_001",
+    "periodStart": "2026-08-25",
+    "periodEnd": "2026-08-31",
+    "generatedAt": "2026-08-31T11:47:02.338Z",
+    "modelVersion": "rule-engine-v1",
+    "summary": "最近 7 天（2026-08-25 至 2026-08-31）没有健康数据记录，无法进行统计分析。请在健康页写入数据或等待设备上报后，重新生成报告。",
+    "advice": [
+      {
+        "id": "adv_1",
+        "level": "info",
+        "text": "可记录：最近 7 天没有健康数据。请在健康页写入或等待设备上报后，重新生成报告。",
+        "evidenceRefs": []
+      }
+    ],
+    "dataQuality": {
+      "status": "insufficient",
+      "totalDays": 7,
+      "daysWithData": 0,
+      "missingDates": [
+        "2026-08-25",
+        "2026-08-26",
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-30",
+        "2026-08-31"
+      ],
+      "recordsCount": 0,
+      "metrics": {
+        "heartRate": {
+          "count": 0,
+          "note": "未采集"
+        },
+        "bloodPressure": {
+          "count": 0,
+          "note": "未采集"
+        },
+        "spo2": {
+          "count": 0,
+          "note": "未采集（当前 Mock 数据不含血氧）"
+        }
+      }
+    },
+    "disclaimer": "本内容根据已授权数据自动生成，仅供健康管理和康养参考，不构成诊断、治疗或急救建议。如有不适或紧急情况，请及时联系医疗机构或急救服务。",
+    "evidence": []
+  }
+]

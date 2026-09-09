@@ -1,0 +1,929 @@
+[
+  {
+    "id": "chat_1788069422224_5uoqyf",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T05:57:02.224Z"
+  },
+  {
+    "id": "chat_1788069422225_kepgct",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T05:57:02.225Z"
+  },
+  {
+    "id": "chat_1788069422558_n28c79",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T05:57:02.558Z"
+  },
+  {
+    "id": "chat_1788069422560_icyt56",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T05:57:02.560Z"
+  },
+  {
+    "id": "chat_1788069720421_qmmg72",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-30T06:02:00.421Z"
+  },
+  {
+    "id": "chat_1788069720423_yqup43",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T06:02:00.423Z"
+  },
+  {
+    "id": "chat_1788069720749_v35m9s",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-30T06:02:00.749Z"
+  },
+  {
+    "id": "chat_1788069720751_ghl3cx",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T06:02:00.751Z"
+  },
+  {
+    "id": "chat_1788070779770_jt9jo8",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T06:19:39.770Z"
+  },
+  {
+    "id": "chat_1788070779782_puajyl",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T06:19:39.782Z"
+  },
+  {
+    "id": "chat_1788070855746_68ywix",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-30T06:20:55.746Z"
+  },
+  {
+    "id": "chat_1788070855755_0eng3s",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T06:20:55.755Z"
+  },
+  {
+    "id": "chat_1788070856103_ofe1dv",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-30T06:20:56.103Z"
+  },
+  {
+    "id": "chat_1788070884980_9sx99h",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T06:21:24.980Z"
+  },
+  {
+    "id": "chat_1788070884981_v7jkdx",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T06:21:24.981Z"
+  },
+  {
+    "id": "chat_1788070885336_wp4k2h",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-30T06:21:25.336Z"
+  },
+  {
+    "id": "chat_1788070885338_jlcyje",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T06:21:25.338Z"
+  },
+  {
+    "id": "chat_1788114117112_vkucbq",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我想跟你聊聊天",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-30T18:21:57.113Z"
+  },
+  {
+    "id": "chat_1788114989038_odrl2g",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-30T18:36:29.038Z"
+  },
+  {
+    "id": "chat_1788114989040_5e41hz",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T18:36:29.040Z"
+  },
+  {
+    "id": "chat_1788114989331_gg8swn",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-30T18:36:29.331Z"
+  },
+  {
+    "id": "chat_1788114989332_holvxg",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T18:36:29.332Z"
+  },
+  {
+    "id": "chat_1788116331953_093h8k",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T18:58:51.953Z"
+  },
+  {
+    "id": "chat_1788116331955_3eebsz",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T18:58:51.955Z"
+  },
+  {
+    "id": "chat_1788116332228_ftb7w9",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-30T18:58:52.228Z"
+  },
+  {
+    "id": "chat_1788116332230_kqu21g",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T18:58:52.230Z"
+  },
+  {
+    "id": "chat_1788116661926_u4428q",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T19:04:21.926Z"
+  },
+  {
+    "id": "chat_1788116661928_iiuw2i",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:04:21.928Z"
+  },
+  {
+    "id": "chat_1788116662186_7t9xag",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-30T19:04:22.186Z"
+  },
+  {
+    "id": "chat_1788116662187_i0bb6h",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:04:22.187Z"
+  },
+  {
+    "id": "chat_1788117426256_jlcfqp",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:17:06.256Z"
+  },
+  {
+    "id": "chat_1788117426258_z7e0po",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:17:06.258Z"
+  },
+  {
+    "id": "chat_1788117426500_ts0idt",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-30T19:17:06.500Z"
+  },
+  {
+    "id": "chat_1788117426502_mdpfe7",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:17:06.502Z"
+  },
+  {
+    "id": "chat_1788118815174_9x8yyx",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:40:15.174Z"
+  },
+  {
+    "id": "chat_1788118815175_qlmxzo",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:40:15.175Z"
+  },
+  {
+    "id": "chat_1788118815405_ifeb09",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:40:15.405Z"
+  },
+  {
+    "id": "chat_1788118815406_ktl241",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:40:15.406Z"
+  },
+  {
+    "id": "chat_1788119471559_g85593",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "今天天气不错，想出去走走",
+    "reply": "最近天气变化大，出门多带件衣裳，别着凉。遛弯的话挑个暖和的钟点再去。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:51:11.559Z"
+  },
+  {
+    "id": "chat_1788119523253_plhujc",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "今天感觉还不错",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-30T19:52:03.253Z"
+  },
+  {
+    "id": "chat_1788119673982_7g9h71",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:54:33.982Z"
+  },
+  {
+    "id": "chat_1788119673983_ixtzkv",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:54:33.983Z"
+  },
+  {
+    "id": "chat_1788119678823_0yfy4c",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-30T19:54:38.823Z"
+  },
+  {
+    "id": "chat_1788119678825_ztzx8q",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:54:38.825Z"
+  },
+  {
+    "id": "chat_1788119967106_3q7e9c",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T19:59:27.106Z"
+  },
+  {
+    "id": "chat_1788119967107_nk88wb",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:59:27.107Z"
+  },
+  {
+    "id": "chat_1788119973186_y88dr8",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T19:59:33.186Z"
+  },
+  {
+    "id": "chat_1788119973188_p3oy56",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-30T19:59:33.188Z"
+  },
+  {
+    "id": "chat_1788120063937_dyylxm",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T20:01:03.937Z"
+  },
+  {
+    "id": "chat_1788120063938_fsxqvu",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T20:01:03.938Z"
+  },
+  {
+    "id": "chat_1788120065457_zv69rd",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-30T20:01:05.457Z"
+  },
+  {
+    "id": "chat_1788120065459_n4wt4o",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-30T20:01:05.459Z"
+  },
+  {
+    "id": "chat_1788150676663_zmikuj",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "号",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T04:31:16.663Z"
+  },
+  {
+    "id": "chat_1788150681363_icq17d",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你是谁",
+    "reply": "跟我说说今天遇到的新鲜事儿？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T04:31:21.363Z"
+  },
+  {
+    "id": "chat_1788150688786_tfvarz",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你试谁",
+    "reply": "今天出门走走了吗？外面风景怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T04:31:28.786Z"
+  },
+  {
+    "id": "chat_1788150980031_0ey6j3",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-31T04:36:20.031Z"
+  },
+  {
+    "id": "chat_1788150980039_lf5q97",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-31T04:36:20.039Z"
+  },
+  {
+    "id": "chat_1788150995369_b90s27",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-31T04:36:35.369Z"
+  },
+  {
+    "id": "chat_1788150995371_rv7gf1",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-31T04:36:35.371Z"
+  },
+  {
+    "id": "chat_1788150996853_c73jer",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-31T04:36:36.853Z"
+  },
+  {
+    "id": "chat_1788150996855_6xin79",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-31T04:36:36.855Z"
+  },
+  {
+    "id": "chat_1788154144713_jxaooj",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:29:04.713Z"
+  },
+  {
+    "id": "chat_1788154144714_k92aw3",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:29:04.714Z"
+  },
+  {
+    "id": "chat_1788154367495_ty141o",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好呀～想吃点什么，还是咱俩聊聊天？",
+    "source": "local",
+    "timestamp": "2026-08-31T05:32:47.495Z"
+  },
+  {
+    "id": "chat_1788154367496_2hqqxy",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:32:47.496Z"
+  },
+  {
+    "id": "chat_1788154376295_zz5fzb",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:32:56.295Z"
+  },
+  {
+    "id": "chat_1788154376296_fldn9o",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:32:56.296Z"
+  },
+  {
+    "id": "chat_1788154390346_4r86ia",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-31T05:33:10.346Z"
+  },
+  {
+    "id": "chat_1788154390348_s38lil",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:33:10.348Z"
+  },
+  {
+    "id": "chat_1788154434822_01f4sr",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:33:54.822Z"
+  },
+  {
+    "id": "chat_1788154434824_94hjnf",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:33:54.824Z"
+  },
+  {
+    "id": "chat_1788154473162_fv3tge",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:34:33.162Z"
+  },
+  {
+    "id": "chat_1788154473164_1sjrzm",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-31T05:34:33.164Z"
+  },
+  {
+    "id": "chat_1788154691585_qpuez1",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你是谁",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T05:38:11.585Z"
+  },
+  {
+    "id": "chat_1788154695989_8kt14h",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "好的",
+    "reply": "跟我说说今天遇到的新鲜事儿？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T05:38:15.989Z"
+  },
+  {
+    "id": "chat_1788176676778_luxjj1",
+    "openid": "test",
+    "role": "elder",
+    "message": "??",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T11:44:36.779Z"
+  },
+  {
+    "id": "chat_1788176689703_gibpxu",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-31T11:44:49.703Z"
+  },
+  {
+    "id": "chat_1788176690199_t55wc9",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-31T11:44:50.199Z"
+  },
+  {
+    "id": "chat_1788176762863_mhvhcp",
+    "openid": "test",
+    "role": "elder",
+    "message": "我头疼，该吃什么药",
+    "reply": "听我的，别拖——给家人打个电话说明一下，必要时直接去医院。号码在「紧急联系人」里存着呢。",
+    "source": "local",
+    "timestamp": "2026-08-31T11:46:02.863Z"
+  },
+  {
+    "id": "chat_1788176797455_oqcdee",
+    "openid": "test",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-31T11:46:37.455Z"
+  },
+  {
+    "id": "chat_1788176814535_2y4drc",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "哎，我在呢！今天精神头怎么样？",
+    "source": "local",
+    "timestamp": "2026-08-31T11:46:54.535Z"
+  },
+  {
+    "id": "chat_1788176814536_oxfdqp",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-31T11:46:54.536Z"
+  },
+  {
+    "id": "chat_1788176822397_dcgdjr",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "嗨，我一直在呢，想说啥都行。",
+    "source": "local",
+    "timestamp": "2026-08-31T11:47:02.397Z"
+  },
+  {
+    "id": "chat_1788176822398_inro3z",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "我有点头疼",
+    "reply": "别硬扛着，先坐下歇一会儿。这种情况我建议您联系家人，让他们陪您去医院看看，要紧的。",
+    "source": "local",
+    "timestamp": "2026-08-31T11:47:02.398Z"
+  },
+  {
+    "id": "chat_1788177767757_0pvsqt",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你是谁",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T12:02:47.757Z"
+  },
+  {
+    "id": "chat_1788178158659_6fepsh",
+    "openid": "test",
+    "role": "elder",
+    "message": "请给我讲一个关于月亮的短故事",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T12:09:18.659Z"
+  },
+  {
+    "id": "chat_1788178662052_k2377i",
+    "openid": "test",
+    "role": "elder",
+    "message": "请给我讲一个关于月亮的两句话短故事",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T12:17:42.052Z"
+  },
+  {
+    "id": "chat_1788178663542_4v4bdh",
+    "openid": "test",
+    "role": "elder",
+    "message": "今天心情不错，推荐一件适合老人在家做的轻松小事",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T12:17:43.542Z"
+  },
+  {
+    "id": "chat_1788178723202_tr2obi",
+    "openid": "spark_verify_1788178722617",
+    "role": "elder",
+    "message": "请给我讲一个关于月亮的两句话短故事",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T12:18:43.202Z"
+  },
+  {
+    "id": "chat_1788178810969_30qqi8",
+    "openid": "spark_verify_clean",
+    "role": "elder",
+    "message": "请讲一个月亮的短故事",
+    "reply": "今天吃饭了吗？胃口怎么样？",
+    "source": "fallback",
+    "timestamp": "2026-08-31T12:20:10.969Z"
+  },
+  {
+    "id": "chat_1788178881436_ymmkuq",
+    "openid": "spark_live_211964caaf3746ddaa0b0531b15e9392",
+    "role": "elder",
+    "message": "请给我讲一个关于月亮的两句话短故事",
+    "reply": "在古老的森林里，有一片神奇的草地。每当夜晚降临，月亮便悄悄爬上天空，照亮了整个草地。小动物们围坐在草地上，仰望着明亮的月亮，听着老人讲述关于月亮的故事。\n有一天，一只聪明的兔子提出了一个问题：“月亮为什么会出现在夜空中呢？”老人微笑着回答：“月亮是地球的朋友，它用自己的光芒陪伴我们度过每一个夜晚。”小动物们听得津津有味，纷纷点头表示赞同。",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:21:21.436Z"
+  },
+  {
+    "id": "chat_1788178883447_hqznma",
+    "openid": "spark_live_2b871b564ef84422ab0b9dd85e97da31",
+    "role": "elder",
+    "message": "今天心情不错，推荐一件适合老人在家做的轻松小事",
+    "reply": "那太好了！老人在家可以做一些简单的事情来放松心情，比如听音乐、画画或做手工艺品。你有什么特别的兴趣呢？",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:21:23.447Z"
+  },
+  {
+    "id": "chat_1788178885809_91uxh2",
+    "openid": "spark_live_7b8ad3f30530469dbc20ff6da26549c5",
+    "role": "elder",
+    "message": "我头疼，该吃什么药",
+    "reply": "桑榆智伴建议，头疼时可以先尝试休息一下，看看是否能够缓解。如果情况持续，可以考虑服用一些非处方的止痛药，如布洛芬或对乙酰氨基酚，但请务必按照说明书上的剂量使用。但如果头痛严重或者伴有其他症状，请及时就医。",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:21:25.809Z"
+  },
+  {
+    "id": "chat_1788178960578_vow2ic",
+    "openid": "spark_final_8c5c1fb45ef543a19a4f3be7bc75da8e",
+    "role": "elder",
+    "message": "请给我讲一个关于月亮的两句话短故事",
+    "reply": "在遥远的古代，有一个美丽的村落，每当月亮升起的时候，村里的孩子们都会聚集在一起，仰望着那轮皎洁的明月。他们相信，月亮上住着嫦娥和玉兔，它们会偷偷地从月宫溜出来，与人间的小朋友们玩耍。\n\n一天晚上，一个勇敢的孩子决定去探索月宫的秘密。他穿上了最漂亮的衣服，带上了自己最爱的小玩具，踏上了寻找嫦娥和玉兔的旅程。他穿过了茂密的森林，跨过了湍急的河流，终于来到了一片神秘的空地。\n\n空地中央有一座由白玉砌成的宫殿，那就是传说中的月宫。孩子走进宫殿，发现嫦娥正坐在窗前织布。她看到孩子进来，微笑着招手让他过来。孩子走到嫦娥面前，好奇地问：“嫦娥姐姐，您真的住在月宫里吗？”\n\n嫦娥点了点头，说：“是的，我在这里已经住了很多年了。”孩子又问：“那您每天都能见到玉兔吗？”嫦娥又笑了笑：“当然，它总是陪伴着我。”\n\n孩子听了这些，心中充满了向往。他问嫦娥：“我可以留下来和您一起住吗？”嫦娥摇了摇头，说：“你是个好孩子，但是月亮上没有地方可以给你安排住宿。”\n\n孩子有些失望，但他知道嫦娥和玉兔都是善良而美丽的存在。他告别了嫦娥，继续他的旅程。当他回到村子时，他把这段奇妙的经历告诉了其他孩子们。他们听得津津有味，纷纷表示也要像那个勇敢的孩子一样，去追寻属于自己的梦想。",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:22:40.578Z"
+  },
+  {
+    "id": "chat_1788178963016_wuaj5z",
+    "openid": "spark_final_d6353d99a70c4bb69231ea396358fe08",
+    "role": "elder",
+    "message": "我头疼，该吃什么药",
+    "reply": "哎呀，头疼可真让人难受。能告诉我是哪种类型的头疼吗？如果是紧张或压力引起的，试试深呼吸和冥想，可能会有帮助。如果是因为天气变化或者缺乏睡眠，可能只是需要休息一下哦。",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:22:43.016Z"
+  },
+  {
+    "id": "chat_1788179047487_8d5p2n",
+    "openid": "spark_accept_e4c4aefa249b450fbb3b14b61d337e6b",
+    "role": "elder",
+    "message": "请用两句话讲一个关于月亮和桂花树的故事",
+    "reply": "在遥远的古代，有一棵桂花树，它静静地生长在村庄的一角。每到中秋之夜，皎洁的月光洒在它的枝头，桂花散发出迷人的香气，仿佛是天上的仙子在轻轻吟唱。村里的人们都知道这棵桂花树与月亮有着不解之缘，每当月圆之夜，人们都会聚集在树下，聆听着桂花的歌声，感受着月光的洗礼。\n\n有一天，一个年轻的书生路过这片桂花林，被这美妙的景色深深吸引。他决定在树下留宿一晚，以期能更深入地了解这棵桂花树和月亮的故事。夜深了，书生躺在树下，仰望星空，心中充满了对自然的敬畏和向往。他想起了自己曾经读过的诗篇，那些关于月亮、桂花和自然之美的文字，让他更加陶醉其中。\n\n第二天清晨，当第一缕阳光穿透树叶洒在书生的脸上时，他醒来了。他发现昨夜的梦境如此真实，仿佛真的与月亮和桂花树有了某种奇妙的联系。从那以后，书生便常常来到这棵桂花树下，聆听着桂花的歌声，感受着月光的洗礼，寻找着心灵的宁静与安宁。",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:24:07.487Z"
+  },
+  {
+    "id": "chat_1788179049477_lo2w8t",
+    "openid": "spark_accept_308ea86aa8ad4be1bcd301dcd0ced888",
+    "role": "elder",
+    "message": "今天心情不错，陪我聊聊",
+    "reply": "听起来您今天心情不错，真是太好了。那您想聊些什么呢？",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:24:09.477Z"
+  },
+  {
+    "id": "chat_1788179051538_n8ifyg",
+    "openid": "spark_accept_c64fc460501943a89419939d5cae926d",
+    "role": "elder",
+    "message": "我头疼，该吃什么药",
+    "reply": "听起来您不舒服，请立即联系家人，并尽快咨询医生或前往医院。不要自行用药，以免造成不必要的健康风险。",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:24:11.538Z"
+  },
+  {
+    "id": "chat_1788179088952_7dypdj",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好，有什么我可以帮您的吗？",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:24:48.952Z"
+  },
+  {
+    "id": "chat_1788179093214_rhd3n9",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你是谁",
+    "reply": "我是您的陪伴助手，我在这里是为了让您的生活更加轻松和愉快。如果您有任何需要帮助的地方，请随时告诉我。",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:24:53.214Z"
+  },
+  {
+    "id": "chat_1788179150563_l3ufka",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你好",
+    "reply": "你好，有什么可以帮助您的吗？",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:25:50.563Z"
+  },
+  {
+    "id": "chat_1788179154324_oemii8",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你是谁",
+    "reply": "我是您的陪伴助手，我在这里随时准备帮助您。如果您需要任何帮助或者只是想聊聊天，我都在这里。",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:25:54.324Z"
+  },
+  {
+    "id": "chat_1788179160894_dy4y22",
+    "openid": "mock_elder_001",
+    "role": "elder",
+    "message": "你能做什么",
+    "reply": "我可以帮助老人处理日常生活中的各种事务，比如购物、做饭、打扫卫生等。同时，我也可以帮助老人进行健康检查和医疗咨询。如果您有任何身体不适或需要药物帮助，请立即联系家人，并尽快咨询医生或前往医院。",
+    "source": "spark",
+    "timestamp": "2026-08-31T12:26:00.894Z"
+  }
+]

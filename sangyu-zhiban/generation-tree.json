@@ -1,0 +1,21 @@
+{
+  "root": {
+    "nodeId": "gen-root",
+    "kind": "project-shell",
+    "pageIds": [],
+    "output": null,
+    "sharedRegions": ["colors_and_type.css design tokens", "mobile bottom navigation (canonicalHtmlByKey)"],
+    "privateRegions": [],
+    "mutableSlots": [],
+    "status": "generated",
+    "children": [
+      { "nodeId": "page-role-select", "kind": "page-leaf", "pageIds": ["page-role-select"], "output": "pages/role-select.html", "sharedRegions": [], "privateRegions": ["full page body"], "mutableSlots": [], "status": "planned", "children": [] },
+      { "nodeId": "page-elder-home", "kind": "page-leaf", "pageIds": ["page-elder-home"], "output": "pages/elder-home.html", "sharedRegions": [], "privateRegions": ["full page body"], "mutableSlots": ["mobileNavigationActiveKey:home"], "status": "planned", "children": [] },
+      { "nodeId": "page-family-home", "kind": "page-leaf", "pageIds": ["page-family-home"], "output": "pages/family-home.html", "sharedRegions": [], "privateRegions": ["full page body"], "mutableSlots": ["mobileNavigationActiveKey:home"], "status": "planned", "children": [] },
+      { "nodeId": "page-elder-sos", "kind": "page-leaf", "pageIds": ["page-elder-sos"], "output": "pages/elder-sos.html", "sharedRegions": [], "privateRegions": ["full page body"], "mutableSlots": [], "status": "planned", "children": [] },
+      { "nodeId": "page-health-data", "kind": "page-leaf", "pageIds": ["page-health-data"], "output": "pages/health-data.html", "sharedRegions": [], "privateRegions": ["full page body"], "mutableSlots": ["mobileNavigationActiveKey:health"], "status": "planned", "children": [] },
+      { "nodeId": "page-voice-companion", "kind": "page-leaf", "pageIds": ["page-voice-companion"], "output": "pages/voice-companion.html", "sharedRegions": [], "privateRegions": ["full page body"], "mutableSlots": [], "status": "planned", "children": [] },
+      { "nodeId": "page-health-report", "kind": "page-leaf", "pageIds": ["page-health-report"], "output": "pages/health-report.html", "sharedRegions": [], "privateRegions": ["full page body"], "mutableSlots": ["mobileNavigationActiveKey:report"], "status": "planned", "children": [] }
+    ]
+  }
+}

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语音陪伴</title>
+    <style id="theme-vars">
+/* ============================================================
+   桑榆智伴 — 枫叶红适老化设计令牌
+   Brand: Deep Maple Red (枫叶色) · Warm Ivory (暖米色)
+   ============================================================ */
+
+:root {
+  /* ---- Brand Primary Hue: Deep Maple Red (枫叶红) ---- */
+  --sangyu-primary: #7C2020;
+  --sangyu-primary-50: #FBF0F0;
+  --sangyu-primary-100: #F5DCDC;
+  --sangyu-primary-200: #E8B8B8;
+  --sangyu-primary-300: #D48A8A;
+  --sangyu-primary-400: #B85151;
+  --sangyu-primary-500: #9A2D2D;
+  --sangyu-primary-600: #7C2020;
+  --sangyu-primary-700: #6B1A1A;
+  --sangyu-primary-800: #561515;
+  --sangyu-primary-900: #3D1010;
+
+  /* ---- Neutral Warm Scale (暖中性色) ---- */
+  --sangyu-neutral-0: #FFFFFF;
+  --sangyu-neutral-50: #FBF5EF;
+  --sangyu-neutral-100: #F5EBE0;
+  --sangyu-neutral-200: #E8DDD5;
+  --sangyu-neutral-300: #D5C5B8;
+  --sangyu-neutral-400: #B8A598;
+  --sangyu-neutral-500: #8A7A70;
+  --sangyu-neutral-600: #6B5953;
+  --sangyu-neutral-700: #4A3D38;
+  --sangyu-neutral-800: #2A1A15;
+  --sangyu-neutral-900: #1A0F0C;
+
+  /* ---- State Colors (语义状态色, 非品牌色) ---- */
+  --state-success: #2D7A3D;
+  --state-warning: #B8860B;
+  --state-error: #C62828;
+  --state-info: #1A6B8C;
+
+  /* ============================================================
+     Light Mode — 暖米色基底 (家属端、信息密集页)
+     ============================================================ */
+
+  /* Semantic brand-prefixed tokens */
+  --sangyu-background: #FBF5EF;
+  --sangyu-foreground: #2A1A15;
+  --sangyu-card: #FFFFFF;
+  --sangyu-card-foreground: #2A1A15;
+  --sangyu-popover: #FFFFFF;
+  --sangyu-popover-foreground: #2A1A15;
+  --sangyu-primary-foreground: #FBF5EF;
+  --sangyu-muted: #F5EBE0;
+  --sangyu-muted-foreground: #6B5953;
+  --sangyu-border: #E8DDD5;
+  --sangyu-input: #F5EBE0;
+  --sangyu-ring: #7C2020;
+
+  /* Non-prefixed semantic aliases */
+  --background: #FBF5EF;
+  --foreground: #2A1A15;
+  --card: #FFFFFF;
+  --card-foreground: #2A1A15;
+  --popover: #FFFFFF;
+  --popover-foreground: #2A1A15;
+  --primary: #7C2020;
+  --primary-foreground: #FBF5EF;
+  --muted: #F5EBE0;
+  --muted-foreground: #6B5953;
+  --border: #E8DDD5;
+  --input: #F5EBE0;
+  --ring: #7C2020;
+
+  /* Radius scale (restrained: 4/8/16/9999) */
+  --sangyu-radius-small: 4px;
+  --sangyu-radius-medium: 8px;
+  --sangyu-radius-large: 16px;
+  --sangyu-radius-full: 9999px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows — 克制深度 */
+  --sangyu-shadow-1: 0 1px 2px rgba(61, 16, 16, 0.04), 0 1px 1px rgba(61, 16, 16, 0.03);
+  --sangyu-shadow-2: 0 8px 24px -8px rgba(61, 16, 16, 0.12);
+  --sangyu-shadow-3: 0 24px 60px -20px rgba(61, 16, 16, 0.20);
+  --shadow-1: 0 1px 2px rgba(61, 16, 16, 0.04), 0 1px 1px rgba(61, 16, 16, 0.03);
+  --shadow-2: 0 8px 24px -8px rgba(61, 16, 16, 0.12);
+  --shadow-3: 0 24px 60px -20px rgba(61, 16, 16, 0.20);
+}
+
+/* ============================================================
+   Dark Mode — 枫叶深红基底 (老人端、情感主导页)
+   ============================================================ */
+html.dark {
+  --sangyu-background: #3D1010;
+  --sangyu-foreground: #FBF5EF;
+  --sangyu-card: #5C1A1A;
+  --sangyu-card-foreground: #FBF5EF;
+  --sangyu-popover: #5C1A1A;
+  --sangyu-popover-foreground: #FBF5EF;
+  --sangyu-primary: #C04545;
+  --sangyu-primary-foreground: #FBF5EF;
+  --sangyu-muted: #4A1515;
+  --sangyu-muted-foreground: #D5C5B8;
+  --sangyu-border: #6B2020;
+  --sangyu-input: #4A1515;
+  --sangyu-ring: #C04545;
+
+  --background: #3D1010;
+  --foreground: #FBF5EF;
+  --card: #5C1A1A;
+  --card-foreground: #FBF5EF;
+  --popover: #5C1A1A;
+  --popover-foreground: #FBF5EF;
+  --primary: #C04545;
+  --primary-foreground: #FBF5EF;
+  --muted: #4A1515;
+  --muted-foreground: #D5C5B8;
+  --border: #6B2020;
+  --input: #4A1515;
+  --ring: #C04545;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --sangyu-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --sangyu-shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+  --sangyu-shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.45);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.45);
+}
+
+/* ============================================================
+   Typography — 适老化大字体系
+   ============================================================ */
+
+body {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.text-display {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.text-h1 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: clamp(24px, 6vw, 32px);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.text-h2 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-h3 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.text-body-lg {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+
+.text-numeric {
+  font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--sangyu-background);
+    --color-foreground: var(--sangyu-foreground);
+    --color-card: var(--sangyu-card);
+    --color-card-foreground: var(--sangyu-card-foreground);
+    --color-popover: var(--sangyu-popover);
+    --color-popover-foreground: var(--sangyu-popover-foreground);
+    --color-primary: var(--sangyu-primary);
+    --color-primary-foreground: var(--sangyu-primary-foreground);
+    --color-muted: var(--sangyu-muted);
+    --color-muted-foreground: var(--sangyu-muted-foreground);
+    --color-border: var(--sangyu-border);
+    --color-input: var(--sangyu-input);
+    --color-ring: var(--sangyu-ring);
+    --radius-sm: var(--sangyu-radius-small);
+    --radius-md: var(--sangyu-radius-medium);
+    --radius-lg: var(--sangyu-radius-large);
+  }
+  @layer base {
+    body { background: var(--sangyu-background); color: var(--sangyu-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--sangyu-background); }
+      .text-background { color: var(--sangyu-background); }
+      .border-background { border-color: var(--sangyu-background); }
+      .ring-background { --tw-ring-color: var(--sangyu-background); }
+      .bg-foreground { background-color: var(--sangyu-foreground); }
+      .text-foreground { color: var(--sangyu-foreground); }
+      .border-foreground { border-color: var(--sangyu-foreground); }
+      .ring-foreground { --tw-ring-color: var(--sangyu-foreground); }
+      .bg-card { background-color: var(--sangyu-card); }
+      .text-card { color: var(--sangyu-card); }
+      .border-card { border-color: var(--sangyu-card); }
+      .ring-card { --tw-ring-color: var(--sangyu-card); }
+      .bg-card-foreground { background-color: var(--sangyu-card-foreground); }
+      .text-card-foreground { color: var(--sangyu-card-foreground); }
+      .border-card-foreground { border-color: var(--sangyu-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--sangyu-card-foreground); }
+      .bg-popover { background-color: var(--sangyu-popover); }
+      .text-popover { color: var(--sangyu-popover); }
+      .border-popover { border-color: var(--sangyu-popover); }
+      .ring-popover { --tw-ring-color: var(--sangyu-popover); }
+      .bg-popover-foreground { background-color: var(--sangyu-popover-foreground); }
+      .text-popover-foreground { color: var(--sangyu-popover-foreground); }
+      .border-popover-foreground { border-color: var(--sangyu-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--sangyu-popover-foreground); }
+      .bg-primary { background-color: var(--sangyu-primary); }
+      .text-primary { color: var(--sangyu-primary); }
+      .border-primary { border-color: var(--sangyu-primary); }
+      .ring-primary { --tw-ring-color: var(--sangyu-primary); }
+      .bg-primary-foreground { background-color: var(--sangyu-primary-foreground); }
+      .text-primary-foreground { color: var(--sangyu-primary-foreground); }
+      .border-primary-foreground { border-color: var(--sangyu-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--sangyu-primary-foreground); }
+      .bg-muted { background-color: var(--sangyu-muted); }
+      .text-muted { color: var(--sangyu-muted); }
+      .border-muted { border-color: var(--sangyu-muted); }
+      .ring-muted { --tw-ring-color: var(--sangyu-muted); }
+      .bg-muted-foreground { background-color: var(--sangyu-muted-foreground); }
+      .text-muted-foreground { color: var(--sangyu-muted-foreground); }
+      .border-muted-foreground { border-color: var(--sangyu-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--sangyu-muted-foreground); }
+      .bg-border { background-color: var(--sangyu-border); }
+      .text-border { color: var(--sangyu-border); }
+      .border-border { border-color: var(--sangyu-border); }
+      .ring-border { --tw-ring-color: var(--sangyu-border); }
+      .bg-input { background-color: var(--sangyu-input); }
+      .text-input { color: var(--sangyu-input); }
+      .border-input { border-color: var(--sangyu-input); }
+      .ring-input { --tw-ring-color: var(--sangyu-input); }
+      .bg-ring { background-color: var(--sangyu-ring); }
+      .text-ring { color: var(--sangyu-ring); }
+      .border-ring { border-color: var(--sangyu-ring); }
+      .ring-ring { --tw-ring-color: var(--sangyu-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <style id="critical-layout">
+      /* ============================================================
+         语音陪伴 — 全屏沉浸式深红背景关键布局
+         ============================================================ */
+      .voice-scene {
+        min-height: 100vh;
+        min-height: 100dvh;
+        background-color: var(--primary);
+        color: var(--primary-foreground);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 1.75rem 1.25rem 1.25rem;
+        position: relative;
+        overflow: hidden;
+      }
+      /* 背景柔和光晕，增加沉浸感但不喧宾夺主 */
+      .voice-scene::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(circle at 50% 26%, rgba(255,255,255,0.10), transparent 58%);
+      }
+      .voice-scene > * { position: relative; z-index: 1; }
+
+      /* ---- 顶部温暖插画 ---- */
+      .voice-illustration {
+        width: 120px;
+        height: 120px;
+        border-radius: var(--radius-full);
+        object-fit: cover;
+        border: 3px solid rgba(251, 245, 239, 0.55);
+        box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+      }
+
+      /* ---- 标题区 ---- */
+      .voice-title {
+        font-size: 30px;
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--primary-foreground);
+      }
+      .voice-subtitle {
+        font-size: 20px;
+        line-height: 1.5;
+        color: rgba(251, 245, 239, 0.88);
+        margin-top: 4px;
+      }
+
+      /* ---- 我在听 状态指示 ---- */
+      .listening-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(251, 245, 239, 0.92);
+      }
+      .listening-dots {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .listening-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: var(--radius-full);
+        background-color: rgba(251, 245, 239, 0.92);
+        display: inline-block;
+        animation: bounce-dot 1.2s infinite ease-in-out;
+      }
+      .listening-dot:nth-child(2) { animation-delay: 0.18s; }
+      .listening-dot:nth-child(3) { animation-delay: 0.36s; }
+      .listening-text { font-size: 16px; }
+
+      /* ---- 超大圆形对话按钮 ---- */
+      .voice-btn {
+        width: 160px;
+        height: 160px;
+        border-radius: var(--radius-full);
+        background-color: rgba(255, 255, 255, 0.96);
+        color: var(--primary);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+        animation: breathing 2.8s infinite ease-in-out;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 0.15s ease;
+      }
+      .voice-btn:active { transform: scale(0.96); }
+      .voice-btn-label {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--primary-foreground);
+        margin-top: 0.75rem;
+      }
+
+      /* ---- 内容分类卡片 ---- */
+      .category-card {
+        width: 80px;
+        padding: 12px 8px;
+        border-radius: var(--radius-lg);
+        background-color: rgba(255, 255, 255, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        color: var(--primary-foreground);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 0.15s ease, transform 0.15s ease;
+      }
+      .category-card:active { transform: scale(0.95); background-color: rgba(255, 255, 255, 0.26); }
+      .category-card-label { font-size: 16px; font-weight: 500; }
+
+      /* ---- 结束陪伴按钮 ---- */
+      .end-companion-btn {
+        padding: 12px 36px;
+        border-radius: var(--radius-full);
+        background-color: transparent;
+        border: 1.5px solid rgba(251, 245, 239, 0.62);
+        color: var(--primary-foreground);
+        font-size: 18px;
+        font-weight: 500;
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 0.15s ease;
+      }
+      .end-companion-btn:active { background-color: rgba(251, 245, 239, 0.12); }
+
+      /* ---- 非真人提示 ---- */
+      .ai-notice {
+        font-size: 15px;
+        color: rgba(251, 245, 239, 0.6);
+      }
+
+      /* ============================================================
+         动画关键帧
+         ============================================================ */
+      @keyframes breathing {
+        0%, 100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3), 0 10px 32px rgba(0, 0, 0, 0.28);
+        }
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 0 0 12px rgba(255, 255, 255, 0), 0 10px 32px rgba(0, 0, 0, 0.28);
+        }
+      }
+      @keyframes bounce-dot {
+        0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+        40% { transform: scale(1); opacity: 1; }
+      }
+
+      /* ============================================================
+         动效降级 — 尊重用户系统偏好
+         ============================================================ */
+      @media (prefers-reduced-motion: reduce) {
+        .voice-btn { animation: none; }
+        .listening-dot { animation: none; opacity: 0.85; }
+        .voice-btn:active,
+        .category-card:active,
+        .end-companion-btn:active { transition: none; }
+      }
+    </style>
+    <main class="voice-scene">
+      <!-- 顶部内容区：插画 + 标题 + 聆听状态 -->
+      <section class="flex flex-col items-center gap-5 pt-1 w-full">
+        <!-- 顶部温暖插画区 -->
+        <img src="../assets/companion-warm-illustration.jpg" alt="温暖陪伴插画" class="voice-illustration">
+
+        <!-- 标题区 -->
+        <div class="text-center">
+          <h1 class="voice-title">语音陪伴</h1>
+          <p class="voice-subtitle">和我聊聊天吧</p>
+        </div>
+
+        <!-- 我在听 状态指示 -->
+        <div class="listening-wrap">
+          <span class="listening-dots">
+            <span class="listening-dot"></span>
+            <span class="listening-dot"></span>
+            <span class="listening-dot"></span>
+          </span>
+          <span class="listening-text">正在聆听...</span>
+        </div>
+      </section>
+
+      <!-- 超大圆形对话按钮 -->
+      <section class="flex flex-col items-center">
+        <button type="button" class="voice-btn" aria-label="按住说话">
+          <i data-lucide="mic" style="width:64px;height:64px;stroke-width:1.8;"></i>
+        </button>
+        <span class="voice-btn-label">按住说话</span>
+      </section>
+
+      <!-- 底部内容区：分类 + 结束 + 提示 -->
+      <section class="flex flex-col items-center gap-5 w-full pb-1">
+        <!-- 内容分类选择 -->
+        <div class="flex items-center justify-center gap-3 w-full">
+          <button type="button" class="category-card" aria-label="选择戏曲">
+            <i data-lucide="music" style="width:28px;height:28px;"></i>
+            <span class="category-card-label">戏曲</span>
+          </button>
+          <button type="button" class="category-card" aria-label="选择天气">
+            <i data-lucide="cloud-sun" style="width:28px;height:28px;"></i>
+            <span class="category-card-label">天气</span>
+          </button>
+          <button type="button" class="category-card" aria-label="选择聊天">
+            <i data-lucide="message-circle" style="width:28px;height:28px;"></i>
+            <span class="category-card-label">聊天</span>
+          </button>
+        </div>
+
+        <!-- 结束陪伴按钮 -->
+        <button type="button" class="end-companion-btn">结束陪伴</button>
+
+        <!-- 非真人提示 -->
+        <p class="ai-notice">AI智能陪伴，非真人服务</p>
+      </section>
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

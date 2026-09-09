@@ -1,0 +1,67 @@
+/* 家属端健康页（设计令牌化）：卡片化布局 + 令牌色图表 + 7/30 天切换 */
+.health-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.range-switch {
+  display: flex;
+}
+
+.range-btn {
+  padding: var(--space-xs) var(--space-md);
+  margin-left: var(--space-sm);
+  font-size: var(--font-desc);
+  color: var(--color-text-secondary);
+  background-color: var(--color-card);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-1);
+}
+
+.range-btn--active {
+  color: var(--color-primary-foreground);
+  background-color: var(--color-primary);
+}
+
+/* ec-canvas 必须显式给高度 */
+.chart {
+  width: 100%;
+  height: 480rpx;
+  display: block;
+}
+
+.record-item {
+  background-color: var(--color-muted);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.mock-btn {
+  margin-top: var(--space-md);
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-base);
+  color: var(--color-info);
+  background-color: var(--color-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-button);
+}
+
+.mock-btn::after {
+  border: none;
+}
+
+.batch-btn {
+  color: var(--color-success);
+}
+
+/* 设计稿 health-data：品牌色顶条 + 大标题 */
+.health-header {
+  border-top: 8rpx solid var(--color-primary);
+  padding-top: var(--space-md);
+  margin-bottom: var(--space-md);
+}

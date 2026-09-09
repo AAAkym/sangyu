@@ -1,0 +1,31 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">紧急联系人</view>
+  <view class="placeholder">紧急情况请优先使用「一键求助」或拨打 120；以下为家人与社区的快捷拨号入口。</view>
+
+  <view wx:if="{{role === 'family'}}" class="entry">
+    <view class="entry__title">添加联系人（给老人）</view>
+    <input class="ct-input" placeholder="姓名（如：小王）" maxlength="20" value="{{form.name}}" bindinput="onNameInput" />
+    <input class="ct-input" type="number" placeholder="电话号码" maxlength="20" value="{{form.phone}}" bindinput="onPhoneInput" />
+    <input class="ct-input" placeholder="关系（可选，如：子女/社区）" maxlength="10" value="{{form.relation}}" bindinput="onRelationInput" />
+    <picker mode="selector" range="{{groups}}" value="{{groupIndex}}" bindchange="onGroupChange">
+      <view class="ct-input ct-group-picker">分组：{{groups[groupIndex]}}（点击选择）</view>
+    </picker>
+    <button class="ct-btn" loading="{{creating}}" bindtap="onCreateTap">添加联系人</button>
+  </view>
+
+  <view wx:if="{{!list.length}}" class="placeholder">{{loading ? '加载中…' : '暂无联系人，家人可为您添加。'}}</view>
+
+  <view class="entry ct-item" wx:for="{{list}}" wx:key="id">
+    <view class="ct-row" data-index="{{index}}" bindtap="onDialTap">
+      <view class="ct-avatar">{{item.name[0]}}</view>
+      <view class="ct-meta">
+        <view class="entry__title">{{item.name}}<text wx:if="{{item.relation}}" class="ct-relation">（{{item.relation}}）</text></view>
+        <view class="entry__desc">{{item.phone}} · {{item.group}}</view>
+      </view>
+      <view class="ct-dial">拨打 ›</view>
+    </view>
+    <view wx:if="{{role === 'family'}}" class="ct-del-row">
+      <text class="ct-del" data-id="{{item.id}}" catchtap="onDeleteTap">删除</text>
+    </view>
+  </view>
+</view>

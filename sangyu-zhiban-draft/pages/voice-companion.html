@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语音陪伴</title>
+    <style id="theme-vars">
+/* ============================================================
+   桑榆智伴 — 暖琥珀适老化设计令牌 (DRAFT)
+   Brand: Warm Honey Amber (暖琥珀色) · Soft Ivory (柔象牙白)
+   色调从深红枫叶转为偏黄暖琥珀，更明亮温暖
+   ============================================================ */
+
+:root {
+  /* ---- Brand Primary Hue: Warm Honey Amber (暖琥珀/蜂蜜金) ---- */
+  --sangyu-primary: #B5832E;
+  --sangyu-primary-50: #FBF5EC;
+  --sangyu-primary-100: #F5E6CC;
+  --sangyu-primary-200: #E8CC99;
+  --sangyu-primary-300: #D4B366;
+  --sangyu-primary-400: #C49A3D;
+  --sangyu-primary-500: #B5832E;
+  --sangyu-primary-600: #9A6E25;
+  --sangyu-primary-700: #7A561D;
+  --sangyu-primary-800: #5C4116;
+  --sangyu-primary-900: #3D2B0F;
+
+  /* ---- Neutral Warm Scale (暖中性色, 琥珀底调) ---- */
+  --sangyu-neutral-0: #FFFFFF;
+  --sangyu-neutral-50: #FFF9F0;
+  --sangyu-neutral-100: #F5EFE2;
+  --sangyu-neutral-200: #E8DDC8;
+  --sangyu-neutral-300: #D5C5A8;
+  --sangyu-neutral-400: #B8A580;
+  --sangyu-neutral-500: #8A7A5C;
+  --sangyu-neutral-600: #6B5D44;
+  --sangyu-neutral-700: #4A3F2E;
+  --sangyu-neutral-800: #2A2316;
+  --sangyu-neutral-900: #1A150F;
+
+  /* ---- State Colors (语义状态色, 非品牌色) ---- */
+  --state-success: #2D7A3D;
+  --state-warning: #C49A3D;
+  --state-error: #C62828;
+  --state-info: #1A6B8C;
+
+  /* ============================================================
+     Light Mode — 柔象牙白基底 (家属端、信息密集页)
+     ============================================================ */
+
+  /* Semantic brand-prefixed tokens */
+  --sangyu-background: #FFF9F0;
+  --sangyu-foreground: #2A2316;
+  --sangyu-card: #FFFFFF;
+  --sangyu-card-foreground: #2A2316;
+  --sangyu-popover: #FFFFFF;
+  --sangyu-popover-foreground: #2A2316;
+  --sangyu-primary-foreground: #FFF9F0;
+  --sangyu-muted: #F5EFE2;
+  --sangyu-muted-foreground: #6B5D44;
+  --sangyu-border: #E8DDC8;
+  --sangyu-input: #F5EFE2;
+  --sangyu-ring: #B5832E;
+
+  /* Non-prefixed semantic aliases */
+  --background: #FFF9F0;
+  --foreground: #2A2316;
+  --card: #FFFFFF;
+  --card-foreground: #2A2316;
+  --popover: #FFFFFF;
+  --popover-foreground: #2A2316;
+  --primary: #B5832E;
+  --primary-foreground: #FFF9F0;
+  --muted: #F5EFE2;
+  --muted-foreground: #6B5D44;
+  --border: #E8DDC8;
+  --input: #F5EFE2;
+  --ring: #B5832E;
+
+  /* Radius scale (restrained: 4/8/16/9999) */
+  --sangyu-radius-small: 4px;
+  --sangyu-radius-medium: 8px;
+  --sangyu-radius-large: 16px;
+  --sangyu-radius-full: 9999px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows — 克制深度, 琥珀底调 */
+  --sangyu-shadow-1: 0 1px 2px rgba(61, 43, 15, 0.05), 0 1px 1px rgba(61, 43, 15, 0.03);
+  --sangyu-shadow-2: 0 4px 16px -4px rgba(61, 43, 15, 0.10), 0 2px 4px -2px rgba(61, 43, 15, 0.06);
+  --sangyu-shadow-3: 0 16px 48px -16px rgba(61, 43, 15, 0.18);
+  --shadow-1: 0 1px 2px rgba(61, 43, 15, 0.05), 0 1px 1px rgba(61, 43, 15, 0.03);
+  --shadow-2: 0 4px 16px -4px rgba(61, 43, 15, 0.10), 0 2px 4px -2px rgba(61, 43, 15, 0.06);
+  --shadow-3: 0 16px 48px -16px rgba(61, 43, 15, 0.18);
+}
+
+/* ============================================================
+   Dark Mode — 深琥珀棕基底 (老人端、情感主导页)
+   ============================================================ */
+html.dark {
+  --sangyu-background: #2A2316;
+  --sangyu-foreground: #FFF9F0;
+  --sangyu-card: #3D2B0F;
+  --sangyu-card-foreground: #FFF9F0;
+  --sangyu-popover: #3D2B0F;
+  --sangyu-popover-foreground: #FFF9F0;
+  --sangyu-primary: #D4B366;
+  --sangyu-primary-foreground: #2A2316;
+  --sangyu-muted: #4A3F2E;
+  --sangyu-muted-foreground: #D5C5A8;
+  --sangyu-border: #5C4116;
+  --sangyu-input: #4A3F2E;
+  --sangyu-ring: #D4B366;
+
+  --background: #2A2316;
+  --foreground: #FFF9F0;
+  --card: #3D2B0F;
+  --card-foreground: #FFF9F0;
+  --popover: #3D2B0F;
+  --popover-foreground: #FFF9F0;
+  --primary: #D4B366;
+  --primary-foreground: #2A2316;
+  --muted: #4A3F2E;
+  --muted-foreground: #D5C5A8;
+  --border: #5C4116;
+  --input: #4A3F2E;
+  --ring: #D4B366;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --sangyu-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --sangyu-shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+  --sangyu-shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.45);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.45);
+}
+
+/* ============================================================
+   Typography — 适老化大字体系
+   ============================================================ */
+
+body {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.text-display {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.text-h1 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: clamp(24px, 6vw, 32px);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.text-h2 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-h3 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.text-body-lg {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+
+.text-numeric {
+  font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+  }
+  @layer base {
+    body { background: var(--background); color: var(--foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--background); }
+      .text-background { color: var(--background); }
+      .border-background { border-color: var(--background); }
+      .ring-background { --tw-ring-color: var(--background); }
+      .bg-foreground { background-color: var(--foreground); }
+      .text-foreground { color: var(--foreground); }
+      .border-foreground { border-color: var(--foreground); }
+      .ring-foreground { --tw-ring-color: var(--foreground); }
+      .bg-card { background-color: var(--card); }
+      .text-card { color: var(--card); }
+      .border-card { border-color: var(--card); }
+      .ring-card { --tw-ring-color: var(--card); }
+      .bg-card-foreground { background-color: var(--card-foreground); }
+      .text-card-foreground { color: var(--card-foreground); }
+      .border-card-foreground { border-color: var(--card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--card-foreground); }
+      .bg-popover { background-color: var(--popover); }
+      .text-popover { color: var(--popover); }
+      .border-popover { border-color: var(--popover); }
+      .ring-popover { --tw-ring-color: var(--popover); }
+      .bg-popover-foreground { background-color: var(--popover-foreground); }
+      .text-popover-foreground { color: var(--popover-foreground); }
+      .border-popover-foreground { border-color: var(--popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--popover-foreground); }
+      .bg-primary { background-color: var(--primary); }
+      .text-primary { color: var(--primary); }
+      .border-primary { border-color: var(--primary); }
+      .ring-primary { --tw-ring-color: var(--primary); }
+      .bg-primary-foreground { background-color: var(--primary-foreground); }
+      .text-primary-foreground { color: var(--primary-foreground); }
+      .border-primary-foreground { border-color: var(--primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--primary-foreground); }
+      .bg-muted { background-color: var(--muted); }
+      .text-muted { color: var(--muted); }
+      .border-muted { border-color: var(--muted); }
+      .ring-muted { --tw-ring-color: var(--muted); }
+      .bg-muted-foreground { background-color: var(--muted-foreground); }
+      .text-muted-foreground { color: var(--muted-foreground); }
+      .border-muted-foreground { border-color: var(--muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--muted-foreground); }
+      .bg-border { background-color: var(--border); }
+      .text-border { color: var(--border); }
+      .border-border { border-color: var(--border); }
+      .ring-border { --tw-ring-color: var(--border); }
+      .bg-input { background-color: var(--input); }
+      .text-input { color: var(--input); }
+      .border-input { border-color: var(--input); }
+      .ring-input { --tw-ring-color: var(--input); }
+      .bg-ring { background-color: var(--ring); }
+      .text-ring { color: var(--ring); }
+      .border-ring { border-color: var(--ring); }
+      .ring-ring { --tw-ring-color: var(--ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body>
+    <style id="critical-layout">
+      /* ============================================================
+         语音陪伴 — 电台主播间·温暖在场的陪伴 (DRAFT)
+         品牌实体感：琥珀主色头图 + 真实聊天气泡 + 差异化分类
+         纯色设计：无渐变、无彩虹、无等量卡片网格、图标裸用
+         层级：对话区 → 分类选择 → 语音控制按钮
+         ============================================================ */
+      *, *::before, *::after { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+        font-size: 18px;
+        line-height: 1.65;
+        color: var(--foreground);
+        background-color: var(--background);
+        -webkit-tap-highlight-color: transparent;
+      }
+      a { text-decoration: none; color: inherit; }
+      svg { display: block; }
+      button { font-family: inherit; }
+
+      .page-container {
+        max-width: 480px;
+        margin: 0 auto;
+        position: relative;
+        min-height: 100vh;
+        background: var(--background);
+        padding-bottom: calc(104px + env(safe-area-inset-bottom));
+        overflow: hidden;
+      }
+
+      /* ===== Hero — 品牌色强存在感（电台主播间的温暖入口） ===== */
+      .hero {
+        background: var(--primary);
+        color: var(--primary-foreground);
+        padding: 18px 20px 22px;
+        border-bottom-left-radius: var(--radius-lg);
+        border-bottom-right-radius: var(--radius-lg);
+        box-shadow: var(--shadow-2);
+      }
+      .hero-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 14px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--primary-foreground);
+      }
+      .brand-mark { width: 22px; height: 22px; color: var(--primary-foreground); flex-shrink: 0; }
+      .end-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        min-height: 48px;
+        padding: 0 14px;
+        border-radius: var(--radius-full);
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--primary-foreground);
+        background: color-mix(in srgb, var(--primary-foreground) 16%, transparent);
+        -webkit-tap-highlight-color: transparent;
+        transition: background 0.15s ease;
+      }
+      .end-btn:active { background: color-mix(in srgb, var(--primary-foreground) 26%, transparent); }
+      .end-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+      .hero-title {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.18;
+        letter-spacing: -0.01em;
+        text-wrap: balance;
+        margin: 0 0 6px;
+        color: var(--primary-foreground);
+      }
+      .hero-prompt {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.45;
+        margin: 0;
+        color: color-mix(in srgb, var(--primary-foreground) 92%, transparent);
+      }
+
+      /* ===== 对话区 — 真实聊天气泡，实体陪伴感 ===== */
+      .conversation {
+        padding: 18px 16px 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .section-label {
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--muted-foreground);
+        margin: 0 4px 2px;
+      }
+      .conv-row { display: flex; gap: 10px; align-items: flex-end; }
+      .conv-row.ai { justify-content: flex-start; }
+      .conv-row.user { justify-content: flex-end; }
+      .avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: var(--radius-full);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .avatar.ai {
+        background: var(--primary);
+        color: var(--primary-foreground);
+      }
+      .avatar.ai svg { width: 20px; height: 20px; }
+      .avatar.user {
+        background: var(--muted);
+        color: var(--primary);
+      }
+      .bubble {
+        max-width: 76%;
+        padding: 12px 14px;
+        font-size: 18px;
+        line-height: 1.5;
+        border-radius: var(--radius-lg);
+        word-break: break-word;
+        margin: 0;
+      }
+      .bubble.ai {
+        background: var(--card);
+        color: var(--foreground);
+        border: 1px solid var(--border);
+        border-bottom-left-radius: 4px;
+        box-shadow: var(--shadow-1);
+      }
+      .bubble.user {
+        background: var(--primary-100);
+        color: var(--primary-900);
+        border-bottom-right-radius: 4px;
+      }
+      /* 系统状态气泡 — 网络不佳等，居中胶囊（非聊天气泡方） */
+      .conv-row.system { justify-content: center; }
+      .sys-notice {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 14px;
+        border-radius: var(--radius-full);
+        background: color-mix(in srgb, var(--state-error) 10%, var(--card));
+        border: 1px solid color-mix(in srgb, var(--state-error) 28%, transparent);
+        color: var(--state-error);
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .sys-notice svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+      /* ===== 分类选择 — 差异化处理，非等量网格 ===== */
+      .categories { padding: 16px 16px 6px; }
+      .cat-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        gap: 8px;
+      }
+      .cat-title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.25;
+        color: var(--foreground);
+        margin: 0;
+      }
+      .cat-hint { font-size: 15px; color: var(--muted-foreground); flex-shrink: 0; }
+
+      /* 推荐分类 — 实色琥珀大卡（戏曲，老人最爱） */
+      .cat-featured {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        min-height: 64px;
+        padding: 16px;
+        background: var(--primary);
+        color: var(--primary-foreground);
+        border: none;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-2);
+        text-align: left;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 0.15s ease;
+        margin-bottom: 10px;
+      }
+      .cat-featured:active { transform: scale(0.985); }
+      .cat-featured .cat-icon { width: 30px; height: 30px; color: var(--primary-foreground); flex-shrink: 0; }
+      .cat-featured .cat-icon svg { width: 100%; height: 100%; }
+      .cat-featured .cat-info { flex: 1; min-width: 0; }
+      .cat-featured .cat-name { font-size: 20px; font-weight: 700; line-height: 1.2; }
+      .cat-featured .cat-desc {
+        font-size: 15px;
+        line-height: 1.35;
+        margin-top: 2px;
+        color: color-mix(in srgb, var(--primary-foreground) 88%, transparent);
+      }
+      .cat-featured .cat-tag {
+        font-size: 13px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: var(--radius-full);
+        background: color-mix(in srgb, var(--primary-foreground) 20%, transparent);
+        color: var(--primary-foreground);
+        flex-shrink: 0;
+      }
+
+      /* 次级分类 — 三等分裸图标小格（无彩色圆底） */
+      .cat-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .cat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 88px;
+        padding: 14px 8px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-1);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 0.15s ease;
+      }
+      .cat-item:active { transform: scale(0.97); }
+      .cat-item .cat-icon { width: 28px; height: 28px; color: var(--primary); }
+      .cat-item .cat-icon svg { width: 100%; height: 100%; }
+      .cat-item .cat-name { font-size: 16px; font-weight: 600; line-height: 1.2; color: var(--foreground); }
+
+      /* ===== 语音控制 — 超大圆形琥珀按钮"我在听" ===== */
+      .voice-ctrl {
+        padding: 22px 16px 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+      .voice-state {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px;
+        border-radius: var(--radius-full);
+        background: var(--primary-50);
+        border: 1px solid var(--primary-100);
+      }
+      .voice-state-text {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--primary-700);
+      }
+      .voice-waves {
+        display: inline-flex;
+        align-items: flex-end;
+        gap: 3px;
+        height: 18px;
+      }
+      .voice-waves span {
+        width: 4px;
+        border-radius: var(--radius-full);
+        background: var(--primary);
+        display: inline-block;
+        transform-origin: bottom;
+        animation: wave-bar 1s infinite ease-in-out;
+      }
+      .voice-waves span:nth-child(1) { height: 8px;  animation-delay: 0s; }
+      .voice-waves span:nth-child(2) { height: 16px; animation-delay: 0.12s; }
+      .voice-waves span:nth-child(3) { height: 12px; animation-delay: 0.24s; }
+      .voice-waves span:nth-child(4) { height: 18px; animation-delay: 0.36s; }
+      .voice-waves span:nth-child(5) { height: 10px; animation-delay: 0.48s; }
+
+      .voice-btn {
+        width: 148px;
+        height: 148px;
+        border: none;
+        border-radius: var(--radius-full);
+        background: var(--primary);
+        color: var(--primary-foreground);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        box-shadow: 0 12px 30px -8px rgba(181, 131, 46, 0.45);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        position: relative;
+      }
+      .voice-btn svg { width: 40px; height: 40px; }
+      .voice-btn .vb-label { font-size: 19px; font-weight: 700; line-height: 1; }
+      .voice-btn:active {
+        transform: scale(1.04);
+        box-shadow: 0 0 0 14px rgba(181, 131, 46, 0.16), 0 12px 30px -8px rgba(181, 131, 46, 0.45);
+      }
+      .voice-btn::after {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        border-radius: inherit;
+        border: 2px solid color-mix(in srgb, var(--primary) 45%, transparent);
+        animation: voice-ring 2.4s infinite ease-out;
+        pointer-events: none;
+      }
+      /* 备用：网络不佳时按钮态（文档化样式，不在默认流中展示） */
+      .voice-btn.is-error {
+        background: var(--muted);
+        color: var(--muted-foreground);
+        box-shadow: var(--shadow-1);
+      }
+      .voice-btn.is-error::after { display: none; }
+
+      .voice-hint {
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--muted-foreground);
+        text-align: center;
+        max-width: 280px;
+        margin: 0;
+      }
+
+      /* ===== 动画关键帧 — 纯色，无渐变 ===== */
+      @keyframes wave-bar {
+        0%, 100% { transform: scaleY(0.5); }
+        50% { transform: scaleY(1); }
+      }
+      @keyframes voice-ring {
+        0% { transform: scale(1); opacity: 0.6; }
+        100% { transform: scale(1.2); opacity: 0; }
+      }
+
+      /* ===== 动效降级 — 尊重用户系统偏好 ===== */
+      @media (prefers-reduced-motion: reduce) {
+        .voice-btn::after,
+        .voice-waves span { animation: none; }
+        .voice-waves span { transform: scaleY(0.85); }
+        .voice-btn,
+        .cat-featured,
+        .cat-item,
+        .end-btn { transition: none; }
+        .voice-btn:active,
+        .cat-featured:active,
+        .cat-item:active { transform: none; }
+      }
+    </style>
+
+    <main class="page-container">
+      <!-- 1. Hero：品牌色强存在感 + 主播间入口 + 开口提示 -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bar">
+          <span class="brand">
+            <svg class="brand-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            桑榆智伴
+          </span>
+          <a href="#" class="end-btn" aria-label="结束陪伴">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            结束
+          </a>
+        </div>
+        <h1 class="hero-title" id="hero-title">语音陪伴</h1>
+        <p class="hero-prompt">想听豫剧，还是聊聊天？我都在。</p>
+      </section>
+
+      <!-- 2. 对话区：真实聊天气泡（陪伴回应，非情绪诊断） -->
+      <section class="conversation" aria-labelledby="conv-label">
+        <h2 class="section-label" id="conv-label">最近对话</h2>
+
+        <div class="conv-row ai">
+          <span class="avatar ai" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          </span>
+          <p class="bubble ai">您好呀，我是小榆，陪您说话、放戏曲。</p>
+        </div>
+
+        <div class="conv-row user">
+          <p class="bubble user">来段豫剧。</p>
+          <span class="avatar user" aria-hidden="true">张</span>
+        </div>
+
+        <!-- 网络不佳状态：居中系统提示，请重试 -->
+        <div class="conv-row system" role="status" aria-live="polite">
+          <span class="sys-notice">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            网络不太好，请重试
+          </span>
+        </div>
+
+        <div class="conv-row ai">
+          <span class="avatar ai" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          </span>
+          <p class="bubble ai">好嘞，给您放《花木兰》选段，慢慢听。</p>
+        </div>
+      </section>
+
+      <!-- 3. 分类选择：1 推荐大卡 + 3 裸图标小格，差异化非等量 -->
+      <section class="categories" aria-labelledby="cat-title">
+        <div class="cat-head">
+          <h2 class="cat-title" id="cat-title">想聊点什么？</h2>
+          <span class="cat-hint">选一个，或直接开口</span>
+        </div>
+
+        <button type="button" class="cat-featured" aria-label="听戏曲，豫剧、黄梅戏名段">
+          <span class="cat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </span>
+          <span class="cat-info">
+            <span class="cat-name">戏曲</span>
+            <span class="cat-desc">豫剧、黄梅戏名段</span>
+          </span>
+          <span class="cat-tag">推荐</span>
+        </button>
+
+        <div class="cat-row">
+          <button type="button" class="cat-item" aria-label="聊聊天，闲聊家常">
+            <span class="cat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <span class="cat-name">聊天</span>
+          </button>
+          <button type="button" class="cat-item" aria-label="查天气，今日天气与穿衣">
+            <span class="cat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M2 12h2"/><path d="M7.5 7.5a5 5 0 0 1 8.5 3.5"/><path d="M17 12a5 5 0 0 0-10 0 4 4 0 0 0 0 8h10a4 4 0 0 0 0-8z"/></svg>
+            </span>
+            <span class="cat-name">天气</span>
+          </button>
+          <button type="button" class="cat-item" aria-label="听新闻，每日要闻播报">
+            <span class="cat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="13" x2="17" y2="13"/><line x1="7" y1="17" x2="13" y2="17"/></svg>
+            </span>
+            <span class="cat-name">新闻</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 4. 语音控制：超大圆形琥珀按钮"我在听" + 声波状态 -->
+      <section class="voice-ctrl" aria-label="语音控制">
+        <div class="voice-state" role="status" aria-live="polite" aria-label="正在倾听">
+          <span class="voice-state-text">正在倾听</span>
+          <span class="voice-waves" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </span>
+        </div>
+        <button type="button" class="voice-btn" aria-label="我在听，轻点说话">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          <span class="vb-label">我在听</span>
+        </button>
+        <p class="voice-hint">轻点说话，想听豫剧、聊聊天都行。</p>
+      </section>
+    </main>
+
+    <!-- 5. 底部导航（求助为琥珀实心圆，突出；首页激活） -->
+    <nav data-mobile-nav="global" class="bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]" style="padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -2px 12px -4px rgba(61,43,15,0.08)">
+      <div class="nav-inner w-full max-w-md mx-auto grid grid-cols-4 h-full">
+        <a data-nav-key="home" data-dom-id="nav-home" class="nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--primary)]" href="#">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z"/></svg>
+          <span class="nav-label text-[13px] leading-none font-semibold whitespace-nowrap">首页</span>
+        </a>
+        <a data-nav-key="health" data-dom-id="nav-health" class="nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]" href="#">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="nav-label text-[13px] leading-none font-medium whitespace-nowrap">健康</span>
+        </a>
+        <a data-nav-key="report" data-dom-id="nav-report" class="nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]" href="#">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          <span class="nav-label text-[13px] leading-none font-medium whitespace-nowrap">报告</span>
+        </a>
+        <a data-nav-key="sos" data-dom-id="nav-sos" class="nav-item nav-sos flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap" href="#" aria-label="一键求助">
+          <span class="nav-sos-circle w-[44px] h-[44px] rounded-full bg-[var(--primary)] flex items-center justify-center text-[var(--primary-foreground)]" style="box-shadow:0 4px 16px -4px rgba(61,43,15,0.10),0 2px 4px -2px rgba(61,43,15,0.06)">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <span class="nav-label text-[13px] leading-none font-semibold whitespace-nowrap text-[var(--primary)]">求助</span>
+        </a>
+      </div>
+    </nav>
+</body>
+</html>

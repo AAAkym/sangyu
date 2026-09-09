@@ -1,0 +1,48 @@
+<view class="page {{fontClass}}">
+  <view class="health-header">
+    <view class="page-title">健康数据</view>
+    <view class="range-switch">
+      <view class="range-btn {{rangeDays === 7 ? 'range-btn--active' : ''}}" data-days="7" bindtap="onRangeChange">7天</view>
+      <view class="range-btn {{rangeDays === 30 ? 'range-btn--active' : ''}}" data-days="30" bindtap="onRangeChange">30天</view>
+    </view>
+  </view>
+
+  <view wx:if="{{!hasTrend}}" class="placeholder">数据不足，暂无趋势（至少 2 天有数据）。可点下方按钮补充记录。</view>
+
+  <block wx:if="{{hasTrend}}">
+    <view class="entry">
+      <view class="entry__title">心率趋势（次/分）</view>
+      <ec-canvas id="hrChart" canvas-id="hr-chart" ec="{{ecHr}}" class="chart"></ec-canvas>
+    </view>
+
+    <view class="entry">
+      <view class="entry__title">血压趋势（mmHg，红虚线为 140/90 参考线）</view>
+      <ec-canvas id="bpChart" canvas-id="bp-chart" ec="{{ecBp}}" class="chart"></ec-canvas>
+    </view>
+
+    <view class="entry" wx:if="{{hasSpo2}}">
+      <view class="entry__title">血氧趋势（%）</view>
+      <ec-canvas id="spo2Chart" canvas-id="spo2-chart" ec="{{ecSpo2}}" class="chart"></ec-canvas>
+    </view>
+  </block>
+
+  <view class="entry">
+    <view class="entry__title" bindtap="toggleRecords">原始数据（{{records.length}} 条）{{showRecords ? ' ▲' : ' ▼'}}</view>
+    <block wx:if="{{showRecords}}">
+      <view wx:if="{{!records.length}}" class="placeholder">暂无数据，点下方按钮写入</view>
+      <view class="record-item" wx:for="{{records}}" wx:key="id">
+        <view class="entry__title">心率 {{item.heartRate === null ? '—' : item.heartRate}} 次/分，血压 {{item.bloodPressure === '' ? '—' : item.bloodPressure}}</view>
+        <view class="entry__desc">{{item.timeText}} · 来源：{{item.sourceText}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="entry">
+    <view class="entry__title" bindtap="toggleTools">健康数据记录（补充用）{{showTools ? ' ▲' : ' ▼'}}</view>
+    <block wx:if="{{showTools}}">
+      <view class="placeholder">以下用于补充记录健康数据；正式环境数据由设备自动上报，无需手动操作。</view>
+      <button class="mock-btn" loading="{{loading}}" bindtap="onMockTap">记录一条健康数据</button>
+      <button class="mock-btn batch-btn" loading="{{batchLoading}}" bindtap="onBatchTap">补全近 7 天每日记录</button>
+    </block>
+  </view>
+</view>

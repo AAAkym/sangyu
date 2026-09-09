@@ -1,0 +1,15 @@
+[
+  {
+    "id": "r_demo_001",
+    "familyOpenid": "mock_family_001",
+    "elderOpenid": "mock_elder_001",
+    "createdAt": "2026-08-24T11:47:01.922Z"
+  },
+  {
+    "id": "r_1788176822339_g45wjg",
+    "familyOpenid": "mock_family_002",
+    "elderOpenid": "mock_elder_001",
+    "createdAt": "2026-08-31T11:47:02.339Z",
+    "unboundAt": "2026-08-31T11:47:02.342Z"
+  }
+]

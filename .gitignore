@@ -1,0 +1,10 @@
+node_modules/
+project.private.config.json
+.DS_Store
+server/.env
+server/data/sessions.json
+server-run.log
+*.log
+*-backup-*/
+server/data/.backup-*/
+*.pdf

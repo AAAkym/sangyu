@@ -1,0 +1,79 @@
+/* 用药提醒页（设计令牌化）：时间大字 + 双端复用列表 */
+.rm-field {
+  padding: var(--space-xs) 0 var(--space-md);
+  color: var(--color-text);
+}
+
+.rm-input {
+  height: 96rpx;
+  padding: 0 var(--space-lg);
+  margin-bottom: var(--space-md);
+  background-color: var(--color-input-bg);
+  border-radius: var(--radius-md);
+}
+
+.rm-btn {
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-foreground);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  box-shadow: var(--shadow-button);
+}
+
+.rm-btn::after {
+  border: none;
+}
+
+.rm-item {
+  border-left: 8rpx solid var(--color-primary);
+}
+
+.rm-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.rm-time {
+  font-size: var(--font-title);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.rm-del {
+  font-size: var(--font-desc);
+  color: var(--color-danger);
+  background-color: var(--color-danger-soft);
+  border-radius: var(--radius-sm);
+  padding: 6rpx 20rpx;
+}
+
+/* "已服用"打卡：按钮（老人端）/ 徽章（家属端） */
+.rm-taken-btn {
+  font-size: var(--font-desc);
+  color: var(--color-success);
+  background-color: var(--color-success-soft);
+  border-radius: var(--radius-sm);
+  padding: 8rpx 20rpx;
+  font-weight: 600;
+}
+
+.rm-taken-badge {
+  font-size: 26rpx;
+  color: var(--color-text-tertiary);
+  background-color: var(--color-muted);
+  border-radius: var(--radius-sm);
+  padding: 6rpx 16rpx;
+}
+
+.rm-taken-badge--done {
+  color: var(--color-success);
+  background-color: var(--color-success-soft);
+  font-weight: 600;
+}

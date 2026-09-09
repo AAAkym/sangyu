@@ -1,0 +1,327 @@
+[
+  {
+    "id": "a_demo_sos_open",
+    "elderOpenid": "mock_elder_001",
+    "reporterOpenid": "mock_elder_001",
+    "source": "sos",
+    "type": "sos",
+    "severity": "high",
+    "status": "open",
+    "createdAt": "2026-08-31T11:39:01.922Z",
+    "updatedAt": "2026-08-31T11:39:01.922Z",
+    "timeline": [
+      {
+        "status": "open",
+        "operator": "mock_elder_001",
+        "note": "老人一键求助",
+        "at": "2026-08-31T11:39:01.922Z"
+      }
+    ],
+    "currentHandler": "family",
+    "resolvedNote": ""
+  },
+  {
+    "id": "a_demo_rule_ack",
+    "elderOpenid": "mock_elder_001",
+    "reporterOpenid": "rule_engine",
+    "source": "rule_engine",
+    "type": "threshold",
+    "severity": "warning",
+    "ruleId": "HR_HIGH_SINGLE",
+    "message": "心率过高，建议密切关注",
+    "status": "acknowledged",
+    "createdAt": "2026-08-31T09:47:01.922Z",
+    "updatedAt": "2026-08-31T09:57:01.922Z",
+    "timeline": [
+      {
+        "status": "open",
+        "operator": "rule_engine",
+        "note": "阈值预警：心率过高，建议密切关注",
+        "at": "2026-08-31T09:47:01.922Z"
+      },
+      {
+        "status": "acknowledged",
+        "operator": "mock_family_001",
+        "note": "家属已确认，马上处理",
+        "at": "2026-08-31T09:57:01.922Z"
+      }
+    ],
+    "currentHandler": "family",
+    "resolvedNote": ""
+  },
+  {
+    "id": "a_demo_escalated",
+    "elderOpenid": "mock_elder_001",
+    "reporterOpenid": "mock_elder_001",
+    "source": "sos",
+    "type": "sos",
+    "severity": "high",
+    "status": "escalated",
+    "createdAt": "2026-08-31T06:47:01.922Z",
+    "updatedAt": "2026-08-31T07:12:01.922Z",
+    "timeline": [
+      {
+        "status": "open",
+        "operator": "mock_elder_001",
+        "note": "老人一键求助",
+        "at": "2026-08-31T06:47:01.922Z"
+      },
+      {
+        "status": "acknowledged",
+        "operator": "mock_family_001",
+        "note": "我在路上",
+        "at": "2026-08-31T06:57:01.922Z"
+      },
+      {
+        "status": "escalated",
+        "operator": "mock_family_001",
+        "note": "已转社区养老服务中心",
+        "at": "2026-08-31T07:12:01.922Z"
+      }
+    ],
+    "currentHandler": "community",
+    "resolvedNote": ""
+  },
+  {
+    "id": "a_demo_rule_resolved",
+    "elderOpenid": "mock_elder_001",
+    "reporterOpenid": "rule_engine",
+    "source": "rule_engine",
+    "type": "threshold",
+    "severity": "warning",
+    "ruleId": "BP_HIGH",
+    "message": "血压偏高，建议关注",
+    "status": "resolved",
+    "createdAt": "2026-08-30T09:47:01.922Z",
+    "updatedAt": "2026-08-30T10:47:01.922Z",
+    "timeline": [
+      {
+        "status": "open",
+        "operator": "rule_engine",
+        "note": "阈值预警：血压偏高，建议关注",
+        "at": "2026-08-30T09:47:01.922Z"
+      },
+      {
+        "status": "acknowledged",
+        "operator": "mock_family_001",
+        "note": "已上门查看",
+        "at": "2026-08-30T10:17:01.922Z"
+      },
+      {
+        "status": "resolved",
+        "operator": "mock_family_001",
+        "note": "老人已平安，血压回落",
+        "at": "2026-08-30T10:47:01.922Z"
+      }
+    ],
+    "currentHandler": null,
+    "resolvedNote": "老人已平安，血压回落"
+  },
+  {
+    "id": "a_1788176822306_0sjx8a",
+    "elderOpenid": "mock_elder_001",
+    "reporterOpenid": "rule_engine",
+    "source": "rule_engine",
+    "type": "threshold",
+    "severity": "warning",
+    "status": "open",
+    "createdAt": "2026-08-31T11:47:02.306Z",
+    "updatedAt": "2026-08-31T11:47:02.306Z",
+    "timeline": [
+      {
+        "status": "open",
+        "operator": "rule_engine",
+        "note": "阈值预警：心率过高，建议密切关注",
+        "at": "2026-08-31T11:47:02.306Z"
+      }
+    ],
+    "currentHandler": "family",
+    "resolvedNote": "",
+    "ruleId": "HR_HIGH_SINGLE",
+    "message": "心率过高，建议密切关注",
+    "evidence": {
+      "ruleId": "HR_HIGH_SINGLE",
+      "ruleName": "心率过高",
+      "severity": "warning",
+      "heartRate": 125,
+      "bloodPressure": "",
+      "spo2": null,
+      "recentHistory": [
+        {
+          "heartRate": 75,
+          "bloodPressure": "120/80",
+          "createdAt": "2026-08-31T11:47:02.304Z"
+        },
+        {
+          "heartRate": 88,
+          "bloodPressure": "128/82",
+          "createdAt": "2026-08-31T11:47:02.302Z"
+        },
+        {
+          "heartRate": 125,
+          "bloodPressure": "126/84",
+          "createdAt": "2026-08-31T11:37:01.922Z"
+        }
+      ]
+    }
+  },
+  {
+    "id": "a_1788176822310_emnc0u",
+    "elderOpenid": "mock_elder_001",
+    "reporterOpenid": "rule_engine",
+    "source": "rule_engine",
+    "type": "threshold",
+    "severity": "warning",
+    "status": "acknowledged",
+    "createdAt": "2026-08-31T11:47:02.310Z",
+    "updatedAt": "2026-08-31T12:26:53.560Z",
+    "timeline": [
+      {
+        "status": "open",
+        "operator": "rule_engine",
+        "note": "阈值预警：血压偏高，建议关注",
+        "at": "2026-08-31T11:47:02.310Z"
+      },
+      {
+        "status": "acknowledged",
+        "operator": "mock_family_001",
+        "note": "家属已确认，马上处理",
+        "at": "2026-08-31T12:26:53.560Z"
+      }
+    ],
+    "currentHandler": "family",
+    "resolvedNote": "",
+    "ruleId": "BP_HIGH",
+    "message": "血压偏高，建议关注",
+    "evidence": {
+      "ruleId": "BP_HIGH",
+      "ruleName": "血压偏高",
+      "severity": "warning",
+      "heartRate": null,
+      "bloodPressure": "165/100",
+      "spo2": null,
+      "recentHistory": [
+        {
+          "heartRate": 125,
+          "bloodPressure": "",
+          "createdAt": "2026-08-31T11:47:02.307Z"
+        },
+        {
+          "heartRate": 125,
+          "bloodPressure": "",
+          "createdAt": "2026-08-31T11:47:02.305Z"
+        },
+        {
+          "heartRate": 75,
+          "bloodPressure": "120/80",
+          "createdAt": "2026-08-31T11:47:02.304Z"
+        }
+      ]
+    }
+  },
+  {
+    "id": "a_1788176822317_15hk6o",
+    "elderOpenid": "mock_elder_001",
+    "reporterOpenid": "mock_elder_001",
+    "source": "sos",
+    "type": "sos",
+    "severity": "high",
+    "status": "resolved",
+    "createdAt": "2026-08-31T11:47:02.317Z",
+    "updatedAt": "2026-08-31T11:47:02.321Z",
+    "timeline": [
+      {
+        "status": "open",
+        "operator": "mock_elder_001",
+        "note": "老人一键求助",
+        "at": "2026-08-31T11:47:02.317Z"
+      },
+      {
+        "status": "acknowledged",
+        "operator": "mock_family_001",
+        "note": "家属确认，马上处理",
+        "at": "2026-08-31T11:47:02.318Z"
+      },
+      {
+        "status": "escalated",
+        "operator": "mock_family_001",
+        "note": "联系了社区养老服务中心",
+        "at": "2026-08-31T11:47:02.319Z"
+      },
+      {
+        "status": "external_dispatched",
+        "operator": "community_001",
+        "note": "社区已接单派单",
+        "at": "2026-08-31T11:47:02.320Z"
+      },
+      {
+        "status": "resolved",
+        "operator": "community_001",
+        "note": "老人已平安，事件关闭",
+        "at": "2026-08-31T11:47:02.321Z"
+      }
+    ],
+    "currentHandler": null,
+    "resolvedNote": "老人已平安，事件关闭"
+  },
+  {
+    "id": "a_1788176822324_2ndewc",
+    "elderOpenid": "mock_elder_001",
+    "reporterOpenid": "mock_elder_001",
+    "source": "sos",
+    "type": "sos",
+    "severity": "high",
+    "status": "resolved",
+    "createdAt": "2026-08-31T11:47:02.324Z",
+    "updatedAt": "2026-08-31T11:47:02.327Z",
+    "timeline": [
+      {
+        "status": "open",
+        "operator": "mock_elder_001",
+        "note": "老人一键求助",
+        "at": "2026-08-31T11:47:02.324Z"
+      },
+      {
+        "status": "acknowledged",
+        "operator": "mock_family_001",
+        "note": "家属已确认，马上处理",
+        "at": "2026-08-31T11:47:02.326Z"
+      },
+      {
+        "status": "resolved",
+        "operator": "mock_family_001",
+        "note": "虚惊一场",
+        "at": "2026-08-31T11:47:02.327Z"
+      }
+    ],
+    "currentHandler": null,
+    "resolvedNote": "虚惊一场"
+  },
+  {
+    "id": "a_1788176822372_9v42pc",
+    "elderOpenid": "mock_elder_001",
+    "reporterOpenid": "mock_elder_001",
+    "source": "sos",
+    "type": "sos",
+    "severity": "high",
+    "status": "acknowledged",
+    "createdAt": "2026-08-31T11:47:02.372Z",
+    "updatedAt": "2026-08-31T11:47:02.375Z",
+    "timeline": [
+      {
+        "status": "open",
+        "operator": "mock_elder_001",
+        "note": "老人一键求助",
+        "at": "2026-08-31T11:47:02.372Z"
+      },
+      {
+        "status": "acknowledged",
+        "operator": "mock_family_001",
+        "note": "已响应",
+        "at": "2026-08-31T11:47:02.375Z"
+      }
+    ],
+    "currentHandler": "family",
+    "resolvedNote": ""
+  }
+]

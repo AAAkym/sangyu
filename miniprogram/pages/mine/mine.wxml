@@ -1,0 +1,106 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">我的</view>
+
+  <!-- 个人信息区（点头像可更换） -->
+  <view class="entry mine-header">
+    <view class="mine-avatar" bindtap="onAvatarTap" aria-label="点击更换头像">
+      <image wx:if="{{myAvatarSrc}}" class="mine-avatar-img" src="{{myAvatarSrc}}" mode="aspectFill" />
+      <image wx:else class="mine-avatar-fallback" src="/assets/brand/symbol.png" mode="aspectFit" aria-label="默认头像" />
+    </view>
+    <view class="mine-meta">
+      <view class="entry__title">{{identityTitle || (roleLabel + '用户')}}</view>
+      <view class="entry__desc">{{role === 'family' ? '您已授权查看绑定老人的健康数据' : '您的数据仅对已授权家属可见'}}</view>
+    </view>
+    <view class="mine-role-tag">{{roleLabel}}</view>
+  </view>
+
+  <!-- 预设头像色板（点击「使用预设头像」后展开） -->
+  <view class="preset-row" wx:if="{{showPresets}}">
+    <view class="preset-dot" style="background-color: {{presetColors.c1}}" data-c="c1" bindtap="onPresetTap"></view>
+    <view class="preset-dot" style="background-color: {{presetColors.c2}}" data-c="c2" bindtap="onPresetTap"></view>
+    <view class="preset-dot" style="background-color: {{presetColors.c3}}" data-c="c3" bindtap="onPresetTap"></view>
+    <view class="preset-dot" style="background-color: {{presetColors.c4}}" data-c="c4" bindtap="onPresetTap"></view>
+    <view class="preset-dot" style="background-color: {{presetColors.c5}}" data-c="c5" bindtap="onPresetTap"></view>
+    <view class="preset-dot" style="background-color: {{presetColors.c6}}" data-c="c6" bindtap="onPresetTap"></view>
+  </view>
+
+  <view class="mine-section">监护关系摘要</view>
+  <view class="entry">
+    <view class="entry__desc">{{relations.length ? '当前已绑定 ' + relations.length + ' 位' + (role === 'family' ? '老人' : '家属') + '，关系由邀请码建立，可随时撤销。' : '尚未建立监护关系。'}}</view>
+  </view>
+
+  <view class="mine-section">已绑定的{{role === 'family' ? '老人' : '家属'}}</view>
+
+  <view wx:if="{{!relations.length}}" class="placeholder">
+    暂无绑定关系{{role === 'elder' ? '，可在首页生成邀请码邀请家人' : '，可在首页输入老人邀请码绑定'}}。
+  </view>
+
+  <view class="entry" wx:for="{{relations}}" wx:key="id">
+    <view class="mine-rel-row">
+      <view class="mine-avatar mine-avatar--sm">{{item.name[0]}}</view>
+      <view class="mine-rel-meta">
+        <view class="entry__title">{{item.name}}</view>
+        <view class="entry__desc">{{item.boundText}} 绑定</view>
+      </view>
+      <view wx:if="{{item.deviceCount !== undefined}}" class="mine-device-state">
+        <view class="status-dot-sm" style="background-color: {{item.deviceOnline ? 'var(--color-success)' : 'var(--color-text-tertiary)'}}"></view>
+        <text>{{item.deviceOnline ? '设备在线' : '设备离线'}}</text>
+      </view>
+      <button class="unbind-btn" catchtap="onUnbindTap" data-index="{{index}}">{{item.unbindLabel}}</button>
+    </view>
+  </view>
+
+  <view class="mine-section">适老化设置</view>
+
+  <view class="entry menu-item" bindtap="onFontTap">
+    <view class="menu-main">
+      <text class="entry__title">字体大小</text>
+      <text class="menu-desc">放大界面文字，看得更清楚</text>
+    </view>
+    <text class="menu-arrow">{{fontLabels[fontIndex]}} ›</text>
+  </view>
+
+  <view class="entry menu-item" bindtap="onContrastTap">
+    <view class="menu-main">
+      <text class="entry__title">高对比模式</text>
+      <text class="menu-desc">文字更深、边界更清晰</text>
+    </view>
+    <view class="menu-switch {{contrastOn ? 'menu-switch--on' : ''}}"><view class="menu-knob"></view></view>
+  </view>
+
+  <view class="entry menu-item" bindtap="onVoiceSwitchTap">
+    <view class="menu-main">
+      <text class="entry__title">语音播报</text>
+      <text class="menu-desc">告警到达时读出提醒（弹窗和震动不受影响）</text>
+    </view>
+    <view class="menu-switch {{voiceOn ? 'menu-switch--on' : ''}}"><view class="menu-knob"></view></view>
+  </view>
+
+  <view class="mine-section">隐私</view>
+
+  <view class="entry menu-item" bindtap="onPrivacyTap">
+    <view class="menu-main">
+      <text class="entry__title">隐私政策</text>
+      <text class="menu-desc">了解数据如何收集与保护</text>
+    </view>
+    <text class="menu-arrow">›</text>
+  </view>
+
+  <view class="mine-section">切换身份</view>
+  <view class="entry menu-item" bindtap="onSwitchRoleTap">
+    <view class="menu-main">
+      <text class="entry__title">切换为{{role === 'family' ? '老人' : '家属'}}身份</text>
+      <text class="menu-desc">在本机切换视角，无需退出登录</text>
+    </view>
+    <text class="menu-arrow">›</text>
+  </view>
+
+  <view class="mine-section">关于</view>
+  <view class="entry about-box">
+    <view class="entry__desc about-line">版本：{{version}}</view>
+    <view class="entry__desc about-line">数据来源：本地演示环境</view>
+    <view class="entry__desc about-line about-line--sub">{{mockMode ? '当前为演示模式，数据仅存本机' : '当前为真实登录模式'}}</view>
+  </view>
+
+  <button class="logout-btn" bindtap="onLogout">退出登录</button>
+</view>

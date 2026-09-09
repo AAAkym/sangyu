@@ -1,0 +1,31 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">服务预约</view>
+
+  <view class="entry">
+    <picker mode="selector" range="{{types}}" value="{{typeIndex}}" bindchange="onTypeChange">
+      <view class="appointment-type">服务类型：{{types[typeIndex]}}（点击切换）</view>
+    </picker>
+    <textarea
+      class="appointment-detail"
+      placeholder="补充说明（时间、地址、需求等）"
+      value="{{detail}}"
+      bindinput="onDetailInput"
+    />
+    <button class="appointment-btn" loading="{{creating}}" bindtap="onCreateTap">提交预约</button>
+  </view>
+
+  <view class="page-title">我的预约</view>
+
+  <view wx:if="{{!list.length}}" class="empty-block">
+    <view class="empty-ico"><view class="ico ico-box"></view></view>
+    <view class="empty-text">还没有预约记录。在上方选好服务类型提交后，会显示在这里。</view>
+  </view>
+
+  <view class="entry" wx:for="{{list}}" wx:key="id">
+    <view class="appt-row">
+      <view class="entry__title">{{item.type}}</view>
+      <view class="appt-status appt-status--{{item.statusKey}}">{{item.statusText}}</view>
+    </view>
+    <view class="entry__desc">{{item.detail || '无补充说明'}} · {{item.timeText}}</view>
+  </view>
+</view>

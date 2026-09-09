@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "repairedPages": [
+    {
+      "htmlSrc": "pages/elder-home.html",
+      "action": "replace-data-mobile-nav-global",
+      "activeKey": "home"
+    },
+    {
+      "htmlSrc": "pages/family-home.html",
+      "action": "replace-data-mobile-nav-global",
+      "activeKey": "home"
+    },
+    {
+      "htmlSrc": "pages/elder-sos.html",
+      "action": "replace-data-mobile-nav-global",
+      "activeKey": "sos"
+    },
+    {
+      "htmlSrc": "pages/health-data.html",
+      "action": "replace-data-mobile-nav-global",
+      "activeKey": "health"
+    },
+    {
+      "htmlSrc": "pages/voice-companion.html",
+      "action": "replace-data-mobile-nav-global",
+      "activeKey": "home"
+    },
+    {
+      "htmlSrc": "pages/health-report.html",
+      "action": "replace-data-mobile-nav-global",
+      "activeKey": "report"
+    }
+  ],
+  "skippedPages": [
+    {
+      "htmlSrc": "pages/role-select.html",
+      "reason": "role selection page has no bottom nav"
+    }
+  ],
+  "failedPages": [],
+  "repairCount": 6,
+  "previousFailedReportDetected": false,
+  "checkedAt": "2026-08-29T17:59:19.241Z"
+}

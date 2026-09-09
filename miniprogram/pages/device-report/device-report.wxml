@@ -1,0 +1,26 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">健康数据录入</view>
+  <view class="placeholder">为老人记录一次健康数据；数值超出关注范围时会自动提醒家人（同一内容 5 分钟内只提醒一次）。</view>
+
+  <view class="entry">
+    <view class="entry__title">快捷记录</view>
+    <button class="preset-btn preset-btn--green" data-preset="normal75" bindtap="onPresetTap">正常心率 75</button>
+    <button class="preset-btn preset-btn--orange" data-preset="hr125" bindtap="onPresetTap">心率偏高 125</button>
+    <button class="preset-btn preset-btn--orange" data-preset="bp165" bindtap="onPresetTap">血压偏高 165/100</button>
+  </view>
+
+  <view class="entry">
+    <view class="entry__title">手动上报</view>
+    <picker mode="selector" range="{{metrics}}" value="{{metricIndex}}" bindchange="onMetricChange">
+      <view class="report-picker">指标类型：{{metrics[metricIndex]}}（点击切换）</view>
+    </picker>
+    <input
+      class="report-input"
+      placeholder="{{metrics[metricIndex] === '血压' ? '如 165/100' : '如 75'}}"
+      value="{{value}}"
+      bindinput="onValueInput"
+    />
+    <input class="report-input" placeholder="设备码" value="{{deviceCode}}" bindinput="onDeviceInput" />
+    <button class="report-btn" loading="{{loading}}" bindtap="onSubmitTap">上报</button>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<view class="role-select-page {{fontClass}}">
+  <view class="brand-area">
+    <view class="brand-mark">
+      <image wx:if="{{!brandImgFailed}}" class="brand-mark-img" src="/assets/brand/symbol-white.png" mode="aspectFit" aria-label="桑榆智伴标志" binderror="onBrandImgError" />
+      <view wx:else class="ico ico-ring brand-mark-fallback"></view>
+    </view>
+    <view class="brand-name">桑榆智伴</view>
+    <view class="brand-tagline">一键呼叫，家人马上知道</view>
+  </view>
+
+  <view class="role-cards">
+    <view class="role-card role-card--elder" hover-class="role-card--hover" hover-stay-time="80" data-key="elder" bindtap="onChooseRole" aria-role="button" aria-label="我是老人，点这里进入老人端">
+      <view class="role-icon role-icon--elder"><view class="ico ico-elder"><view class="ico-elder-cane"></view></view></view>
+      <view class="role-card-body">
+        <view class="role-card-title">我是老人</view>
+        <view class="role-card-desc">大字大按钮，一键呼叫家人</view>
+      </view>
+      <view class="role-card-cta">›</view>
+    </view>
+
+    <view class="role-card role-card--family" hover-class="role-card--hover" hover-stay-time="80" data-key="family" bindtap="onChooseRole" aria-role="button" aria-label="我是家属，点这里进入家属端">
+      <view class="role-icon"><view class="ico ico-family"></view></view>
+      <view class="role-card-body">
+        <view class="role-card-title">我是家属</view>
+        <view class="role-card-desc">远程查看健康，异常即时提醒</view>
+      </view>
+      <view class="role-card-cta">›</view>
+    </view>
+  </view>
+
+  <view class="footer-area">
+    <navigator class="footer-links" url="/pages/privacy/privacy">选择身份即表示同意《隐私政策》</navigator>
+  </view>
+</view>

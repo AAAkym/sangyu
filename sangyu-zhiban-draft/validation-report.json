@@ -1,0 +1,119 @@
+{
+  "success": true,
+  "outcome": "passed",
+  "repairable": true,
+  "terminalViolations": [],
+  "terminalBlockingSummary": null,
+  "skillProvenance": {
+    "name": "solo-design",
+    "version": "2026.08.06.19.15.08",
+    "version_source": "skill-release-manifest.json",
+    "runtime_skill_dir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+    "recorded_at": null,
+    "expected_version": "2026.08.06.19.15.08",
+    "status": "manifest_fallback",
+    "read_status": "ok",
+    "reason": "runtime-orchestration-summary.json missing skillProvenance; used skill-release-manifest.json"
+  },
+  "operatingMode": "free-explore",
+  "renderBlockingErrorCount": 0,
+  "softWarningCount": 8,
+  "renderBlockingErrors": [],
+  "errorSignatures": [],
+  "softWarnings": [
+    "[orchestration-summary] runtime-orchestration-summary.json is missing skillProvenance.name/version/version_source. Version provenance will be reported as observed_unknown by external evaluators.",
+    "[mobile-bottom-overlay] pages/elder-home.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/family-home.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/elder-sos.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/health-data.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/voice-companion.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/health-report.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-navigation-consistency] 1 mobile page(s) do not expose a 3+ item data-nav-key nav cluster while sibling pages do. This is acceptable for detail/reward/modal pages only when planned explicitly."
+  ],
+  "repairPlanHints": [],
+  "repairActionTable": [],
+  "errorCount": 0,
+  "warningCount": 8,
+  "errors": [],
+  "warnings": [
+    "[orchestration-summary] runtime-orchestration-summary.json is missing skillProvenance.name/version/version_source. Version provenance will be reported as observed_unknown by external evaluators.",
+    "[mobile-bottom-overlay] pages/elder-home.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/family-home.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/elder-sos.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/health-data.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/voice-companion.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-bottom-overlay] pages/health-report.html: bottom fixed/absolute CTA or navigation found. Ensure it has safe-area spacing and does not cover content. Evidence: class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\"",
+    "[mobile-navigation-consistency] 1 mobile page(s) do not expose a 3+ item data-nav-key nav cluster while sibling pages do. This is acceptable for detail/reward/modal pages only when planned explicitly."
+  ],
+  "validationRunDisciplineStatus": {
+    "declared": true,
+    "restoreMode": false,
+    "maxFullValidationRuns": null,
+    "validationHistoryCount": 0,
+    "repairLedgerCount": 0,
+    "softWarningsTriggerRepair": null,
+    "terminalState": null,
+    "nextAction": null,
+    "violations": [],
+    "success": true
+  },
+  "terminalState": null,
+  "nextCheck": {
+    "type": "finish-readiness",
+    "command": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban-draft\" --check=all",
+    "fullValidationAllowed": false,
+    "reason": "workspace validation passed; run complete finish readiness before final delivery"
+  },
+  "repairBatch": [],
+  "repairContextPacket": {
+    "schema_version": "1.0",
+    "purpose": "small-context repair packet; read this before full validation-report.json",
+    "success": true,
+    "terminalState": null,
+    "skillProvenance": {
+      "name": "solo-design",
+      "version": "2026.08.06.19.15.08",
+      "version_source": "skill-release-manifest.json",
+      "runtime_skill_dir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+      "recorded_at": null,
+      "expected_version": "2026.08.06.19.15.08",
+      "status": "manifest_fallback",
+      "read_status": "ok",
+      "reason": "runtime-orchestration-summary.json missing skillProvenance; used skill-release-manifest.json"
+    },
+    "renderBlockingErrorCount": 0,
+    "softWarningCount": 8,
+    "renderBlockingErrors": [],
+    "repairActionTable": [],
+    "nextCheck": {
+      "type": "finish-readiness",
+      "command": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban-draft\" --check=all",
+      "fullValidationAllowed": false,
+      "reason": "workspace validation passed; run complete finish readiness before final delivery"
+    },
+    "forbidden": [
+      "do not read validator source",
+      "do not rerun full validation when nextCheck.fullValidationAllowed=false",
+      "do not start preview/browser unless user explicitly asks",
+      "do not hand-edit repair ledger fields"
+    ]
+  },
+  "projectFileHashes": {
+    "sangyu-zhiban-draft.design": "52225e27368eb9fa0f5d496ed86bc3a4d73f4ecf6ec5c92849e8beb7c006c905",
+    "runtime-orchestration-summary.json": "96a9b694028ecf8f51f5d022c948503905c3dc856eff5d944c52fb637e02f97f",
+    "pages/elder-home.html": "dbfc7d4e3ec13652cf77302079676ca80e69191cfc29c51dbdefd1cf4cce6b0e",
+    "pages/elder-sos.html": "813c1238813fe1c124df026656bf20665325b8494a847e33816cdfb14a7768d1",
+    "pages/family-home.html": "7d33f2e746482a550f2edb5ffd4b07a54135927ce4edfa7cef9008cb2e5a9e19",
+    "pages/health-data.html": "b6936c529b37a56ecc8ecffe50509696c6bc5e9e6c7ac2353580603d456a1120",
+    "pages/health-report.html": "65ce4ab8f620f262c449489318c84d839bc42fed7be593fbfbce70617e4afa92",
+    "pages/role-select.html": "dc1138c49c548fbf9815da84cf61475b049ff946988bd051f45d9dedeec2a9f1",
+    "pages/voice-companion.html": "f0db1a040832aa494273135d01190f88b79ad167b6dac77f2b0b1c5f37f7bb7f",
+    "assets/companion-warm-illustration.jpg": "47b24c267381a1e1cb41f27bee74994bc740921126280f299aa23140f5342a42",
+    "assets/elder-man-portrait.jpg": "78467419328108f9176ffac942103e22e08016cf7be5f6fd77341b401b06fc52",
+    "assets/elder-woman-portrait.jpg": "f7e65b4067b8d06a1b66ad5dab4e4b690a3a55bea44303c339219f4ae3532d46"
+  },
+  "designDir": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban-draft",
+  "expectedPages": null,
+  "requireInteractions": null,
+  "checkedAt": "2026-08-29T17:59:31.138Z"
+}

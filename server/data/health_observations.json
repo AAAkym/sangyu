@@ -1,0 +1,198 @@
+[
+  {
+    "id": "h_1788176821937_zid1fz",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-25",
+    "source": "device",
+    "heartRate": 76,
+    "bloodPressure": "124/76",
+    "spo2": 97,
+    "createdAt": "2026-08-25T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176821937_vwpmzh",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-26",
+    "source": "mock",
+    "heartRate": 82,
+    "bloodPressure": "123/81",
+    "spo2": 97,
+    "createdAt": "2026-08-26T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176821938_ro69pg",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-27",
+    "source": "device",
+    "heartRate": 71,
+    "bloodPressure": "122/80",
+    "spo2": 97,
+    "createdAt": "2026-08-27T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176821938_cjllm6",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-28",
+    "source": "mock",
+    "heartRate": 88,
+    "bloodPressure": "121/79",
+    "spo2": 97,
+    "createdAt": "2026-08-28T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176821938_x32rq1",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-29",
+    "source": "device",
+    "heartRate": 79,
+    "bloodPressure": "120/78",
+    "spo2": 97,
+    "createdAt": "2026-08-29T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176821939_ynwncr",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-30",
+    "source": "mock",
+    "heartRate": 84,
+    "bloodPressure": "119/77",
+    "spo2": 97,
+    "createdAt": "2026-08-30T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176821939_vq7vlz",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-31",
+    "source": "mock",
+    "heartRate": 78,
+    "bloodPressure": "122/78",
+    "spo2": 98,
+    "createdAt": "2026-08-31T09:37:01.922Z"
+  },
+  {
+    "id": "h_demo_125",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-31",
+    "source": "device",
+    "heartRate": 125,
+    "bloodPressure": "126/84",
+    "spo2": 97,
+    "createdAt": "2026-08-31T11:37:01.922Z"
+  },
+  {
+    "id": "h_1788176822302_f0kqnp",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-31",
+    "source": "mock",
+    "heartRate": 88,
+    "bloodPressure": "128/82",
+    "createdAt": "2026-08-31T11:47:02.302Z"
+  },
+  {
+    "id": "h_1788176822304_dzdewv",
+    "deviceCode": "SB-001",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-31",
+    "source": "device",
+    "heartRate": 75,
+    "bloodPressure": "120/80",
+    "spo2": null,
+    "createdAt": "2026-08-31T11:47:02.304Z"
+  },
+  {
+    "id": "h_1788176822305_5e5f16",
+    "deviceCode": "SB-001",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-31",
+    "source": "device",
+    "heartRate": 125,
+    "bloodPressure": "",
+    "spo2": null,
+    "createdAt": "2026-08-31T11:47:02.305Z"
+  },
+  {
+    "id": "h_1788176822307_pbl4zc",
+    "deviceCode": "SB-001",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-31",
+    "source": "device",
+    "heartRate": 125,
+    "bloodPressure": "",
+    "spo2": null,
+    "createdAt": "2026-08-31T11:47:02.307Z"
+  },
+  {
+    "id": "h_1788176822309_u01f03",
+    "deviceCode": "SB-001",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-31",
+    "source": "device",
+    "heartRate": null,
+    "bloodPressure": "165/100",
+    "spo2": null,
+    "createdAt": "2026-08-31T11:47:02.309Z"
+  },
+  {
+    "id": "h_1788176822331_5880vi",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-25",
+    "source": "mock",
+    "heartRate": 75,
+    "bloodPressure": "133/76",
+    "createdAt": "2026-08-25T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176822331_cnys19",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-26",
+    "source": "mock",
+    "heartRate": 84,
+    "bloodPressure": "134/77",
+    "createdAt": "2026-08-26T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176822332_7bb8a7",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-27",
+    "source": "mock",
+    "heartRate": 75,
+    "bloodPressure": "122/77",
+    "createdAt": "2026-08-27T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176822332_05u6d2",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-28",
+    "source": "mock",
+    "heartRate": 80,
+    "bloodPressure": "129/76",
+    "createdAt": "2026-08-28T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176822332_xbpsr3",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-29",
+    "source": "mock",
+    "heartRate": 86,
+    "bloodPressure": "120/85",
+    "createdAt": "2026-08-29T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176822333_fj7jya",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-30",
+    "source": "mock",
+    "heartRate": 84,
+    "bloodPressure": "133/78",
+    "createdAt": "2026-08-30T00:30:00.000Z"
+  },
+  {
+    "id": "h_1788176822333_4cpbg3",
+    "elderOpenid": "mock_elder_001",
+    "date": "2026-08-31",
+    "source": "mock",
+    "heartRate": 84,
+    "bloodPressure": "123/83",
+    "createdAt": "2026-08-31T00:30:00.000Z"
+  }
+]

@@ -1,0 +1,65 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">告警与求助</view>
+
+  <!-- 老人端：按住确认一键求助（与老人首页一致，防误触） -->
+  <block wx:if="{{role === 'elder'}}">
+    <button
+      class="sos-btn {{sosPressing ? 'sos-btn--pressing' : ''}}"
+      hover-class="none"
+      bind:touchstart="onSOSStart"
+      bind:touchend="onSOSEnd"
+      bind:touchcancel="onSOSEnd"
+    >
+      <view class="sos-btn-word">SOS</view>
+      <view class="sos-btn-sub">按住 1 秒确认求助</view>
+    </button>
+    <view class="sos-hint">{{sosHint}}</view>
+  </block>
+
+  <!-- 家属端：告警列表 + 状态流转 + 时间线 -->
+  <block wx:else>
+    <view wx:if="{{!alerts.length}}" class="empty-block">
+      <view class="empty-ico"><view class="ico ico-alert"></view></view>
+      <view class="empty-text">暂无告警。老人端发起「一键求助」或设备上报异常时，会显示在这里。</view>
+    </view>
+
+    <view class="entry alert-card {{item.isRuleEngine ? 'alert-card--device' : 'alert-card--sos'}}" wx:for="{{alerts}}" wx:key="id" wx:for-index="cardIndex">
+      <view class="alert-card-head" data-index="{{cardIndex}}" bindtap="onCardTap">
+        <view class="alert-row">
+          <view class="alert-title-wrap">
+            <view class="entry__title">{{item.isRuleEngine ? '设备自动预警' : item.elderOpenid + ' 发起求助'}}</view>
+            <view wx:if="{{item.isRuleEngine}}" class="alert-tag-device">设备自动预警</view>
+          </view>
+          <view class="alert-status alert-status--{{item.status}}">{{item.statusText}}</view>
+        </view>
+        <view class="entry__desc">{{item.timeText}}</view>
+        <view class="entry__desc alert-toggle">{{item.expanded ? '收起时间线 ▲' : '展开时间线 ▼'}}</view>
+      </view>
+
+      <view wx:if="{{item.displayTimeline.length}}" class="timeline">
+        <view class="timeline__item" wx:for="{{item.displayTimeline}}" wx:for-item="tl" wx:key="at">
+          <view class="timeline__time">{{tl.timeText}}</view>
+          <view class="timeline__body">
+            <view class="timeline__line">
+              <text class="timeline__operator">{{tl.operatorText}}</text>
+              <text class="timeline__action">{{tl.actionText}}</text>
+            </view>
+            <view wx:if="{{tl.note}}" class="timeline__note">备注：{{tl.note}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view wx:if="{{item.actions.length}}" class="alert-actions">
+        <button
+          class="alert-btn"
+          wx:for="{{item.actions}}"
+          wx:for-item="act"
+          wx:key="status"
+          catchtap="onActionTap"
+          data-index="{{cardIndex}}"
+          data-act="{{act.status}}"
+        >{{act.label}}</button>
+      </view>
+    </view>
+  </block>
+</view>

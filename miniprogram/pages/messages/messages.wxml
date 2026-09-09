@@ -1,0 +1,26 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">家人留言</view>
+
+  <!-- 家属端：发布留言 -->
+  <view wx:if="{{role === 'family'}}" class="entry">
+    <view class="entry__title">给老人留句话</view>
+    <textarea
+      class="msg-input"
+      placeholder="写一句关心的话（200 字内），老人端留言墙可见"
+      maxlength="200"
+      value="{{text}}"
+      bindinput="onTextInput"
+    />
+    <view class="msg-count">{{text.length}}/200</view>
+    <button class="msg-btn" loading="{{posting}}" bindtap="onPostTap">发布留言</button>
+  </view>
+
+  <!-- 留言墙（时间倒序） -->
+  <view class="section-title">留言墙</view>
+  <view wx:if="{{!list.length}}" class="placeholder">{{loading ? '加载中…' : '还没有留言，家人发布的留言会显示在这里。'}}</view>
+
+  <view class="bubble {{index % 2 === 0 ? 'bubble--family' : 'bubble--family-alt'}}" wx:for="{{list}}" wx:key="id">
+    <view class="bubble-head">{{item.fromName}} · {{item.timeText}} · {{item.read ? '已读' : '未读'}}</view>
+    <view class="bubble-text">{{item.text}}</view>
+  </view>
+</view>

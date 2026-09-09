@@ -1,0 +1,43 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">隐私政策</view>
+
+  <view wx:if="{{alreadyAgreed}}" class="privacy-agreed">您已于此前同意本政策。</view>
+
+  <view class="entry">
+    <view class="entry__title">一、我们收集的数据</view>
+    <view class="privacy-text">1. 账号标识：微信 openid（用于登录与身份识别），不收集微信昵称、头像以外的个人信息；</view>
+    <view class="privacy-text">2. 健康数据：心率、血压、血氧等由设备上报或手动录入的健康观测记录；</view>
+    <view class="privacy-text">3. 设备信息：设备码、在线状态、电量、最后上报时间；</view>
+    <view class="privacy-text">4. 告警与处置记录：求助/预警事件及其处理过程；</view>
+    <view class="privacy-text">5. 服务预约记录：社区医护、志愿者陪伴、复诊预约信息。</view>
+  </view>
+
+  <view class="entry">
+    <view class="entry__title">二、数据用途</view>
+    <view class="privacy-text">数据仅用于健康展示、阈值预警、告警处置、服务预约与健康报告生成，不用于广告营销，不对外共享（依法要求除外）。健康报告为规则生成，仅供参考，不构成诊断或治疗建议。</view>
+  </view>
+
+  <view class="entry">
+    <view class="entry__title">三、存储方式</view>
+    <view class="privacy-text">数据存储于服务端数据库，传输使用加密通道；仅老人本人及其授权家属、被授权的社区服务方可查看，所有敏感操作留痕可审计。</view>
+  </view>
+
+  <view class="entry">
+    <view class="entry__title">四、您的权利</view>
+    <view class="privacy-text">1. 查阅：随时在「健康数据」「设备管理」等页面查看您的数据；</view>
+    <view class="privacy-text">2. 删除：可申请删除健康数据与账号；</view>
+    <view class="privacy-text">3. 撤回授权：在「我的」页随时撤销对家属的授权，撤销后对方立即无法查看您的数据（其绑定的设备同步停止接收）。</view>
+  </view>
+
+  <view class="entry">
+    <view class="entry__title">五、联系方式</view>
+    <view class="privacy-text">隐私事务请联系：privacy@sangyu.example（工作日 48 小时内回复）。</view>
+  </view>
+
+  <view class="privacy-check" bindtap="onCheckboxTap">
+    <view class="privacy-checkbox {{agreed ? 'privacy-checkbox--on' : ''}}">{{agreed ? '✓' : ''}}</view>
+    <text class="privacy-check-text">我已阅读并同意本隐私政策</text>
+  </view>
+
+  <button class="privacy-confirm" bindtap="onConfirmTap">确认并返回</button>
+</view>

@@ -1,0 +1,83 @@
+/* 紧急联系人（设计令牌化）：拨号卡片 + 家属维护 */
+.ct-input {
+  height: 96rpx;
+  padding: 0 var(--space-lg);
+  margin-bottom: var(--space-md);
+  background-color: var(--color-input-bg);
+  border-radius: var(--radius-md);
+}
+
+.ct-btn {
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-foreground);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  box-shadow: var(--shadow-button);
+}
+
+.ct-btn::after {
+  border: none;
+}
+
+.ct-item {
+  border-left: 8rpx solid var(--color-success);
+}
+
+.ct-row {
+  display: flex;
+  align-items: center;
+}
+
+.ct-avatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: var(--radius-full);
+  background-color: var(--color-success-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44rpx;
+  margin-right: var(--space-md);
+  flex-shrink: 0;
+}
+
+.ct-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.ct-relation {
+  font-size: var(--font-desc);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.ct-dial {
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+.ct-del-row {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1rpx solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ct-del {
+  font-size: var(--font-desc);
+  color: var(--color-danger);
+}
+
+.ct-group-picker {
+  padding: var(--space-xs) 0 var(--space-md);
+  color: var(--color-text);
+}

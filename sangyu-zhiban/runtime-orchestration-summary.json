@@ -1,0 +1,1405 @@
+{
+  "schemaVersion": "1.0",
+  "skillProvenance": {
+    "name": "solo-design",
+    "version": "2026.08.06.19.15.08",
+    "release": "prompt-base-cloud-ssot-migration",
+    "version_source": "skill-release-manifest.json",
+    "schema_version": "1.0",
+    "read_status": "loaded"
+  },
+  "project": {
+    "resolvedLane": "complex_html_page",
+    "operation": "create",
+    "selectedIntentWorkflowRead": true,
+    "contextReadScope": "complex-build lane: intent-workflow, long-requirement-intake, design-project-file-format, orchestration-summary-contract, visual-experience-guidelines, visual-checkpoint-protocol, lane-runtime-contracts",
+    "contextRequirementsLoaded": [
+      {
+        "path": "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/page-rendering-quality-gate.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/design-artifact-validation.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/delivery-evidence-contract.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "visual-experience/visual-experience-guidelines.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "visual-experience/visual-checkpoint-protocol.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      }
+    ],
+    "validationRunDiscipline": {
+      "maxFullValidationRuns": 2,
+      "softWarningsTriggerRepair": false,
+      "blockingRepairMode": "targeted-once",
+      "forbiddenRepairTriggers": [
+        "soft-warning-only",
+        "provenance-warning-only",
+        "style-warning-only"
+      ]
+    },
+    "lowValueCallWatchdog": {
+      "applies": true,
+      "noProgressNextAction": "proceed-to-dispatch-after-preflight"
+    },
+    "deviceType": "mobile",
+    "designRead": "mobile mini-program / elderly+family dual audience / warm caring safety-first / info-dense family + task-driven elder / avoid clinical coldness",
+    "designDials": {
+      "layoutVariance": 3,
+      "motionIntensity": 2,
+      "visualDensity": 2
+    },
+    "styleContinuityAnchors": {
+      "typographySystem": "Noto Sans SC, PingFang SC, Microsoft YaHei, system-ui, sans-serif",
+      "colorSystem": "single brand hue: deep maple red #7C2020, warm neutral scale, no secondary/accent",
+      "radiusScale": "4px / 8px / 16px / 9999px",
+      "surfaceDepthModel": "border-first for static surfaces, shadow <= 0.05 alpha; deeper shadow only for floating layers",
+      "iconSystem": "Lucide inline SVG, stroke-width 2, sizes 24/20/16"
+    },
+    "sharedProjectShellContract": {
+      "radiusScale": {
+        "sm": 4,
+        "md": 8,
+        "lg": 16,
+        "full": 9999
+      },
+      "surfaceDepthModel": "static surfaces use border or surface layering; floating layers use shadow-2",
+      "typographySystem": "Noto Sans SC, PingFang SC, Microsoft YaHei, system-ui, sans-serif; body 18px for elderly accessibility",
+      "mobileNavigation": {
+        "applies": true,
+        "type": "bottom-tab",
+        "items": [
+          {
+            "key": "home",
+            "label": "首页",
+            "icon": "home"
+          },
+          {
+            "key": "health",
+            "label": "健康",
+            "icon": "heart"
+          },
+          {
+            "key": "report",
+            "label": "报告",
+            "icon": "file-text"
+          },
+          {
+            "key": "sos",
+            "label": "求助",
+            "icon": "shield"
+          }
+        ],
+        "heightPx": 64,
+        "position": "fixed-bottom",
+        "activeState": "primary color + font-weight 600; geometry identical",
+        "structure": {
+          "navTag": "nav",
+          "navClass": "fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]",
+          "innerClass": "w-full max-w-md mx-auto grid grid-cols-4 h-full",
+          "itemTag": "a",
+          "itemClass": "flex flex-col items-center justify-center gap-1 px-1 h-full",
+          "iconClass": "w-6 h-6 shrink-0",
+          "labelClass": "text-[12px] leading-none whitespace-nowrap",
+          "activeRule": "data-active=true sets text-[var(--primary)] font-semibold; inactive text-[var(--muted-foreground)]",
+          "markerAttr": "data-mobile-nav=\"global\"",
+          "canonicalHtmlByKey": {
+            "home": "<nav data-mobile-nav=\"global\" class=\"fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\" style=\"padding-bottom:env(safe-area-inset-bottom)\"><div class=\"w-full max-w-md mx-auto grid grid-cols-4 h-full\"><a data-nav-key=\"home\" data-active=\"true\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--primary)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z\"/></svg><span class=\"text-[12px] font-semibold leading-none\">首页</span></a><a data-nav-key=\"health\" data-dom-id=\"nav-health\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg><span class=\"text-[12px] leading-none\">健康</span></a><a data-nav-key=\"report\" data-dom-id=\"nav-report\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"9\" y1=\"13\" x2=\"15\" y2=\"13\"/><line x1=\"9\" y1=\"17\" x2=\"15\" y2=\"17\"/></svg><span class=\"text-[12px] leading-none\">报告</span></a><a data-nav-key=\"sos\" data-dom-id=\"nav-sos\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg><span class=\"text-[12px] leading-none\">求助</span></a></div></nav>",
+            "health": "<nav data-mobile-nav=\"global\" class=\"fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\" style=\"padding-bottom:env(safe-area-inset-bottom)\"><div class=\"w-full max-w-md mx-auto grid grid-cols-4 h-full\"><a data-nav-key=\"home\" data-dom-id=\"nav-home\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z\"/></svg><span class=\"text-[12px] leading-none\">首页</span></a><a data-nav-key=\"health\" data-active=\"true\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--primary)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg><span class=\"text-[12px] font-semibold leading-none\">健康</span></a><a data-nav-key=\"report\" data-dom-id=\"nav-report\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"9\" y1=\"13\" x2=\"15\" y2=\"13\"/><line x1=\"9\" y1=\"17\" x2=\"15\" y2=\"17\"/></svg><span class=\"text-[12px] leading-none\">报告</span></a><a data-nav-key=\"sos\" data-dom-id=\"nav-sos\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg><span class=\"text-[12px] leading-none\">求助</span></a></div></nav>",
+            "report": "<nav data-mobile-nav=\"global\" class=\"fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\" style=\"padding-bottom:env(safe-area-inset-bottom)\"><div class=\"w-full max-w-md mx-auto grid grid-cols-4 h-full\"><a data-nav-key=\"home\" data-dom-id=\"nav-home\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z\"/></svg><span class=\"text-[12px] leading-none\">首页</span></a><a data-nav-key=\"health\" data-dom-id=\"nav-health\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg><span class=\"text-[12px] leading-none\">健康</span></a><a data-nav-key=\"report\" data-active=\"true\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--primary)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"9\" y1=\"13\" x2=\"15\" y2=\"13\"/><line x1=\"9\" y1=\"17\" x2=\"15\" y2=\"17\"/></svg><span class=\"text-[12px] font-semibold leading-none\">报告</span></a><a data-nav-key=\"sos\" data-dom-id=\"nav-sos\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg><span class=\"text-[12px] leading-none\">求助</span></a></div></nav>",
+            "sos": "<nav data-mobile-nav=\"global\" class=\"fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\" style=\"padding-bottom:env(safe-area-inset-bottom)\"><div class=\"w-full max-w-md mx-auto grid grid-cols-4 h-full\"><a data-nav-key=\"home\" data-dom-id=\"nav-home\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z\"/></svg><span class=\"text-[12px] leading-none\">首页</span></a><a data-nav-key=\"health\" data-dom-id=\"nav-health\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg><span class=\"text-[12px] leading-none\">健康</span></a><a data-nav-key=\"report\" data-dom-id=\"nav-report\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--muted-foreground)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"9\" y1=\"13\" x2=\"15\" y2=\"13\"/><line x1=\"9\" y1=\"17\" x2=\"15\" y2=\"17\"/></svg><span class=\"text-[12px] leading-none\">报告</span></a><a data-nav-key=\"sos\" data-active=\"true\" class=\"flex flex-col items-center justify-center gap-1 px-1 h-full text-[var(--primary)]\"><svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg><span class=\"text-[12px] font-semibold leading-none\">求助</span></a></div></nav>"
+          }
+        }
+      }
+    },
+    "cssPreflightEvidence": {
+      "command": "node apply-html-head-contract.mjs .../colors_and_type.css .../.preflight/preflight.html --title=桑榆智伴预检 --lang=zh --prefix=sangyu",
+      "exitCode": 0,
+      "generatedId": "theme-vars",
+      "semanticFallbackId": "semantic-token-fallback",
+      "tailwindCdnPresent": true,
+      "htmlClass": "light"
+    },
+    "generationTree": {
+      "root": {
+        "nodeId": "gen-root",
+        "kind": "project-shell",
+        "status": "generated",
+        "children": [
+          {
+            "nodeId": "page-role-select",
+            "kind": "page-leaf",
+            "status": "planned"
+          },
+          {
+            "nodeId": "page-elder-home",
+            "kind": "page-leaf",
+            "status": "planned"
+          },
+          {
+            "nodeId": "page-family-home",
+            "kind": "page-leaf",
+            "status": "planned"
+          },
+          {
+            "nodeId": "page-elder-sos",
+            "kind": "page-leaf",
+            "status": "planned"
+          },
+          {
+            "nodeId": "page-health-data",
+            "kind": "page-leaf",
+            "status": "planned"
+          },
+          {
+            "nodeId": "page-voice-companion",
+            "kind": "page-leaf",
+            "status": "planned"
+          },
+          {
+            "nodeId": "page-health-report",
+            "kind": "page-leaf",
+            "status": "planned"
+          }
+        ]
+      }
+    },
+    "dispatchPreflightManifest": [
+      {
+        "recorded_at": "2026-08-29T07:13:57.701Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-role-select",
+        "htmlSrc": "pages/role-select.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/role-select.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/role-select.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\" --node-id=\"page-role-select\" --html-src=\"pages/role-select.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css",
+        "htmlFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\role-select.html",
+        "brandPrefix": "sangyu",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\role-select.html\" --title=\"角色选择\" --lang=\"zh-CN\" --prefix=\"sangyu\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": null,
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "sangyu-zhiban.design": "272bcc3f9e6bc1e806dccd714d3c47778fd551c3f649d755214f0ae993146af8"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": true,
+          "appliesToThisPage": true,
+          "activeKey": "home",
+          "contractPresent": true,
+          "structurePresent": true,
+          "canonicalHtmlIncluded": true,
+          "canonicalHtmlSource": "sharedProjectShellContract.mobileNavigation.structure.canonicalHtmlByKey.home",
+          "structureHash": "3b8214a58963d3d21146eb4324658b8b2c7536e1ec5480125f529f13580bd76e",
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-29T07:13:57.701Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-elder-home",
+        "htmlSrc": "pages/elder-home.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/elder-home.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/elder-home.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\" --node-id=\"page-elder-home\" --html-src=\"pages/elder-home.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css",
+        "htmlFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\elder-home.html",
+        "brandPrefix": "sangyu",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\elder-home.html\" --title=\"老人首页\" --lang=\"zh-CN\" --prefix=\"sangyu\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": null,
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "sangyu-zhiban.design": "272bcc3f9e6bc1e806dccd714d3c47778fd551c3f649d755214f0ae993146af8"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": true,
+          "appliesToThisPage": true,
+          "activeKey": "home",
+          "contractPresent": true,
+          "structurePresent": true,
+          "canonicalHtmlIncluded": true,
+          "canonicalHtmlSource": "sharedProjectShellContract.mobileNavigation.structure.canonicalHtmlByKey.home",
+          "structureHash": "3b8214a58963d3d21146eb4324658b8b2c7536e1ec5480125f529f13580bd76e",
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-29T07:13:57.701Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-family-home",
+        "htmlSrc": "pages/family-home.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/family-home.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/family-home.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\" --node-id=\"page-family-home\" --html-src=\"pages/family-home.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css",
+        "htmlFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\family-home.html",
+        "brandPrefix": "sangyu",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\family-home.html\" --title=\"家属首页\" --lang=\"zh-CN\" --prefix=\"sangyu\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": null,
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "sangyu-zhiban.design": "272bcc3f9e6bc1e806dccd714d3c47778fd551c3f649d755214f0ae993146af8"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": true,
+          "appliesToThisPage": true,
+          "activeKey": "home",
+          "contractPresent": true,
+          "structurePresent": true,
+          "canonicalHtmlIncluded": true,
+          "canonicalHtmlSource": "sharedProjectShellContract.mobileNavigation.structure.canonicalHtmlByKey.home",
+          "structureHash": "3b8214a58963d3d21146eb4324658b8b2c7536e1ec5480125f529f13580bd76e",
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-29T07:13:57.701Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-elder-sos",
+        "htmlSrc": "pages/elder-sos.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/elder-sos.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/elder-sos.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\" --node-id=\"page-elder-sos\" --html-src=\"pages/elder-sos.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css",
+        "htmlFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\elder-sos.html",
+        "brandPrefix": "sangyu",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\elder-sos.html\" --title=\"一键求助\" --lang=\"zh-CN\" --prefix=\"sangyu\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": null,
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "sangyu-zhiban.design": "272bcc3f9e6bc1e806dccd714d3c47778fd551c3f649d755214f0ae993146af8"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": true,
+          "appliesToThisPage": true,
+          "activeKey": "home",
+          "contractPresent": true,
+          "structurePresent": true,
+          "canonicalHtmlIncluded": true,
+          "canonicalHtmlSource": "sharedProjectShellContract.mobileNavigation.structure.canonicalHtmlByKey.home",
+          "structureHash": "3b8214a58963d3d21146eb4324658b8b2c7536e1ec5480125f529f13580bd76e",
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-29T07:13:57.701Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-health-data",
+        "htmlSrc": "pages/health-data.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/health-data.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/health-data.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\" --node-id=\"page-health-data\" --html-src=\"pages/health-data.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css",
+        "htmlFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\health-data.html",
+        "brandPrefix": "sangyu",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\health-data.html\" --title=\"健康数据\" --lang=\"zh-CN\" --prefix=\"sangyu\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": null,
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "sangyu-zhiban.design": "272bcc3f9e6bc1e806dccd714d3c47778fd551c3f649d755214f0ae993146af8"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": true,
+          "appliesToThisPage": true,
+          "activeKey": "health",
+          "contractPresent": true,
+          "structurePresent": true,
+          "canonicalHtmlIncluded": true,
+          "canonicalHtmlSource": "sharedProjectShellContract.mobileNavigation.structure.canonicalHtmlByKey.health",
+          "structureHash": "3b8214a58963d3d21146eb4324658b8b2c7536e1ec5480125f529f13580bd76e",
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-29T07:13:57.701Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-voice-companion",
+        "htmlSrc": "pages/voice-companion.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/voice-companion.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/voice-companion.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\" --node-id=\"page-voice-companion\" --html-src=\"pages/voice-companion.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css",
+        "htmlFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\voice-companion.html",
+        "brandPrefix": "sangyu",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\voice-companion.html\" --title=\"语音陪伴\" --lang=\"zh-CN\" --prefix=\"sangyu\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": null,
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "sangyu-zhiban.design": "272bcc3f9e6bc1e806dccd714d3c47778fd551c3f649d755214f0ae993146af8"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": true,
+          "appliesToThisPage": true,
+          "activeKey": "home",
+          "contractPresent": true,
+          "structurePresent": true,
+          "canonicalHtmlIncluded": true,
+          "canonicalHtmlSource": "sharedProjectShellContract.mobileNavigation.structure.canonicalHtmlByKey.home",
+          "structureHash": "3b8214a58963d3d21146eb4324658b8b2c7536e1ec5480125f529f13580bd76e",
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-29T07:13:57.701Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-health-report",
+        "htmlSrc": "pages/health-report.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/health-report.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/health-report.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\" --node-id=\"page-health-report\" --html-src=\"pages/health-report.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css",
+        "htmlFilePath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\health-report.html",
+        "brandPrefix": "sangyu",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\33552\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\colors_and_type.css\" \"c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban\\pages\\health-report.html\" --title=\"健康报告\" --lang=\"zh-CN\" --prefix=\"sangyu\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": null,
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "sangyu-zhiban.design": "272bcc3f9e6bc1e806dccd714d3c47778fd551c3f649d755214f0ae993146af8"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": true,
+          "appliesToThisPage": true,
+          "activeKey": "report",
+          "contractPresent": true,
+          "structurePresent": true,
+          "canonicalHtmlIncluded": true,
+          "canonicalHtmlSource": "sharedProjectShellContract.mobileNavigation.structure.canonicalHtmlByKey.report",
+          "structureHash": "3b8214a58963d3d21146eb4324658b8b2c7536e1ec5480125f529f13580bd76e",
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      }
+    ],
+    "validationHistory": [],
+    "validationRepairLedger": [],
+    "visualQualityCheckpoints": [
+      {
+        "checkpointId": "vq-anchor",
+        "dimension": "visual-anchor",
+        "expected": "枫叶红品牌色 + 暖米色卡片 + 适老化大字体系为视觉锚点",
+        "evidenceTarget": "pages/elder-home.html#primary"
+      },
+      {
+        "checkpointId": "vq-hierarchy",
+        "dimension": "information-hierarchy",
+        "expected": "求助 > 陪伴 > 健康 > 服务 的优先级清晰，老人端单任务化",
+        "evidenceTarget": "pages/elder-home.html#content"
+      },
+      {
+        "checkpointId": "vq-structure",
+        "dimension": "composition-structure",
+        "expected": "老人端大按钮单列纵向排列，家属端信息卡片分组清晰",
+        "evidenceTarget": "pages/elder-home.html#layout"
+      },
+      {
+        "checkpointId": "vq-implementation",
+        "dimension": "implementation-strategy",
+        "expected": "CSS令牌 + Lucide内联SVG + Tailwind工具类 + 真实老人头像图片",
+        "evidenceTarget": "pages/elder-home.html#implementation"
+      }
+    ],
+    "readScopeLedger": [
+      {
+        "actor": "page-sub-agent",
+        "lane": "complex_html_page",
+        "path": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "reason": "page runtime guide",
+        "scopeClass": "page-runtime",
+        "declaredBeforeRead": true,
+        "recordedAt": "2026-08-29T07:13:57.701Z",
+        "nodeId": "page-role-select",
+        "htmlSrc": "pages/role-select.html"
+      },
+      {
+        "actor": "page-sub-agent",
+        "lane": "complex_html_page",
+        "path": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md",
+        "reason": "dispatch contract",
+        "scopeClass": "dispatch-contract",
+        "declaredBeforeRead": true,
+        "recordedAt": "2026-08-29T07:13:57.701Z",
+        "nodeId": "page-role-select",
+        "htmlSrc": "pages/role-select.html"
+      }
+    ],
+    "expectedDispatches": [
+      {
+        "nodeId": "page-elder-sos",
+        "pageId": "page-elder-sos",
+        "targetPageId": "page-elder-sos",
+        "htmlSrc": "pages/elder-sos.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/elder-sos.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-29T07:20:03.153Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-elder-home",
+        "pageId": "page-elder-home",
+        "targetPageId": "page-elder-home",
+        "htmlSrc": "pages/elder-home.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/elder-home.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-29T07:21:10.978Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-role-select",
+        "pageId": "page-role-select",
+        "targetPageId": "page-role-select",
+        "htmlSrc": "pages/role-select.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/role-select.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-29T07:21:33.427Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-family-home",
+        "pageId": "page-family-home",
+        "targetPageId": "page-family-home",
+        "htmlSrc": "pages/family-home.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/family-home.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-29T07:23:05.962Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-health-report",
+        "pageId": "page-health-report",
+        "targetPageId": "page-health-report",
+        "htmlSrc": "pages/health-report.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/health-report.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-29T07:26:51.547Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-voice-companion",
+        "pageId": "page-voice-companion",
+        "targetPageId": "page-voice-companion",
+        "htmlSrc": "pages/voice-companion.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/voice-companion.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-29T07:27:05.864Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-health-data",
+        "pageId": "page-health-data",
+        "targetPageId": "page-health-data",
+        "htmlSrc": "pages/health-data.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/health-data.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-29T07:28:46.439Z",
+        "source": "record-dispatch-completion.mjs"
+      }
+    ],
+    "mainAgentPostDispatchMutations": []
+  },
+  "designSource": {
+    "operatingMode": "free-explore",
+    "styleConstraints": {
+      "radiusMax": 16,
+      "staticShadowAlphaMax": 0.05
+    },
+    "cssFilePath": "colors_and_type.css",
+    "brandPrefix": "sangyu",
+    "designLibrary": null
+  },
+  "pages": [
+    {
+      "nodeId": "page-role-select",
+      "pageIndex": 1,
+      "title": "角色选择",
+      "htmlSrc": "pages/role-select.html",
+      "pageType": "task-driven",
+      "visualNorthStar": "温暖枫叶红全屏背景 + 两个大米色卡片选择老人/家属身份",
+      "compositionPattern": "full-screen scenes",
+      "continuityAnchors": [
+        "枫叶红品牌色 #7C2020",
+        "暖米色卡片 #FFFFFF",
+        "Noto Sans SC 18px+"
+      ],
+      "mobileNavigationActiveKey": "home",
+      "imagePlan": [],
+      "componentPlan": [
+        "大卡片选择器",
+        "微信授权入口",
+        "隐私说明链接"
+      ]
+    },
+    {
+      "nodeId": "page-elder-home",
+      "pageIndex": 2,
+      "title": "老人首页",
+      "htmlSrc": "pages/elder-home.html",
+      "pageType": "task-driven",
+      "visualNorthStar": "深红枫叶背景 + 老人问候 + 底部4个大入口按钮（求助/陪伴/健康/服务）",
+      "compositionPattern": "large/medium/small stacked",
+      "continuityAnchors": [
+        "枫叶红品牌色 #7C2020",
+        "暖米色卡片 #FFFFFF",
+        "Noto Sans SC 18px+",
+        "底部导航64px"
+      ],
+      "mobileNavigationActiveKey": "home",
+      "imagePlan": [
+        {
+          "filename": "elder-woman-portrait.jpg",
+          "role": "supporting-content",
+          "sectionType": "testimonial"
+        }
+      ],
+      "componentPlan": [
+        "老人头像问候区",
+        "下次提醒卡片",
+        "一键求助大按钮",
+        "语音陪伴入口",
+        "健康数据入口",
+        "服务预约入口",
+        "底部导航"
+      ]
+    },
+    {
+      "nodeId": "page-family-home",
+      "pageIndex": 3,
+      "title": "家属首页",
+      "htmlSrc": "pages/family-home.html",
+      "pageType": "info-dense",
+      "visualNorthStar": "暖米色背景 + 老人健康摘要卡片 + 预警红条 + 快捷操作入口",
+      "compositionPattern": "large/medium/small stacked",
+      "continuityAnchors": [
+        "枫叶红品牌色 #7C2020",
+        "暖米色卡片 #FFFFFF",
+        "Noto Sans SC 18px+",
+        "底部导航64px"
+      ],
+      "mobileNavigationActiveKey": "home",
+      "imagePlan": [
+        {
+          "filename": "elder-man-portrait.jpg",
+          "role": "supporting-content",
+          "sectionType": "testimonial"
+        }
+      ],
+      "componentPlan": [
+        "老人状态摘要卡片",
+        "设备在线状态",
+        "最近健康指标",
+        "预警红条",
+        "快捷联系按钮",
+        "健康报告入口",
+        "底部导航"
+      ]
+    },
+    {
+      "nodeId": "page-elder-sos",
+      "pageIndex": 4,
+      "title": "一键求助",
+      "htmlSrc": "pages/elder-sos.html",
+      "pageType": "task-driven",
+      "visualNorthStar": "全屏深红背景 + 超大圆形求助按钮 + 倒计时 + 取消/联系选项",
+      "compositionPattern": "full-screen scenes",
+      "continuityAnchors": [
+        "枫叶红品牌色 #7C2020",
+        "Noto Sans SC 18px+"
+      ],
+      "mobileNavigationActiveKey": "home",
+      "imagePlan": [],
+      "componentPlan": [
+        "超大求助按钮",
+        "倒计时显示",
+        "取消按钮",
+        "联系家属/社区/急救选项",
+        "位置授权提示"
+      ]
+    },
+    {
+      "nodeId": "page-health-data",
+      "pageIndex": 5,
+      "title": "健康数据",
+      "htmlSrc": "pages/health-data.html",
+      "pageType": "info-dense",
+      "visualNorthStar": "暖米色背景 + 指标卡片(心率/血压/血氧) + 7天趋势迷你图 + 异常标记",
+      "compositionPattern": "large/medium/small stacked",
+      "continuityAnchors": [
+        "枫叶红品牌色 #7C2020",
+        "暖米色卡片 #FFFFFF",
+        "Noto Sans SC 18px+",
+        "底部导航64px"
+      ],
+      "mobileNavigationActiveKey": "health",
+      "imagePlan": [],
+      "componentPlan": [
+        "心率指标卡片+趋势图",
+        "血压指标卡片",
+        "血氧指标卡片",
+        "数据来源标注",
+        "异常时间线",
+        "底部导航"
+      ]
+    },
+    {
+      "nodeId": "page-voice-companion",
+      "pageIndex": 6,
+      "title": "语音陪伴",
+      "htmlSrc": "pages/voice-companion.html",
+      "pageType": "task-driven",
+      "visualNorthStar": "深红枫叶背景 + 超大圆形对话按钮 + 我在听状态 + 内容分类选择",
+      "compositionPattern": "full-screen scenes",
+      "continuityAnchors": [
+        "枫叶红品牌色 #7C2020",
+        "暖米色卡片 #FFFFFF",
+        "Noto Sans SC 18px+"
+      ],
+      "mobileNavigationActiveKey": "home",
+      "imagePlan": [
+        {
+          "filename": "companion-warm-illustration.jpg",
+          "role": "supporting-content",
+          "sectionType": "hero"
+        }
+      ],
+      "componentPlan": [
+        "大圆形对话按钮",
+        "我在听状态指示",
+        "内容分类(戏曲/天气/聊天)",
+        "结束陪伴按钮",
+        "非真人提示"
+      ]
+    },
+    {
+      "nodeId": "page-health-report",
+      "pageIndex": 7,
+      "title": "健康报告",
+      "htmlSrc": "pages/health-report.html",
+      "pageType": "info-dense",
+      "visualNorthStar": "暖米色背景 + 周报标题 + 异常发现卡片 + 证据链展开 + 建议列表 + 非诊断声明",
+      "compositionPattern": "large/medium/small stacked",
+      "continuityAnchors": [
+        "枫叶红品牌色 #7C2020",
+        "暖米色卡片 #FFFFFF",
+        "Noto Sans SC 18px+",
+        "底部导航64px"
+      ],
+      "mobileNavigationActiveKey": "report",
+      "imagePlan": [],
+      "componentPlan": [
+        "报告周期标题",
+        "本周发现摘要",
+        "异常事件证据链",
+        "生活建议卡片",
+        "免责声明",
+        "导出/分享按钮",
+        "底部导航"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "filename": "elder-woman-portrait.jpg",
+      "role": "supporting-content",
+      "sectionType": "testimonial",
+      "owningPage": "老人首页",
+      "status": "generated"
+    },
+    {
+      "filename": "elder-man-portrait.jpg",
+      "role": "supporting-content",
+      "sectionType": "testimonial",
+      "owningPage": "家属首页",
+      "status": "generated"
+    },
+    {
+      "filename": "companion-warm-illustration.jpg",
+      "role": "supporting-content",
+      "sectionType": "hero",
+      "owningPage": "语音陪伴",
+      "status": "generated"
+    }
+  ]
+}

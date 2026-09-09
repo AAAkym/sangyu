@@ -1,0 +1,481 @@
+page {
+  /* tabBar 实际高度约 110rpx，预留 120rpx + iPhone 底部安全区（Batch 15 布局修复） */
+  --tabbar-height: 120rpx;
+  padding-bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom));
+}
+
+/* 家属首页（还原设计稿 family-home.html：品牌栏 + 状态卡 + 健康监测面板 + 快捷操作） */
+
+.app-bar {
+  margin: calc(-1 * var(--space-lg)) calc(-1 * var(--space-lg)) 0;
+  background-color: var(--color-card);
+  border-bottom: 1rpx solid var(--color-border);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.appbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-mark {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: var(--space-xs);
+}
+
+.brand-mark-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.brand-name {
+  font-size: 38rpx;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.brand-sub {
+  font-size: 26rpx;
+  color: var(--color-text-secondary);
+  margin-left: var(--space-xs);
+}
+
+.bell {
+  font-size: 44rpx;
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 预警横幅（实体红条） */
+.alert-strip {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-danger);
+  color: var(--color-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.strip-chip {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  margin-right: var(--space-md);
+  flex-shrink: 0;
+}
+
+.strip-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.strip-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.strip-desc {
+  font-size: var(--font-desc);
+  opacity: 0.9;
+  margin-top: 4rpx;
+}
+
+.strip-cta {
+  font-size: var(--font-desc);
+  font-weight: 600;
+  text-decoration: underline;
+  flex-shrink: 0;
+}
+
+/* 老人状态卡 */
+.status-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-card);
+  border: 1rpx solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-1);
+}
+
+.avatar-ring {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: var(--radius-full);
+  border: 4rpx solid var(--sangyu-primary-200);
+  flex-shrink: 0;
+  margin-right: var(--space-md);
+}
+
+.status-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.status-name-row {
+  display: flex;
+  align-items: baseline;
+}
+
+.status-name {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.status-age {
+  font-size: 32rpx;
+  color: var(--color-text-secondary);
+  margin-left: var(--space-sm);
+}
+
+.status-line {
+  display: flex;
+  align-items: center;
+  margin-top: var(--space-xs);
+}
+
+.device-state {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+.online-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: var(--radius-full);
+  margin-right: var(--space-xs);
+}
+
+.status-sync {
+  font-size: var(--font-desc);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.call-btn {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: var(--radius-full);
+  background-color: var(--sangyu-primary-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  flex-shrink: 0;
+}
+
+/* 今日健康监测面板 */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.section-title {
+  font-size: 38rpx;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.section-sub {
+  font-size: 26rpx;
+  color: var(--color-text-tertiary);
+}
+
+.health-panel {
+  background-color: var(--color-card);
+  border: 1rpx solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+}
+
+.metric-alert {
+  background-color: var(--color-danger-soft);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.metric-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metric-name {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.trend-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 26rpx;
+  font-weight: 600;
+  padding: 4rpx 16rpx;
+  border-radius: var(--radius-full);
+  line-height: 1.4;
+}
+
+.trend-up {
+  background-color: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.trend-flat {
+  background-color: var(--sangyu-primary-50);
+  color: var(--color-text-secondary);
+}
+
+.trend-ok {
+  background-color: var(--sangyu-primary-50);
+  color: var(--color-success);
+}
+
+.metric-value-row {
+  display: flex;
+  align-items: baseline;
+  margin-top: var(--space-xs);
+}
+
+.metric-big {
+  font-size: 60rpx;
+  font-weight: 700;
+  color: var(--color-danger);
+  line-height: 1;
+}
+
+.metric-flag {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: var(--color-danger);
+  margin-left: var(--space-xs);
+}
+
+.metric-split {
+  display: flex;
+  border-top: 1rpx solid var(--color-border);
+}
+
+.metric-cell {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+}
+
+.metric-cell:first-child {
+  border-right: 1rpx solid var(--color-border);
+}
+
+.metric-mid {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.metric-unit {
+  font-size: 26rpx;
+  color: var(--color-text-tertiary);
+  margin-left: var(--space-xs);
+}
+
+.metric-cell .trend-chip {
+  margin-top: var(--space-sm);
+}
+
+/* 快捷操作：主次分级 */
+.action-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-radius: var(--radius-lg);
+  min-height: 112rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+  box-shadow: var(--shadow-2);
+}
+
+.action-row {
+  display: flex;
+  margin-top: var(--space-md);
+}
+
+.action-secondary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-card);
+  color: var(--color-text);
+  border: 1rpx solid var(--color-border);
+  border-radius: var(--radius-lg);
+  min-height: 104rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.action-secondary:first-child {
+  margin-right: var(--space-md);
+}
+
+/* 报告/功能行 */
+.report-row {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-card);
+  border: 1rpx solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-1);
+}
+
+.row-icon {
+  font-size: 40rpx;
+  margin-right: var(--space-md);
+  flex-shrink: 0;
+}
+
+.row-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.row-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.row-desc {
+  display: block;
+  font-size: var(--font-desc);
+  color: var(--color-text-secondary);
+  margin-top: 4rpx;
+}
+
+.row-arrow {
+  font-size: var(--font-title);
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+/* 状态 chip：琥珀"需要留意"档（正常绿/异常红已有 trend-ok/trend-up） */
+.trend-watch {
+  background-color: var(--color-warning-soft);
+  color: var(--color-warning-text);
+}
+
+/* P2 主次入口：健康数据为主入口，视觉更强 */
+.row-item--featured {
+  background-color: var(--sangyu-primary-50);
+  border-left: 8rpx solid var(--color-primary);
+}
+
+.row-item--featured .row-title {
+  font-size: 38rpx;
+  font-weight: 700;
+}
+
+/* 列表进入 stagger（只动 transform/opacity） */
+.report-row,
+.action-primary,
+.action-row {
+  animation: fade-up 0.4s var(--ease-out) backwards;
+}
+
+.action-row {
+  animation-delay: 0.06s;
+}
+
+.report-row {
+  animation-delay: 0.12s;
+}
+
+/* 图标色：统一品牌琥珀 */
+.row-icon {
+  color: var(--color-primary);
+}
+/* ===== 功能入口分组（Batch 15：组间留白 > 组内分隔线 > 行内间距） ===== */
+.group-block {
+  margin-bottom: var(--space-lg);
+}
+
+.group-title {
+  font-size: var(--font-desc);
+  color: var(--color-text-tertiary);
+  margin: 0 var(--space-xs) var(--space-sm);
+  letter-spacing: 0.04em;
+}
+
+.group-card {
+  background-color: var(--color-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+
+/* 组内行：去掉独立卡片描边，改极浅分隔线；按压整行淡底 */
+.group-item {
+  display: flex;
+  align-items: center;
+  min-height: 112rpx;
+  padding: var(--space-sm) var(--space-lg);
+  transition: background-color 150ms var(--ease-out), transform 150ms var(--ease-out);
+}
+
+.group-item + .group-item {
+  border-top: 1rpx solid var(--color-border);
+}
+
+.group-item:active {
+  background-color: var(--color-muted);
+  transform: scale(0.99);
+}
+
+/* 箭头弱化：默认更淡，按压提亮（替代 8 个一模一样的深色箭头） */
+.group-item .row-arrow {
+  color: var(--color-text-tertiary);
+  opacity: 0.6;
+  transition: color 150ms var(--ease-out);
+}
+
+.group-item:active .row-arrow {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+
+.group-item .row-icon {
+  width: 44rpx;
+  height: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-md);
+  color: var(--color-primary);
+}

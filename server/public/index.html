@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!-- 桑榆智伴 · 本地启动页：内容与小程序真实页面/接口一一对应 -->
+<!-- 双端入口文案取自 miniprogram/pages/family/family.js 与 pages/elder/elder.wxml；
+     接口清单取自 server/routes/*.js；实时面板调用的是与小程序相同的 /api 接口与 Mock 身份 -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>桑榆智伴 · 本地开发后端</title>
+<style>
+  :root {
+    --primary: #1a73e8;        /* 与小程序 tabBar selectedColor 一致 */
+    --primary-weak: #e8f0fe;
+    --sos: #e53935;            /* 与小程序 sos-btn 一致 */
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --text: #333333;
+    --text-sub: #888888;
+    --text-faint: #999999;
+    --ok: #188038;
+    --ok-weak: #e6f4ea;
+    --off-weak: #f1f3f4;
+    --border: #ebedf0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    line-height: 1.6;
+    padding: 32px 16px 64px;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+
+  /* ===== 头部 ===== */
+  header.hero { margin-bottom: 28px; }
+  .hero__row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  h1 { font-size: 28px; letter-spacing: 1px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; padding: 3px 12px; border-radius: 999px; white-space: nowrap;
+  }
+  .badge--ok { background: var(--ok-weak); color: var(--ok); }
+  .badge__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+  .hero__desc { color: var(--text-sub); font-size: 14px; margin-top: 8px; max-width: 760px; }
+  .hero__desc code {
+    background: #eceff3; border-radius: 4px; padding: 1px 6px; font-size: 13px; color: #444;
+  }
+
+  /* ===== 统计条 ===== */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .stat {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px 16px; text-align: center;
+  }
+  .stat__num { font-size: 22px; font-weight: 700; color: var(--primary); }
+  .stat__label { font-size: 12px; color: var(--text-faint); margin-top: 2px; }
+
+  /* ===== 通用区块 ===== */
+  section { margin-bottom: 28px; }
+  h2 { font-size: 18px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  h2::before { content: ""; width: 4px; height: 18px; border-radius: 2px; background: var(--primary); display: inline-block; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .muted { color: var(--text-faint); font-size: 13px; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ===== 主闭环 ===== */
+  .flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px; }
+  .flow__step {
+    flex: 1 1 150px; background: var(--primary-weak); border-radius: 10px;
+    padding: 12px 14px; position: relative; min-width: 150px;
+  }
+  .flow__step b { display: block; font-size: 14px; color: var(--primary); }
+  .flow__step span { font-size: 12px; color: var(--text-sub); }
+  .flow__arrow { align-self: center; color: var(--primary); font-size: 18px; font-weight: 700; }
+
+  /* ===== 双端 ===== */
+  .roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .role { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .role__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .role__title { font-size: 17px; font-weight: 700; }
+  .role__tabs { font-size: 12px; color: var(--text-faint); }
+  .role__sub { color: var(--text-sub); font-size: 13px; margin-bottom: 14px; }
+  .entry {
+    border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .entry:last-child { margin-bottom: 0; }
+  .entry__icon { width: 36px; height: 36px; border-radius: 8px; background: var(--primary-weak);
+    display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .entry__icon--sos { background: #fdeceb; }
+  .entry__title { font-size: 14px; font-weight: 600; }
+  .entry__desc { font-size: 12.5px; color: var(--text-sub); }
+  .entry__meta { margin-left: auto; font-size: 12px; color: var(--text-faint); white-space: nowrap; }
+  .sos-mini {
+    background: var(--sos); color: #fff; border-radius: 10px; text-align: center;
+    padding: 18px; font-size: 18px; font-weight: 700; letter-spacing: 4px; margin-bottom: 10px;
+  }
+  .sos-mini small { display: block; font-size: 12px; font-weight: 400; letter-spacing: 0; margin-top: 4px; opacity: .85; }
+
+  /* ===== 页面清单 ===== */
+  .pages { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; }
+  .page-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+  .page-item__row { display: flex; align-items: center; gap: 8px; }
+  .page-item__path { font-family: Consolas, Monaco, monospace; font-size: 12.5px; color: var(--text-sub); }
+  .page-item__title { font-size: 14px; font-weight: 600; flex: 1; }
+  .pill { font-size: 11.5px; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+  .pill--on { background: var(--ok-weak); color: var(--ok); }
+  .pill--off { background: var(--off-weak); color: var(--text-faint); }
+  .page-item__note { font-size: 12.5px; color: var(--text-sub); margin-top: 4px; }
+
+  /* ===== 实时数据面板 ===== */
+  .panel-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  .panel-head .spacer { flex: 1; }
+  button.btn {
+    border: none; border-radius: 8px; padding: 7px 14px; font-size: 13px; cursor: pointer;
+    background: var(--primary); color: #fff; font-family: inherit;
+  }
+  button.btn:disabled { opacity: .5; cursor: default; }
+  button.btn--ghost { background: #fff; color: var(--primary); border: 1px solid var(--primary); }
+  button.btn--sos { background: var(--sos); }
+  .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .panel { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px;
+    display: flex; flex-direction: column; max-height: 480px; }
+  .panel > div:not(.panel__title) { overflow-y: auto; }
+  .panel__title { font-size: 13.5px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .panel__title code { font-size: 11px; color: var(--text-faint); font-weight: 400; }
+  .empty { color: var(--text-faint); font-size: 12.5px; padding: 10px 4px; }
+  .rec { background: #fff; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; border: 1px solid var(--border); }
+  .rec:last-child { margin-bottom: 0; }
+  .rec__title { font-size: 13.5px; font-weight: 600; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .rec__time { font-size: 12px; color: var(--text-faint); margin-top: 2px; }
+  .rec .pill--open { background: #fdeceb; color: var(--sos); }
+  .rec .pill--acknowledged { background: #fff8e1; color: #b26a00; }
+  .rec .pill--resolved { background: var(--ok-weak); color: var(--ok); }
+  .rec__actions { margin-top: 8px; }
+  .rec__actions .btn { padding: 4px 12px; font-size: 12px; }
+
+  /* ===== 接口清单 ===== */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--text-faint); font-weight: 500; font-size: 12.5px; }
+  tr:last-child td { border-bottom: none; }
+  code.path { font-family: Consolas, Monaco, monospace; font-size: 12.5px; background: #f6f8fa; padding: 2px 6px; border-radius: 4px; }
+  .method { font-family: Consolas, monospace; font-size: 11.5px; font-weight: 700; border-radius: 4px; padding: 1px 7px; color: #fff; }
+  .method--get { background: #188038; }
+  .method--post { background: var(--primary); }
+
+  /* ===== 联调指南 ===== */
+  .guide { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .guide h3 { font-size: 14px; margin-bottom: 8px; }
+  .guide ul { list-style: none; }
+  .guide li { font-size: 13px; color: var(--text-sub); padding: 4px 0 4px 18px; position: relative; }
+  .guide li::before { content: "·"; position: absolute; left: 4px; color: var(--primary); font-weight: 700; }
+  .guide code { background: #eceff3; border-radius: 4px; padding: 1px 6px; font-size: 12px; color: #444;
+    font-family: Consolas, Monaco, monospace; }
+
+  footer { text-align: center; color: var(--text-faint); font-size: 12.5px; margin-top: 36px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero__row">
+      <h1>桑榆智伴</h1>
+      <span class="badge badge--ok"><span class="badge__dot"></span>服务运行中 · 端口 <span id="port">3000</span></span>
+      <span class="badge pill--off" style="background:var(--off-weak);color:var(--text-sub)">本地开发模式 · JSON 文件存储</span>
+    </div>
+    <p class="hero__desc">
+      双端微信小程序（<b>家属端</b> / <b>适老化老人端</b>）的本地后端。Express + JSON 文件模拟数据库，
+      接口路径与后期微信云函数一一对应，迁移时小程序侧只需修改 <code>miniprogram/utils/request.js</code>。
+      本页展示的入口、文案与接口均取自小程序真实代码。
+    </p>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <section>
+    <h2>MVP 主闭环</h2>
+    <div class="card">
+      <div class="flow">
+        <div class="flow__step"><b>① 绑定设备</b><span>家属绑定老人端机器人 / 健康设备</span></div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__step"><b>② 采集健康数据</b><span>心率、血压等时序数据</span></div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__step"><b>③ 生成健康报告</b><span>AI 周期报告与康养建议</span></div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__step"><b>④ 触发预警</b><span>老人一键求助 / 规则判定</span></div>
+        <div class="flow__arrow">→</div>
+        <div class="flow__step"><b>⑤ 处理 SOS</b><span>家属确认接单 → 处理完成</span></div>
+      </div>
+      <p class="muted" style="margin-top:12px">服务链路 A：预约社区医护 / 志愿者陪伴 / 医疗机构复诊；服务链路 B：机器人远程语音监护。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>双端功能（与小程序首页入口一致）</h2>
+    <div class="roles">
+      <div class="role">
+        <div class="role__head">
+          <span class="role__title">👵 老人端 · 适老化</span>
+          <span class="role__tabs">底部 tab：仅「首页」</span>
+        </div>
+        <div class="role__sub">以适老化交互为中心：大字体、高对比，一键求助保持首屏固定可见。</div>
+        <div class="sos-mini">一键求助<small>按下后，已绑定的家属端会立即收到预警</small></div>
+        <div class="entry">
+          <div class="entry__icon">❤️</div>
+          <div><div class="entry__title">我的健康</div><div class="entry__desc">今日健康数据（简要）</div></div>
+        </div>
+        <div class="entry">
+          <div class="entry__icon">🎙️</div>
+          <div><div class="entry__title">语音助手</div><div class="entry__desc">呼叫家人 / 语音交互</div></div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role__head">
+          <span class="role__title">👨‍👩‍👧 家属端</span>
+          <span class="role__tabs">底部 tab：首页 / 我的</span>
+        </div>
+        <div class="role__sub">以监护协同和服务调度为中心，MVP 六大功能入口。</div>
+        <div class="entry">
+          <div class="entry__icon">🔗</div>
+          <div><div class="entry__title">绑定设备</div><div class="entry__desc">绑定老人端机器人 / 健康设备</div></div>
+          <span class="entry__meta">POST /api/bindDevice</span>
+        </div>
+        <div class="entry">
+          <div class="entry__icon">📈</div>
+          <div><div class="entry__title">健康数据</div><div class="entry__desc">心率、血压等趋势查看</div></div>
+          <span class="entry__meta">GET /api/health</span>
+        </div>
+        <div class="entry">
+          <div class="entry__icon">🚨</div>
+          <div><div class="entry__title">告警与求助</div><div class="entry__desc">SOS 预警确认 / 转社区处理</div></div>
+          <span class="entry__meta">/api/alert/*</span>
+        </div>
+        <div class="entry">
+          <div class="entry__icon">📞</div>
+          <div><div class="entry__title">语音通话</div><div class="entry__desc">远程呼叫老人端</div></div>
+          <span class="entry__meta">待开发</span>
+        </div>
+        <div class="entry">
+          <div class="entry__icon">🗓️</div>
+          <div><div class="entry__title">服务预约</div><div class="entry__desc">社区医护 / 志愿者 / 复诊</div></div>
+          <span class="entry__meta">/api/appointment/*</span>
+        </div>
+        <div class="entry">
+          <div class="entry__icon">🧾</div>
+          <div><div class="entry__title">AI 健康报告</div><div class="entry__desc">周期健康报告与建议</div></div>
+          <span class="entry__meta">/api/report/*</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>小程序页面清单（app.json 共 10 页）</h2>
+    <div class="pages" id="pages"></div>
+  </section>
+
+  <section>
+    <h2>实时数据面板（与小程序同接口、同 Mock 身份）</h2>
+    <div class="card">
+      <div class="panel-head">
+        <span class="muted">以下数据由本页直接请求后端真实接口获得，与小程序页面看到的一致；可在这里触发动作后，回小程序刷新验证。</span>
+        <span class="spacer"></span>
+        <button class="btn btn--sos" id="btnSos">老人端一键求助</button>
+        <button class="btn btn--ghost" id="btnMock">写入 Mock 健康数据</button>
+        <button class="btn btn--ghost" id="btnBatch">写入 7 天演示数据</button>
+        <button class="btn btn--ghost" id="btnReport">生成健康报告</button>
+        <button class="btn" id="btnRefresh">刷新</button>
+      </div>
+      <div class="panels">
+        <div class="panel">
+          <div class="panel__title">老人健康数据 <code>GET /api/health?openid=mock_elder_001</code></div>
+          <div id="panelHealth"><div class="empty">加载中…</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel__title">家属告警列表 <code>GET /api/alert/list?familyOpenid=mock_family_001</code></div>
+          <div id="panelAlerts"><div class="empty">加载中…</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel__title">家属预约记录 <code>GET /api/appointment/list?openid=mock_family_001</code></div>
+          <div id="panelAppt"><div class="empty">加载中…</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel__title">最新健康报告 <code>GET /api/report/list?openid=mock_elder_001</code></div>
+          <div id="panelReport"><div class="empty">加载中…</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>接口清单（路径与后期云函数一一对应）</h2>
+    <div class="card" style="padding:6px 0">
+      <table id="apiTable"></table>
+    </div>
+  </section>
+
+  <section>
+    <h2>本地联调指南</h2>
+    <div class="guide">
+      <div class="card">
+        <h3>身份与地址</h3>
+        <ul>
+          <li>Mock 身份（<code>miniprogram/utils/config.js</code>）：家属 <code>mock_family_001</code>、老人 <code>mock_elder_001</code></li>
+          <li>小程序 BASE_URL：<code>http://localhost:3000</code>（<code>miniprogram/utils/request.js</code>）</li>
+          <li><code>server/data/relationships.json</code> 已预置两身份的监护关系，家属端开箱即可看到老人告警</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>启动与自检</h3>
+        <ul>
+          <li>启动后端：<code>cd server && npm start</code></li>
+          <li>一键自检全部接口：<code>npm run smoke</code>（需先启动服务）</li>
+          <li>开发者工具需勾选「不校验合法域名」（设置 → 项目设置 → 本地设置）</li>
+          <li>服务状态 JSON：<a href="/healthz"><code>GET /healthz</code></a>（含各 JSON 文件记录数）</li>
+          <li>数据落盘：<code>server/data/*.json</code>，可随时查看 / 手动清理</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>桑榆智伴 · 人工智能赋能养老服务治理平台 —— 家属协同照护 + 老人自助照护 + 可信健康事件闭环</footer>
+</div>
+
+<script>
+  // ===== 静态内容（与小程序代码一致，改小程序时同步维护）=====
+  const PAGES = [
+    { path: 'pages/login/login',           title: '登录 · 身份选择',   note: '「我是家属 / 我是老人」，写入角色后跳对应首页', status: 'on' },
+    { path: 'pages/family/family',         title: '家属端首页',        note: 'MVP 六大功能入口（见上方家属端）',             status: 'on' },
+    { path: 'pages/elder/elder',           title: '老人端首页',        note: '一键求助 + 我的健康 + 语音助手',               status: 'on' },
+    { path: 'pages/mine/mine',             title: '我的',              note: '当前身份 / 退出登录·切换身份',                 status: 'on' },
+    { path: 'pages/bind-device/bind-device', title: '绑定设备',        note: '输入机身码绑定（本地任意字符串即可，如 SB-001）', status: 'on' },
+    { path: 'pages/health/health',         title: '健康数据',          note: '双端复用，支持写入 Mock 数据',                 status: 'on' },
+    { path: 'pages/alert/alert',           title: '告警与求助',        note: '老人端一键求助；家属端列表 + 确认接单/处理完成', status: 'on' },
+    { path: 'pages/appointment/appointment', title: '服务预约',        note: '社区医护 / 志愿者陪伴 / 复诊，提交与记录',      status: 'on' },
+    { path: 'pages/voice/voice',           title: '语音通话',          note: '占位页：实时音视频方案调研，待开发',           status: 'off' },
+    { path: 'pages/report/report',         title: 'AI 健康报告',       note: '前端仍为占位页；后端报告接口已开放（规则引擎，见接口清单）', status: 'off' }
+  ];
+
+  const APIS = [
+    { method: 'POST', path: '/api/login',              desc: '登录建档（openid 不存在则创建）', page: '登录页',                    status: 'on' },
+    { method: 'POST', path: '/api/updateRole',         desc: '保存角色 family / elder',         page: '登录页 / 我的页',           status: 'on' },
+    { method: 'POST', path: '/api/bindDevice',         desc: '按机身码绑定设备',                page: '绑定设备',                  status: 'on' },
+    { method: 'GET',  path: '/api/health?openid=',     desc: '查询健康记录（时间倒序）',        page: '健康数据',                  status: 'on' },
+    { method: 'POST', path: '/api/health/mock',        desc: '写入一条 Mock 健康数据',          page: '健康数据',                  status: 'on' },
+    { method: 'POST', path: '/api/health/mock/batch',  desc: '一次生成最近 7 天演示数据（每天 1 条）', page: '健康数据 / 报告演示', status: 'on' },
+    { method: 'POST', path: '/api/relationship/create', desc: '建立监护关系（幂等）',           page: '预置 / 后续管理台',         status: 'on' },
+    { method: 'POST', path: '/api/alert/create',       desc: '老人一键求助，生成 open 告警',    page: '老人端首页 / 告警页',       status: 'on' },
+    { method: 'GET',  path: '/api/alert/list?familyOpenid=', desc: '家属查名下老人告警',          page: '告警与求助（家属端）',      status: 'on' },
+    { method: 'POST', path: '/api/alert/update',       desc: '状态机校验：open → acknowledged → resolved', page: '告警与求助（家属端）', status: 'on' },
+    { method: 'POST', path: '/api/appointment/create', desc: '创建预约（社区医护/志愿者陪伴/复诊）', page: '服务预约',             status: 'on' },
+    { method: 'GET',  path: '/api/appointment/list?openid=', desc: '查询预约记录',                page: '服务预约',                  status: 'on' },
+    { method: 'POST', path: '/api/report/generate',    desc: '规则引擎生成近 7 天报告：摘要 + 建议 + 数据质量 + 免责声明（不调用大模型）', page: 'AI 健康报告', status: 'on' },
+    { method: 'GET',  path: '/api/report/list?openid=', desc: '最近 5 份报告摘要（家属 openid 自动解析到关联老人）', page: 'AI 健康报告', status: 'on' },
+    { method: 'GET',  path: '/api/report/detail?id=',  desc: '按 id 返回完整报告',              page: 'AI 健康报告',               status: 'on' }
+  ];
+
+  const ALERT_STATUS_TEXT = { open: '待处理', acknowledged: '已接单', resolved: '已处理' }; // 与 pages/alert/alert.js 一致
+  const MOCK = { family: 'mock_family_001', elder: 'mock_elder_001' };                     // 与 utils/config.js 一致
+
+  // ===== 渲染静态区块 =====
+  const pill = (on, onText, offText) =>
+    `<span class="pill ${on ? 'pill--on' : 'pill--off'}">${on ? onText : offText}</span>`;
+
+  document.getElementById('pages').innerHTML = PAGES.map(p => `
+    <div class="page-item">
+      <div class="page-item__row">
+        <span class="page-item__title">${p.title}</span>
+        <code class="page-item__path">${p.path}</code>
+        ${pill(p.status === 'on', '已联调', '占位')}
+      </div>
+      <div class="page-item__note">${p.note}</div>
+    </div>`).join('');
+
+  document.getElementById('apiTable').innerHTML = `
+    <tr><th>方法</th><th>路径</th><th>说明</th><th>对应小程序页面</th><th>状态</th></tr>` +
+    APIS.map(a => `
+    <tr>
+      <td><span class="method method--${a.method.toLowerCase()}">${a.method}</span></td>
+      <td><code class="path">${a.path}</code></td>
+      <td>${a.desc}</td>
+      <td>${a.page}</td>
+      <td>${pill(a.status === 'on', '开放', '未开放')}</td>
+    </tr>`).join('');
+
+  // ===== 服务状态 /healthz：运行时长 + 数据文件记录数 =====
+  async function loadStats() {
+    try {
+      const res = await fetch('/healthz').then(r => r.json());
+      if (res.code !== 0) return;
+      const d = res.data || {};
+      const up = d.uptimeText || '-';
+      const counts = d.counts || {};
+      const items = [
+        ['健康记录', counts.health], ['告警', counts.alerts], ['预约', counts.appointments],
+        ['报告', counts.reports], ['设备', counts.devices], ['监护关系', counts.relationships], ['运行时长', up, true]
+      ];
+      document.getElementById('stats').innerHTML = items.map(([label, val, isText]) => `
+        <div class="stat">
+          <div class="stat__num" style="${isText ? 'font-size:14px;line-height:30px' : ''}">${val ?? '-'}</div>
+          <div class="stat__label">${label}</div>
+        </div>`).join('');
+    } catch (e) { /* 服务不可见时静默，页面其余部分不受影响 */ }
+  }
+
+  // ===== 实时数据面板：与小程序页面相同的请求与展示逻辑 =====
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const timeText = (iso) => iso ? new Date(iso).toLocaleString() : '';
+
+  async function loadHealth() {
+    const el = document.getElementById('panelHealth');
+    try {
+      const records = await fetch(`/api/health?openid=${MOCK.elder}`).then(r => r.json());
+      if (records.code !== 0) throw new Error(records.msg);
+      el.innerHTML = records.data.length ? records.data.map(r => `
+        <div class="rec">
+          <div class="rec__title">心率 ${esc(r.heartRate)} 次/分，血压 ${esc(r.bloodPressure) || '—'}</div>
+          <div class="rec__time">${esc(timeText(r.createdAt))}</div>
+        </div>`).join('')
+        : '<div class="empty">暂无数据，点上方「写入 Mock 健康数据」生成一条</div>';
+    } catch (e) { el.innerHTML = `<div class="empty">加载失败：${esc(e.message)}</div>`; }
+  }
+
+  async function loadAlerts() {
+    const el = document.getElementById('panelAlerts');
+    try {
+      const res = await fetch(`/api/alert/list?familyOpenid=${MOCK.family}`).then(r => r.json());
+      if (res.code !== 0) throw new Error(res.msg);
+      el.innerHTML = res.data.length ? res.data.map(a => `
+        <div class="rec">
+          <div class="rec__title">${esc(a.elderOpenid)} 发起求助
+            <span class="pill pill--${esc(a.status)}">${esc(ALERT_STATUS_TEXT[a.status] || a.status)}</span>
+          </div>
+          <div class="rec__time">${esc(timeText(a.createdAt))}</div>
+          ${a.status === 'open'
+            ? `<div class="rec__actions"><button class="btn" data-alert="${esc(a.id)}" data-status="acknowledged">确认接单</button></div>`
+            : a.status === 'acknowledged'
+              ? `<div class="rec__actions"><button class="btn" data-alert="${esc(a.id)}" data-status="resolved">处理完成</button></div>`
+              : ''}
+        </div>`).join('')
+        : '<div class="empty">暂无告警。点上方「老人端一键求助」后会显示在这里。</div>';
+    } catch (e) { el.innerHTML = `<div class="empty">加载失败：${esc(e.message)}</div>`; }
+  }
+
+  async function loadAppointments() {
+    const el = document.getElementById('panelAppt');
+    try {
+      const res = await fetch(`/api/appointment/list?openid=${MOCK.family}`).then(r => r.json());
+      if (res.code !== 0) throw new Error(res.msg);
+      el.innerHTML = res.data.length ? res.data.map(a => `
+        <div class="rec">
+          <div class="rec__title">${esc(a.type)}</div>
+          <div class="rec__time">${esc(a.detail || '无补充说明')} · ${esc(timeText(a.createdAt))}</div>
+        </div>`).join('')
+        : '<div class="empty">暂无预约记录</div>';
+    } catch (e) { el.innerHTML = `<div class="empty">加载失败：${esc(e.message)}</div>`; }
+  }
+
+  async function loadReport() {
+    const el = document.getElementById('panelReport');
+    try {
+      const res = await fetch(`/api/report/list?openid=${MOCK.elder}`).then(r => r.json());
+      if (res.code !== 0) throw new Error(res.msg);
+      const qualityText = { good: '数据良好', partial: '数据部分缺失', insufficient: '数据不足' };
+      el.innerHTML = res.data.length ? res.data.map(r => `
+        <div class="rec">
+          <div class="rec__title">${esc(r.periodStart)} ~ ${esc(r.periodEnd)}
+            <span class="pill ${r.dataQuality && r.dataQuality.status === 'good' ? 'pill--resolved' : 'pill--acknowledged'}">${esc(r.dataQuality ? (qualityText[r.dataQuality.status] || r.dataQuality.status) : '')}</span>
+          </div>
+          <div class="rec__time">${esc(r.summary)}</div>
+          <div class="rec__time">生成于 ${esc(timeText(r.generatedAt))} · ${esc(r.modelVersion)}（规则引擎，非大模型）</div>
+        </div>`).join('')
+        : '<div class="empty">暂无报告，点上方「生成健康报告」（需先有健康数据，可用「写入 7 天演示数据」）</div>';
+    } catch (e) { el.innerHTML = `<div class="empty">加载失败：${esc(e.message)}</div>`; }
+  }
+
+  const refreshAll = () => { loadStats(); loadHealth(); loadAlerts(); loadAppointments(); loadReport(); };
+  document.getElementById('btnRefresh').addEventListener('click', refreshAll);
+
+  // 触发「一键求助」/「写入 Mock 健康数据」——与小程序页面按钮调用同一接口
+  const post = (url, body) =>
+    fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
+      .then(r => r.json());
+
+  document.getElementById('btnSos').addEventListener('click', async (e) => {
+    const btn = e.currentTarget; btn.disabled = true;
+    try { const r = await post('/api/alert/create', { openid: MOCK.elder }); alert(r.code === 0 ? '已发起一键求助，家属端将收到预警' : r.msg); }
+    finally { btn.disabled = false; refreshAll(); }
+  });
+
+  document.getElementById('btnMock').addEventListener('click', async (e) => {
+    const btn = e.currentTarget; btn.disabled = true;
+    try { const r = await post('/api/health/mock', { openid: MOCK.elder, heartRate: 88, bloodPressure: '128/82' }); if (r.code !== 0) alert(r.msg); }
+    finally { btn.disabled = false; refreshAll(); }
+  });
+
+  document.getElementById('btnBatch').addEventListener('click', async (e) => {
+    const btn = e.currentTarget; btn.disabled = true;
+    try { const r = await post('/api/health/mock/batch', { openid: MOCK.elder }); if (r.code !== 0) alert(r.msg); }
+    finally { btn.disabled = false; refreshAll(); }
+  });
+
+  document.getElementById('btnReport').addEventListener('click', async (e) => {
+    const btn = e.currentTarget; btn.disabled = true;
+    try { const r = await post('/api/report/generate', { openid: MOCK.elder }); if (r.code !== 0) alert(r.msg); }
+    finally { btn.disabled = false; refreshAll(); }
+  });
+
+  // 告警处理按钮：与小程序 alert 页一致的状态机流转
+  document.getElementById('panelAlerts').addEventListener('click', async (e) => {
+    const btn = e.target.closest('button[data-alert]');
+    if (!btn) return;
+    btn.disabled = true;
+    const r = await post('/api/alert/update', { alertId: btn.dataset.alert, status: btn.dataset.status });
+    if (r.code !== 0) alert(r.msg);
+    loadAlerts();
+  });
+
+  refreshAll();
+</script>
+</body>
+</html>

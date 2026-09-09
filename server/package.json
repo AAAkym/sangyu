@@ -1,0 +1,18 @@
+{
+  "name": "sangyu-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "桑榆智伴本地开发后端：Express + JSON 文件存储，接口形状与后期云函数一一对应",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node --test tests/validators.test.js tests/ruleEngine.test.js tests/chatEngine.test.js",
+    "smoke": "node smoke-test.js",
+    "spark:check": "node scripts/spark-check.js",
+    "demo:reset": "node scripts/demo-reset.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

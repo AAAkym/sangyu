@@ -1,0 +1,177 @@
+<view class="page {{fontClass}}">
+  <!-- 顶部品牌栏 -->
+  <view class="app-bar">
+    <view class="appbar-brand">
+      <view class="brand-mark"><image class="brand-mark-img" src="/assets/brand/symbol.png" mode="aspectFit" aria-label="桑榆智伴标志" /></view>
+      <text class="brand-name">桑榆智伴</text>
+      <text class="brand-sub">· 家属端</text>
+    </view>
+    <navigator class="bell" url="/pages/alert/alert" aria-label="预警中心"><view class="ico ico-alert"></view></navigator>
+  </view>
+
+  <view class="content">
+    <!-- 预警中心横幅（有待处理预警才显示） -->
+    <navigator wx:if="{{pendingCount > 0}}" class="alert-strip" url="/pages/alert/alert">
+      <view class="strip-chip"><view class="ico ico-alert"></view></view>
+      <view class="strip-body">
+        <view class="strip-title">您有 {{pendingCount}} 条待处理预警</view>
+        <view class="strip-desc">老人求助与设备自动预警，实时提醒</view>
+      </view>
+      <text class="strip-cta">立即查看 ›</text>
+    </navigator>
+
+    <!-- 老人状态卡 -->
+    <view class="status-card">
+      <image class="avatar-ring" src="/assets/elder-man-portrait.jpg" mode="aspectFill" />
+      <view class="status-meta">
+        <view class="status-name-row">
+          <text class="status-name">{{elderName}}</text>
+          <text wx:if="{{elderAge}}" class="status-age">{{elderAge}}</text>
+        </view>
+        <view wx:if="{{deviceTag}}" class="status-line">
+          <view class="device-state">
+            <view class="online-dot" style="background-color: {{deviceTag.color}}"></view>
+            <text>{{deviceTag.text}}</text>
+          </view>
+        </view>
+        <view class="status-sync">最后同步 · {{syncText}}</view>
+      </view>
+      <navigator class="call-btn" url="/pages/voice/voice" aria-label="联系老人"><view class="ico ico-phone"></view></navigator>
+    </view>
+
+    <!-- 今日健康监测（真实数据；无数据显示 "—"） -->
+    <view class="section-head">
+      <text class="section-title">今日健康监测</text>
+      <text class="section-sub">{{panelHint}}</text>
+    </view>
+    <view class="health-panel">
+      <view class="metric {{hrState.key === 'alert' ? 'metric-alert' : ''}}">
+        <view class="metric-head">
+          <text class="metric-name">心率</text>
+          <view class="trend-chip trend-{{hrChip}}" style="color: {{hrState.color}}; background-color: {{hrState.soft}};">{{hrState.text}}</view>
+        </view>
+        <view class="metric-value-row">
+          <text class="metric-big" style="color: {{hrState.color}}">{{hrText}}</text>
+          <text class="metric-unit">bpm</text>
+          <text class="metric-flag">{{hrFlag}}</text>
+        </view>
+      </view>
+      <view class="metric-split">
+        <view class="metric-cell">
+          <view class="metric-head"><text class="metric-name">血压</text></view>
+          <view class="metric-value-row">
+            <text class="metric-mid" style="color: {{bpState.color}}">{{bpText}}</text>
+            <text class="metric-unit">mmHg</text>
+          </view>
+          <view class="trend-chip trend-{{bpChip}}" style="color: {{bpState.color}}; background-color: {{bpState.soft}};">{{bpState.text}}</view>
+        </view>
+        <view class="metric-cell">
+          <view class="metric-head"><text class="metric-name">血氧</text></view>
+          <view class="metric-value-row">
+            <text class="metric-mid" style="color: {{spo2State.color}}">{{spo2Text}}</text>
+            <text class="metric-unit">%</text>
+          </view>
+          <view class="trend-chip trend-{{spo2Chip}}" style="color: {{spo2State.color}}; background-color: {{spo2State.soft}};">{{spo2State.text}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 主入口：看今天的心率（保持在页面上方突出位置） -->
+    <navigator class="report-row row-item--featured" url="/pages/health/health">
+      <view class="row-icon"><view class="ico ico-pulse"></view></view>
+      <view class="row-meta">
+        <text class="row-title">看今天的心率</text>
+        <text class="row-desc">最新一条 {{panelHint}}</text>
+      </view>
+      <text class="row-arrow">›</text>
+    </navigator>
+
+    <!-- 快捷操作 -->
+    <navigator class="action-primary" url="/pages/voice/voice">联系老人</navigator>
+    <view class="action-row">
+      <navigator class="action-secondary" url="/pages/alert/alert">查看预警</navigator>
+      <navigator class="action-secondary" url="/pages/appointment/appointment">预约服务</navigator>
+    </view>
+
+    <!-- 功能入口（按语义分组：组间留白 > 组内分隔线） -->
+    <view class="group-block">
+      <view class="group-title">健康监护</view>
+      <view class="group-card">
+        <navigator class="group-item" url="/pages/device-report/device-report">
+          <view class="row-icon"><view class="ico ico-wave"></view></view>
+          <view class="row-meta">
+            <text class="row-title">健康数据录入</text>
+            <text class="row-desc">为老人记录一次心率、血压</text>
+          </view>
+          <text class="row-arrow">›</text>
+        </navigator>
+        <navigator class="group-item" url="/pages/report/report">
+          <view class="row-icon"><view class="ico ico-chart"></view></view>
+          <view class="row-meta">
+            <text class="row-title">本周健康报告</text>
+            <text class="row-desc">含心率、血压趋势分析</text>
+          </view>
+          <text class="row-arrow">›</text>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="group-block">
+      <view class="group-title">设备</view>
+      <view class="group-card">
+        <navigator class="group-item" url="/pages/bind-device/bind-device">
+          <view class="row-icon"><view class="ico ico-box"></view></view>
+          <view class="row-meta">
+            <text class="row-title">设备管理</text>
+            <text class="row-desc">绑定 / 在线状态 / 解绑</text>
+          </view>
+          <text class="row-arrow">›</text>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="group-block">
+      <view class="group-title">家人与安全</view>
+      <view class="group-card">
+        <navigator class="group-item" url="/pages/bind-relationship/bind-relationship">
+          <view class="row-icon"><view class="ico ico-person"></view></view>
+          <view class="row-meta">
+            <text class="row-title">绑定老人</text>
+            <text class="row-desc">输入邀请码建立监护关系</text>
+          </view>
+          <text class="row-arrow">›</text>
+        </navigator>
+        <navigator class="group-item" url="/pages/messages/messages">
+          <view class="row-icon"><view class="ico ico-lines"></view></view>
+          <view class="row-meta">
+            <text class="row-title">家人留言</text>
+            <text class="row-desc">给老人留言，老人端留言墙可见</text>
+          </view>
+          <text class="row-arrow">›</text>
+        </navigator>
+        <navigator class="group-item" url="/pages/contacts/contacts">
+          <view class="row-icon"><view class="ico ico-alert"></view></view>
+          <view class="row-meta">
+            <text class="row-title">紧急联系人</text>
+            <text class="row-desc">为老人维护快捷拨号联系人</text>
+          </view>
+          <text class="row-arrow">›</text>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="group-block">
+      <view class="group-title">日常</view>
+      <view class="group-card">
+        <navigator class="group-item" url="/pages/reminders/reminders">
+          <view class="row-icon"><view class="ico ico-clock"></view></view>
+          <view class="row-meta">
+            <text class="row-title">用药提醒</text>
+            <text class="row-desc">为老人添加日程服药提醒</text>
+          </view>
+          <text class="row-arrow">›</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

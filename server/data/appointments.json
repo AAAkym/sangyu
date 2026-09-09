@@ -1,0 +1,40 @@
+[
+  {
+    "id": "ap_demo_001",
+    "openid": "mock_family_001",
+    "type": "社区医护",
+    "detail": "上门测血压，周三上午",
+    "status": "待处理",
+    "createdAt": "2026-08-30T15:47:01.922Z"
+  },
+  {
+    "id": "ap_demo_002",
+    "openid": "mock_family_001",
+    "type": "志愿者陪伴",
+    "detail": "志愿者上门陪伴聊天",
+    "status": "已完成",
+    "createdAt": "2026-08-28T11:47:01.922Z"
+  },
+  {
+    "id": "ap_demo_003",
+    "openid": "mock_elder_001",
+    "type": "志愿者陪伴",
+    "detail": "今天 10:00 · 上门探访",
+    "status": "待处理",
+    "createdAt": "2026-08-31T11:17:01.922Z"
+  },
+  {
+    "id": "ap_1788176822329_k1x25x",
+    "openid": "mock_family_001",
+    "type": "社区医护",
+    "detail": "上门测血压",
+    "createdAt": "2026-08-31T11:47:02.329Z"
+  },
+  {
+    "id": "ap_1788179170052_3ed2fg",
+    "openid": "mock_elder_001",
+    "type": "社区医护",
+    "detail": "1",
+    "createdAt": "2026-08-31T12:26:10.052Z"
+  }
+]

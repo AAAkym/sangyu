@@ -1,0 +1,170 @@
+{
+  "data": [
+    {
+      "id": "page-role-select",
+      "title": "角色选择",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 1200,
+        "y": 12,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-7116cad9",
+          "measuredAt": 1787988680994
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/role-select.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-elder-home",
+      "title": "老人首页",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 169,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-5f9d0803",
+          "measuredAt": 1787988680994
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/elder-home.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-family-home",
+      "title": "家属首页",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 336,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 904,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-060d706d",
+          "measuredAt": 1787988680994
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/family-home.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-elder-sos",
+      "title": "一键求助",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 507,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-57c6d694",
+          "measuredAt": 1787988680994
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/elder-sos.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-health-data",
+      "title": "健康数据",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 684,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1047,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-5ac3b90a",
+          "measuredAt": 1787988680994
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/health-data.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-voice-companion",
+      "title": "语音陪伴",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 845,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-23c8b5d8",
+          "measuredAt": 1787988680994
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/voice-companion.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-health-report",
+      "title": "健康报告",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 1014,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1320,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-b5d18a71",
+          "measuredAt": 1787988680994
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/health-report.html",
+        "interactions": []
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": false,
+    "deviceType": "mobile",
+    "projectName": "桑榆智伴"
+  }
+}

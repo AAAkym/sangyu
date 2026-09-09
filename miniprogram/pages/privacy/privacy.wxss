@@ -1,0 +1,59 @@
+/* 隐私政策页（设计令牌化）：勾选成功绿 + 确认按钮枫叶红 */
+.privacy-agreed {
+  color: var(--color-success);
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-base);
+}
+
+.privacy-text {
+  font-size: var(--font-desc);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-top: var(--space-sm);
+}
+
+.privacy-check {
+  display: flex;
+  align-items: center;
+  margin: var(--space-lg) var(--space-xs);
+}
+
+.privacy-checkbox {
+  width: 44rpx;
+  height: 44rpx;
+  border: 2rpx solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin-right: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-foreground);
+  font-size: var(--font-desc);
+  flex-shrink: 0;
+}
+
+.privacy-checkbox--on {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.privacy-check-text {
+  font-size: var(--font-base);
+}
+
+.privacy-confirm {
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-foreground);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  box-shadow: var(--shadow-button);
+}
+
+.privacy-confirm::after {
+  border: none;
+}

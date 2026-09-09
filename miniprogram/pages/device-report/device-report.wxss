@@ -1,0 +1,53 @@
+/* 模拟设备上报面板（设计令牌化）：快捷按钮语义色 + 主操作枫叶红 */
+.preset-btn {
+  margin: var(--space-md) 0 0;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  background-color: var(--color-muted);
+}
+
+.preset-btn::after {
+  border: none;
+}
+
+.preset-btn--green {
+  color: var(--color-success);
+}
+
+.preset-btn--orange {
+  color: var(--color-warning-text);
+}
+
+.report-picker {
+  padding: var(--space-xs) 0 var(--space-md);
+}
+
+.report-input {
+  height: 96rpx;
+  padding: 0 var(--space-lg);
+  margin-bottom: var(--space-md);
+  background-color: var(--color-input-bg);
+  border-radius: var(--radius-md);
+}
+
+.report-btn {
+  margin-top: var(--space-xs);
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-foreground);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  box-shadow: var(--shadow-button);
+}
+
+.report-btn::after {
+  border: none;
+}

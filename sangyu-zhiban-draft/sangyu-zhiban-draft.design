@@ -1,0 +1,212 @@
+{
+  "data": [
+    {
+      "id": "page-role-select",
+      "title": "角色选择",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-cd2b0c2c",
+          "measuredAt": 1788026429874
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/role-select.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-elder-home",
+      "title": "老人首页",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 169,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-0e1a9153",
+          "measuredAt": 1788026429874
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/elder-home.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-family-home",
+      "title": "家属首页",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 338,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-00dbd619",
+          "measuredAt": 1788026429874
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/family-home.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-elder-sos",
+      "title": "一键求助",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 507,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-2be624a2",
+          "measuredAt": 1788026429874
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/elder-sos.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-health-data",
+      "title": "健康数据",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 684,
+        "y": 120,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 2195,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-3c7ae5fd",
+          "measuredAt": 1788026429874
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/health-data.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-voice-companion",
+      "title": "语音陪伴",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 845,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1138,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-27e996d9",
+          "measuredAt": 1788026429874
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/voice-companion.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-health-report",
+      "title": "健康报告",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 1014,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 2525,
+          "viewportWidth": 375,
+          "sourceHash": "fnv1a-daf188e8",
+          "measuredAt": 1788026429874
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/health-report.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "image-001",
+      "title": "老人女性头像",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 0,
+        "y": 710
+      },
+      "devMetadata": {
+        "imageSrc": "assets/elder-woman-portrait.jpg"
+      }
+    },
+    {
+      "id": "image-002",
+      "title": "老人男性头像",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 169,
+        "y": 710
+      },
+      "devMetadata": {
+        "imageSrc": "assets/elder-man-portrait.jpg"
+      }
+    },
+    {
+      "id": "image-003",
+      "title": "温暖陪伴插画",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1787987121332,
+      "canvasData": {
+        "x": 338,
+        "y": 710
+      },
+      "devMetadata": {
+        "imageSrc": "assets/companion-warm-illustration.jpg"
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": false,
+    "deviceType": "mobile",
+    "projectName": "桑榆智伴 (草稿)"
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ct_demo_001",
+    "elderOpenid": "mock_elder_001",
+    "name": "小王（子女）",
+    "phone": "13800000001",
+    "relation": "子女",
+    "group": "家人",
+    "createdAt": "2026-08-26T11:47:01.922Z"
+  },
+  {
+    "id": "ct_demo_002",
+    "elderOpenid": "mock_elder_001",
+    "name": "社区服务站",
+    "phone": "13800000002",
+    "relation": "社区",
+    "group": "社区",
+    "createdAt": "2026-08-26T11:47:01.922Z"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "code": "611365",
+    "elderOpenid": "mock_elder_001",
+    "createdAt": "2026-08-31T11:47:02.290Z",
+    "expiresAt": "2026-08-31T11:57:02.290Z",
+    "used": true,
+    "usedBy": "mock_family_001",
+    "usedAt": "2026-08-31T11:47:02.293Z"
+  },
+  {
+    "code": "990001",
+    "elderOpenid": "mock_elder_001",
+    "createdAt": "2026-08-31T11:36:02.296Z",
+    "expiresAt": "2026-08-31T11:46:02.297Z",
+    "used": false,
+    "usedBy": null
+  },
+  {
+    "code": "610392",
+    "elderOpenid": "mock_elder_001",
+    "createdAt": "2026-08-31T11:47:02.300Z",
+    "expiresAt": "2026-08-31T11:57:02.300Z",
+    "used": false,
+    "usedBy": null
+  }
+]

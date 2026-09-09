@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康报告</title>
+    <style id="theme-vars">
+/* ============================================================
+   桑榆智伴 — 暖琥珀适老化设计令牌 (DRAFT)
+   Brand: Warm Honey Amber (暖琥珀色) · Soft Ivory (柔象牙白)
+   色调从深红枫叶转为偏黄暖琥珀，更明亮温暖
+   ============================================================ */
+
+:root {
+  /* ---- Brand Primary Hue: Warm Honey Amber (暖琥珀/蜂蜜金) ---- */
+  --sangyu-primary: #B5832E;
+  --sangyu-primary-50: #FBF5EC;
+  --sangyu-primary-100: #F5E6CC;
+  --sangyu-primary-200: #E8CC99;
+  --sangyu-primary-300: #D4B366;
+  --sangyu-primary-400: #C49A3D;
+  --sangyu-primary-500: #B5832E;
+  --sangyu-primary-600: #9A6E25;
+  --sangyu-primary-700: #7A561D;
+  --sangyu-primary-800: #5C4116;
+  --sangyu-primary-900: #3D2B0F;
+
+  /* ---- Neutral Warm Scale (暖中性色, 琥珀底调) ---- */
+  --sangyu-neutral-0: #FFFFFF;
+  --sangyu-neutral-50: #FFF9F0;
+  --sangyu-neutral-100: #F5EFE2;
+  --sangyu-neutral-200: #E8DDC8;
+  --sangyu-neutral-300: #D5C5A8;
+  --sangyu-neutral-400: #B8A580;
+  --sangyu-neutral-500: #8A7A5C;
+  --sangyu-neutral-600: #6B5D44;
+  --sangyu-neutral-700: #4A3F2E;
+  --sangyu-neutral-800: #2A2316;
+  --sangyu-neutral-900: #1A150F;
+
+  /* ---- State Colors (语义状态色, 非品牌色) ---- */
+  --state-success: #2D7A3D;
+  --state-warning: #C49A3D;
+  --state-error: #C62828;
+  --state-info: #1A6B8C;
+
+  /* ============================================================
+     Light Mode — 柔象牙白基底 (家属端、信息密集页)
+     ============================================================ */
+
+  /* Semantic brand-prefixed tokens */
+  --sangyu-background: #FFF9F0;
+  --sangyu-foreground: #2A2316;
+  --sangyu-card: #FFFFFF;
+  --sangyu-card-foreground: #2A2316;
+  --sangyu-popover: #FFFFFF;
+  --sangyu-popover-foreground: #2A2316;
+  --sangyu-primary-foreground: #FFF9F0;
+  --sangyu-muted: #F5EFE2;
+  --sangyu-muted-foreground: #6B5D44;
+  --sangyu-border: #E8DDC8;
+  --sangyu-input: #F5EFE2;
+  --sangyu-ring: #B5832E;
+
+  /* Non-prefixed semantic aliases */
+  --background: #FFF9F0;
+  --foreground: #2A2316;
+  --card: #FFFFFF;
+  --card-foreground: #2A2316;
+  --popover: #FFFFFF;
+  --popover-foreground: #2A2316;
+  --primary: #B5832E;
+  --primary-foreground: #FFF9F0;
+  --muted: #F5EFE2;
+  --muted-foreground: #6B5D44;
+  --border: #E8DDC8;
+  --input: #F5EFE2;
+  --ring: #B5832E;
+
+  /* Radius scale (restrained: 4/8/16/9999) */
+  --sangyu-radius-small: 4px;
+  --sangyu-radius-medium: 8px;
+  --sangyu-radius-large: 16px;
+  --sangyu-radius-full: 9999px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows — 克制深度, 琥珀底调 */
+  --sangyu-shadow-1: 0 1px 2px rgba(61, 43, 15, 0.05), 0 1px 1px rgba(61, 43, 15, 0.03);
+  --sangyu-shadow-2: 0 4px 16px -4px rgba(61, 43, 15, 0.10), 0 2px 4px -2px rgba(61, 43, 15, 0.06);
+  --sangyu-shadow-3: 0 16px 48px -16px rgba(61, 43, 15, 0.18);
+  --shadow-1: 0 1px 2px rgba(61, 43, 15, 0.05), 0 1px 1px rgba(61, 43, 15, 0.03);
+  --shadow-2: 0 4px 16px -4px rgba(61, 43, 15, 0.10), 0 2px 4px -2px rgba(61, 43, 15, 0.06);
+  --shadow-3: 0 16px 48px -16px rgba(61, 43, 15, 0.18);
+}
+
+/* ============================================================
+   Dark Mode — 深琥珀棕基底 (老人端、情感主导页)
+   ============================================================ */
+html.dark {
+  --sangyu-background: #2A2316;
+  --sangyu-foreground: #FFF9F0;
+  --sangyu-card: #3D2B0F;
+  --sangyu-card-foreground: #FFF9F0;
+  --sangyu-popover: #3D2B0F;
+  --sangyu-popover-foreground: #FFF9F0;
+  --sangyu-primary: #D4B366;
+  --sangyu-primary-foreground: #2A2316;
+  --sangyu-muted: #4A3F2E;
+  --sangyu-muted-foreground: #D5C5A8;
+  --sangyu-border: #5C4116;
+  --sangyu-input: #4A3F2E;
+  --sangyu-ring: #D4B366;
+
+  --background: #2A2316;
+  --foreground: #FFF9F0;
+  --card: #3D2B0F;
+  --card-foreground: #FFF9F0;
+  --popover: #3D2B0F;
+  --popover-foreground: #FFF9F0;
+  --primary: #D4B366;
+  --primary-foreground: #2A2316;
+  --muted: #4A3F2E;
+  --muted-foreground: #D5C5A8;
+  --border: #5C4116;
+  --input: #4A3F2E;
+  --ring: #D4B366;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --sangyu-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --sangyu-shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+  --sangyu-shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.45);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.45);
+}
+
+/* ============================================================
+   Typography — 适老化大字体系
+   ============================================================ */
+
+body {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.text-display {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.text-h1 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: clamp(24px, 6vw, 32px);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.text-h2 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-h3 {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.text-body-lg {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+
+.text-numeric {
+  font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+  }
+  @layer base {
+    body { background: var(--background); color: var(--foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--background); }
+      .text-background { color: var(--background); }
+      .border-background { border-color: var(--background); }
+      .ring-background { --tw-ring-color: var(--background); }
+      .bg-foreground { background-color: var(--foreground); }
+      .text-foreground { color: var(--foreground); }
+      .border-foreground { border-color: var(--foreground); }
+      .ring-foreground { --tw-ring-color: var(--foreground); }
+      .bg-card { background-color: var(--card); }
+      .text-card { color: var(--card); }
+      .border-card { border-color: var(--card); }
+      .ring-card { --tw-ring-color: var(--card); }
+      .bg-card-foreground { background-color: var(--card-foreground); }
+      .text-card-foreground { color: var(--card-foreground); }
+      .border-card-foreground { border-color: var(--card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--card-foreground); }
+      .bg-popover { background-color: var(--popover); }
+      .text-popover { color: var(--popover); }
+      .border-popover { border-color: var(--popover); }
+      .ring-popover { --tw-ring-color: var(--popover); }
+      .bg-popover-foreground { background-color: var(--popover-foreground); }
+      .text-popover-foreground { color: var(--popover-foreground); }
+      .border-popover-foreground { border-color: var(--popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--popover-foreground); }
+      .bg-primary { background-color: var(--primary); }
+      .text-primary { color: var(--primary); }
+      .border-primary { border-color: var(--primary); }
+      .ring-primary { --tw-ring-color: var(--primary); }
+      .bg-primary-foreground { background-color: var(--primary-foreground); }
+      .text-primary-foreground { color: var(--primary-foreground); }
+      .border-primary-foreground { border-color: var(--primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--primary-foreground); }
+      .bg-muted { background-color: var(--muted); }
+      .text-muted { color: var(--muted); }
+      .border-muted { border-color: var(--muted); }
+      .ring-muted { --tw-ring-color: var(--muted); }
+      .bg-muted-foreground { background-color: var(--muted-foreground); }
+      .text-muted-foreground { color: var(--muted-foreground); }
+      .border-muted-foreground { border-color: var(--muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--muted-foreground); }
+      .bg-border { background-color: var(--border); }
+      .text-border { color: var(--border); }
+      .border-border { border-color: var(--border); }
+      .ring-border { --tw-ring-color: var(--border); }
+      .bg-input { background-color: var(--input); }
+      .text-input { color: var(--input); }
+      .border-input { border-color: var(--input); }
+      .ring-input { --tw-ring-color: var(--input); }
+      .bg-ring { background-color: var(--ring); }
+      .text-ring { color: var(--ring); }
+      .border-ring { border-color: var(--ring); }
+      .ring-ring { --tw-ring-color: var(--ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <style id="critical-layout">
+      /* 桑榆智伴 · 健康周报 — 关键布局CSS (品牌实体感 / 诊所出院小结式) */
+
+      .page-shell { max-width: 480px; margin: 0 auto; }
+      .pad-x { padding-left: 16px; padding-right: 16px; }
+
+      /* 通用表层 */
+      .surface {
+        background-color: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-1);
+      }
+
+      /* ---------- 文档式头部 ---------- */
+      .doc-head {
+        background-color: var(--card);
+        border-bottom: 1px solid var(--border);
+      }
+      .doc-head-rule {
+        height: 4px;
+        width: 100%;
+        background-color: var(--primary);
+      }
+      .brand-mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary);
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+      .doc-title {
+        font-size: 27px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: var(--foreground);
+        letter-spacing: -0.012em;
+      }
+      .doc-sub {
+        font-size: 15px;
+        color: var(--muted-foreground);
+        line-height: 1.55;
+      }
+      .doc-meta-grid {
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        gap: 6px 12px;
+        font-size: 14px;
+      }
+      .doc-meta-grid dt { color: var(--muted-foreground); }
+      .doc-meta-grid dd { color: var(--foreground); font-variant-numeric: tabular-nums; margin: 0; }
+
+      /* ---------- 状态徽标 ---------- */
+      .status-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: var(--radius-full);
+        font-size: 13px;
+        font-weight: 600;
+        border: 1px solid var(--state-warning);
+        color: var(--state-warning);
+        background-color: rgba(196, 154, 61, 0.08);
+      }
+      .status-chip.approved {
+        border-color: var(--state-success);
+        color: var(--state-success);
+        background-color: rgba(45, 122, 61, 0.08);
+      }
+      .status-dot {
+        width: 6px; height: 6px;
+        border-radius: var(--radius-full);
+        background-color: currentColor;
+      }
+
+      /* ---------- 区块标签 ---------- */
+      .sec { margin-top: 24px; }
+      .sec-label {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .sec-num {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--primary);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.06em;
+      }
+      .sec-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--foreground);
+      }
+      .sec-hint {
+        margin-left: auto;
+        font-size: 13px;
+        color: var(--muted-foreground);
+      }
+
+      /* ---------- 风险摘要 ---------- */
+      .risk-block {
+        background-color: var(--card);
+        border: 1px solid var(--border);
+        border-top: 4px solid var(--primary);
+        border-radius: var(--radius-lg);
+        padding: 20px 18px;
+        box-shadow: var(--shadow-1);
+      }
+      .risk-figure {
+        font-size: 46px;
+        line-height: 1;
+        font-weight: 700;
+        color: var(--primary);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+      .risk-figure-unit {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--muted-foreground);
+        margin-left: 4px;
+      }
+      .risk-headline {
+        font-size: 22px;
+        line-height: 1.3;
+        font-weight: 700;
+        color: var(--foreground);
+      }
+      .risk-context {
+        font-size: 16px;
+        color: var(--muted-foreground);
+        line-height: 1.6;
+      }
+      .risk-stat {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: var(--muted-foreground);
+      }
+
+      /* ---------- 发现项 (时间线/记录式, 非等量卡片) ---------- */
+      .finding {
+        display: grid;
+        grid-template-columns: 84px 1fr;
+        gap: 14px;
+        padding: 14px 0;
+        border-top: 1px solid var(--border);
+      }
+      .finding:first-child { border-top: 0; padding-top: 4px; }
+      .finding:last-child { padding-bottom: 4px; }
+      .finding-date {
+        font-size: 14px;
+        color: var(--muted-foreground);
+        font-variant-numeric: tabular-nums;
+        line-height: 1.45;
+      }
+      .finding-date .d-day {
+        display: block;
+        font-weight: 700;
+        color: var(--foreground);
+      }
+      .finding-body { min-width: 0; }
+      .finding-metric {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--foreground);
+      }
+      .finding-value {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--state-error);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.01em;
+      }
+      .finding-value.warn { color: var(--state-warning); }
+      .finding-thresh {
+        font-size: 14px;
+        color: var(--muted-foreground);
+      }
+      .finding-note {
+        font-size: 14px;
+        color: var(--muted-foreground);
+        line-height: 1.55;
+      }
+      .finding-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--state-error);
+        border: 1px solid rgba(198, 40, 40, 0.25);
+        background-color: rgba(198, 40, 40, 0.06);
+        padding: 2px 8px;
+        border-radius: var(--radius-full);
+      }
+      .finding-tag.warn {
+        color: var(--state-warning);
+        border-color: rgba(196, 154, 61, 0.30);
+        background-color: rgba(196, 154, 61, 0.08);
+      }
+
+      /* ---------- 证据链 ---------- */
+      .evidence-card {
+        background-color: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+      .evidence-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 14px;
+        border-top: 1px dashed var(--border);
+        font-size: 14px;
+      }
+      .evidence-row:first-child { border-top: 0; }
+      .evidence-step-label {
+        flex-shrink: 0;
+        width: 58px;
+        padding-top: 1px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 0.02em;
+      }
+      .evidence-step-body { color: var(--foreground); min-width: 0; line-height: 1.55; }
+      .evidence-step-body .mono {
+        display: block;
+        font-size: 13px;
+        color: var(--muted-foreground);
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* ---------- 可展开明细 ---------- */
+      details.exp { border-top: 1px solid var(--border); }
+      details.exp:first-of-type { border-top: 0; }
+      details.exp > summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 14px 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--foreground);
+      }
+      details.exp > summary::-webkit-details-marker { display: none; }
+      details.exp > summary .chev {
+        transition: transform 0.2s ease;
+        color: var(--muted-foreground);
+      }
+      details.exp[open] > summary .chev { transform: rotate(180deg); }
+      details.exp > .exp-body { padding-bottom: 14px; }
+
+      .detail-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      .detail-table th, .detail-table td { padding: 8px 4px; }
+      .detail-table thead th {
+        text-align: left;
+        font-weight: 600;
+        color: var(--muted-foreground);
+        border-bottom: 1px solid var(--border);
+      }
+      .detail-table td { border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+      .detail-table tr:last-child td { border-bottom: 0; }
+      .detail-table .num { text-align: right; }
+      .detail-table .over { color: var(--state-error); font-weight: 600; }
+      .detail-table .near { color: var(--state-warning); font-weight: 600; }
+
+      /* ---------- 建议 ---------- */
+      .suggestion-lead {
+        font-size: 19px;
+        line-height: 1.6;
+        color: var(--foreground);
+        font-weight: 600;
+      }
+      .suggestion-lead em {
+        font-style: normal;
+        color: var(--primary);
+        font-weight: 700;
+      }
+      .suggestion-list {
+        margin-top: 12px;
+        border-top: 1px solid var(--border);
+      }
+      .suggestion-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 16px;
+        color: var(--foreground);
+        line-height: 1.55;
+      }
+      .suggestion-item:last-child { border-bottom: 0; }
+      .suggestion-item .marker {
+        flex-shrink: 0;
+        width: 22px;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--primary);
+        font-variant-numeric: tabular-nums;
+      }
+      .insufficient {
+        margin-top: 14px;
+        padding: 12px 14px;
+        border-left: 3px solid var(--state-warning);
+        background-color: var(--muted);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        font-size: 14px;
+        color: var(--muted-foreground);
+        line-height: 1.6;
+      }
+      .insufficient strong { color: var(--foreground); font-weight: 600; }
+
+      /* ---------- 免责声明 ---------- */
+      .disclaimer {
+        border-top: 1px solid var(--border);
+        padding: 16px 0 4px;
+        font-size: 14px;
+        color: var(--muted-foreground);
+        line-height: 1.7;
+      }
+      .disclaimer strong { color: var(--foreground); font-weight: 600; }
+      .disclaimer .lead {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      /* ---------- 操作按钮 ---------- */
+      .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 52px;
+        border-radius: var(--radius-md);
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+        border: 1.5px solid transparent;
+      }
+      .btn-ghost {
+        background-color: var(--card);
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+      .btn-solid {
+        background-color: var(--primary);
+        color: var(--primary-foreground);
+        border-color: var(--primary);
+        box-shadow: var(--shadow-2);
+      }
+
+      /* ---------- 文档底栏 ---------- */
+      .doc-foot {
+        margin-top: 4px;
+        border-top: 1px solid var(--border);
+        padding: 14px 0 96px;
+        font-size: 12px;
+        color: var(--muted-foreground);
+        line-height: 1.8;
+      }
+      .doc-foot .kv { display: flex; gap: 8px; }
+      .doc-foot .kv .k { min-width: 64px; color: var(--muted-foreground); }
+      .doc-foot .kv .v { color: var(--foreground); font-variant-numeric: tabular-nums; }
+    </style>
+    <main class="min-h-screen bg-[var(--background)]">
+
+      <div class="page-shell">
+
+        <!-- 1. 报告头部 -->
+        <section id="report-header" class="doc-head">
+          <div class="doc-head-rule"></div>
+          <div class="pad-x pt-5 pb-5">
+            <div class="brand-mark mb-3">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/></svg>
+              桑榆智伴 · 健康周报
+            </div>
+            <h1 class="doc-title">2026年8月第4周<br>健康周报</h1>
+            <p class="doc-sub mt-2">报告周期 2026-08-20 至 2026-08-26 · 适用对象 王伯安（男 / 72岁）</p>
+
+            <div class="mt-4 flex items-center gap-2 flex-wrap">
+              <span class="status-chip">
+                <span class="status-dot"></span>待医生审核
+              </span>
+              <span class="doc-sub">AI 生成 · 尚未加签</span>
+            </div>
+
+            <dl class="doc-meta-grid mt-4">
+              <dt>报告编号</dt><dd>HR-2026W34-0093</dd>
+              <dt>报告版本</dt><dd>v1.2</dd>
+              <dt>AI 版本</dt><dd>受控 LLM v1.0</dd>
+            </dl>
+          </div>
+        </section>
+
+        <!-- 2. 风险摘要 -->
+        <section id="risk-summary" class="sec pad-x">
+          <div class="sec-label">
+            <span class="sec-num">01</span>
+            <span class="sec-title">本周风险摘要</span>
+            <span class="sec-hint">临床印象</span>
+          </div>
+          <div class="risk-block">
+            <div class="flex items-end gap-2">
+              <span class="risk-figure">3</span>
+              <span class="risk-figure-unit">次 / 本周</span>
+            </div>
+            <p class="risk-headline mt-2">本周有3次心率偏高</p>
+            <p class="risk-context mt-2">心率与血压均在自定义提醒阈值之上出现波动，集中在晨起与午后时段。未达急诊指征，建议结合下方发现持续监测。</p>
+            <div class="mt-4 pt-3 border-t border-[var(--border)] flex items-center gap-6 flex-wrap">
+              <span class="risk-stat">
+                <svg class="w-4 h-4" style="color:var(--state-error);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                心率偏高 3 次
+              </span>
+              <span class="risk-stat">
+                <svg class="w-4 h-4" style="color:var(--state-error);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4 2-5 1.5 2H21"/></svg>
+                血压偏高 1 次
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. 异常发现 -->
+        <section id="findings" class="sec pad-x">
+          <div class="sec-label">
+            <span class="sec-num">02</span>
+            <span class="sec-title">异常发现</span>
+            <span class="sec-hint">2 条</span>
+          </div>
+          <div class="surface px-4 py-1">
+            <!-- 发现1: 心率 -->
+            <div class="finding">
+              <div class="finding-date">
+                <span class="d-day">8月20日</span>
+                08:12
+              </div>
+              <div class="finding-body">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="finding-metric">心率</span>
+                  <span class="finding-tag warn">触发提醒</span>
+                </div>
+                <div class="mt-1 flex items-baseline gap-2 flex-wrap">
+                  <span class="finding-value warn">118</span>
+                  <span class="finding-thresh">次/分 · 提醒值 120</span>
+                </div>
+                <p class="finding-note mt-1">晨起测量，临近自定义提醒值，建议静坐5分钟后复测。</p>
+              </div>
+            </div>
+            <!-- 发现2: 血压 -->
+            <div class="finding">
+              <div class="finding-date">
+                <span class="d-day">8月22日</span>
+                14:30
+              </div>
+              <div class="finding-body">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="finding-metric">血压</span>
+                  <span class="finding-tag">高于提醒值</span>
+                </div>
+                <div class="mt-1 flex items-baseline gap-2 flex-wrap">
+                  <span class="finding-value">145/92</span>
+                  <span class="finding-thresh">mmHg · 提醒值 140/90</span>
+                </div>
+                <p class="finding-note mt-1">午后测量，收缩压与舒张压双超自定义提醒阈值。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 证据链 -->
+        <section id="evidence-chain" class="sec pad-x">
+          <div class="sec-label">
+            <span class="sec-num">03</span>
+            <span class="sec-title">证据链</span>
+            <span class="sec-hint">可追溯</span>
+          </div>
+          <div class="evidence-card">
+            <div class="evidence-row">
+              <span class="evidence-step-label">原始数据</span>
+              <span class="evidence-step-body">
+                榆宝仿真设备自动上传测量记录
+                <span class="mono">device: yubao-sim-072 · sync 2026-08-26 23:50</span>
+              </span>
+            </div>
+            <div class="evidence-row">
+              <span class="evidence-step-label">规则判定</span>
+              <span class="evidence-step-body">
+                心率 ≥ 自定义提醒值(120) 触发；血压 ≥ 自定义提醒值(140/90) 触发
+                <span class="mono">rule-engine v2.1 · policy 2026-07</span>
+              </span>
+            </div>
+            <div class="evidence-row">
+              <span class="evidence-step-label">AI 改写</span>
+              <span class="evidence-step-body">
+                结构化改写为自然语言摘要，未新增结论、未替换数据
+                <span class="mono">controlled-llm v1.0 · temp 0.2</span>
+              </span>
+            </div>
+            <div class="evidence-row">
+              <span class="evidence-step-label">审核状态</span>
+              <span class="evidence-step-body">
+                待医生审核（未加签，按规则不展示“医生推荐”标识）
+                <span class="mono">review: pending</span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. 本周建议 -->
+        <section id="suggestions" class="sec pad-x">
+          <div class="sec-label">
+            <span class="sec-num">04</span>
+            <span class="sec-title">本周建议</span>
+            <span class="sec-hint">参考性</span>
+          </div>
+          <div class="surface p-4">
+            <p class="suggestion-lead">建议<em>规律监测</em>、<em>保持用药</em>并<em>按需复诊</em>。</p>
+            <div class="suggestion-list">
+              <div class="suggestion-item">
+                <span class="marker">①</span>
+                <span>每日固定晨起、午后各测量一次心率与血压并记录。</span>
+              </div>
+              <div class="suggestion-item">
+                <span class="marker">②</span>
+                <span>按医嘱规律服用降压药物，勿自行停药或加量。</span>
+              </div>
+              <div class="suggestion-item">
+                <span class="marker">③</span>
+                <span>若一周内再次出现收缩压 ≥ 160 或心率 ≥ 130，及时门诊复诊。</span>
+              </div>
+            </div>
+            <div class="insufficient">
+              睡眠与步数数据本周采集不足 3 天，<strong>数据不足以生成该维度建议</strong>，下周补采后再评估。
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. 可展开明细 -->
+        <section class="sec pad-x">
+          <div class="surface px-4">
+            <details class="exp">
+              <summary>
+                <span>每日测量明细（节选）</span>
+                <svg class="chev w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="exp-body">
+                <table class="detail-table">
+                  <thead>
+                    <tr>
+                      <th>日期时间</th>
+                      <th class="num">心率</th>
+                      <th class="num">血压</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>08-20 08:12</td><td class="num near">118</td><td class="num">128/82</td></tr>
+                    <tr><td>08-21 08:05</td><td class="num">76</td><td class="num">126/80</td></tr>
+                    <tr><td>08-22 14:30</td><td class="num">88</td><td class="num over">145/92</td></tr>
+                    <tr><td>08-23 08:10</td><td class="num">82</td><td class="num">130/84</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+            <details class="exp">
+              <summary>
+                <span>判定规则与提醒阈值</span>
+                <svg class="chev w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="exp-body" style="font-size:14px;color:var(--muted-foreground);line-height:1.7">
+                <p>· 心率提醒值 120 次/分（家属端自定义）</p>
+                <p>· 血压提醒值 140/90 mmHg（家属端自定义）</p>
+                <p>· 规则版本 rule-engine v2.1，策略周期 2026-07</p>
+                <p>· 仅供参考，不构成诊疗建议</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 7. 免责声明 -->
+        <section id="disclaimer" class="sec pad-x">
+          <div class="disclaimer">
+            <div class="lead">
+              <svg class="w-4 h-4 flex-shrink-0 mt-1" style="color:var(--state-warning);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div>
+                <p><strong>免责声明：</strong>本报告由 AI 基于设备数据与规则引擎生成，<strong>仅供参考，不构成诊疗建议</strong>。如有不适或数据持续异常，请联系签约医生或拨打 120。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. 导出 / 分享 -->
+        <section class="sec pad-x">
+          <div class="actions">
+            <button class="btn btn-ghost" type="button">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              分享给家属
+            </button>
+            <button class="btn btn-solid" type="button">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              导出 PDF
+            </button>
+          </div>
+        </section>
+
+        <!-- 9. 文档底栏 -->
+        <section class="pad-x">
+          <div class="doc-foot">
+            <div class="kv"><span class="k">生成时间</span><span class="v">2026-08-27 06:00</span></div>
+            <div class="kv"><span class="k">报告版本</span><span class="v">v1.2</span></div>
+            <div class="kv"><span class="k">AI 版本</span><span class="v">controlled-llm v1.0</span></div>
+            <div class="kv"><span class="k">规则版本</span><span class="v">rule-engine v2.1</span></div>
+            <div class="kv"><span class="k">审核状态</span><span class="v">pending</span></div>
+            <div class="kv"><span class="k">数据来源</span><span class="v">榆宝仿真设备</span></div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- 底部导航 -->
+      <nav data-mobile-nav="global" class="bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]" style="padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -2px 12px -4px rgba(61,43,15,0.08)">
+      <div class="nav-inner w-full max-w-md mx-auto grid grid-cols-4 h-full">
+        <a data-nav-key="home" data-dom-id="nav-home" class="nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]" href="#">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z"/></svg>
+          <span class="nav-label text-[13px] leading-none font-medium whitespace-nowrap">首页</span>
+        </a>
+        <a data-nav-key="health" data-dom-id="nav-health" class="nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]" href="#">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="nav-label text-[13px] leading-none font-medium whitespace-nowrap">健康</span>
+        </a>
+        <a data-nav-key="report" data-dom-id="nav-report" class="nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--primary)]" href="#">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          <span class="nav-label text-[13px] leading-none font-semibold whitespace-nowrap">报告</span>
+        </a>
+        <a data-nav-key="sos" data-dom-id="nav-sos" class="nav-item nav-sos flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap" href="#" aria-label="一键求助">
+          <span class="nav-sos-circle w-[44px] h-[44px] rounded-full bg-[var(--primary)] flex items-center justify-center text-[var(--primary-foreground)]" style="box-shadow:0 4px 16px -4px rgba(61,43,15,0.10),0 2px 4px -2px rgba(61,43,15,0.06)">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <span class="nav-label text-[13px] leading-none font-semibold whitespace-nowrap text-[var(--primary)]">求助</span>
+        </a>
+      </div>
+    </nav>
+
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

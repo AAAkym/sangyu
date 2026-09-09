@@ -1,0 +1,251 @@
+/* 角色选择页（还原设计稿 role-select.html：琥珀满屏 + 描边角色卡） */
+.role-select-page {
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  padding: 112rpx 48rpx 64rpx;
+  box-sizing: border-box;
+}
+
+.brand-area {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 64rpx;
+}
+
+.brand-mark {
+  width: 176rpx;
+  height: 176rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80rpx;
+  margin-bottom: var(--space-md);
+}
+
+.brand-name {
+  font-size: 68rpx;
+  font-weight: 700;
+  color: var(--color-primary-foreground);
+  letter-spacing: 0.06em;
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+}
+
+.brand-tagline {
+  font-size: var(--font-base);
+  color: var(--color-primary-foreground);
+  opacity: 0.82;
+  letter-spacing: 0.04em;
+}
+
+.role-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.role-card {
+  position: relative;
+  width: auto;
+  flex: 1 1 0;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-card);
+  border: 4rpx solid var(--sangyu-primary-200);
+  border-radius: var(--radius-lg);
+  padding: 40rpx 20rpx 32rpx;
+  min-height: 360rpx;
+  margin-bottom: 0;
+  text-align: center;
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+
+.role-card:active,
+.role-card--hover {
+  border-color: var(--color-primary);
+  background-color: var(--sangyu-primary-50);
+  transform: scale(0.985);
+}
+
+.role-card::after {
+  border: none;
+}
+
+.role-icon {
+  flex-shrink: 0;
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56rpx;
+  margin-right: 0;
+  margin-bottom: 24rpx;
+}
+
+.role-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.role-card-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.role-card-desc {
+  font-size: 28rpx;
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+  margin-top: 12rpx;
+  min-height: 82rpx;
+}
+
+.role-card-cta {
+  flex-shrink: 0;
+  font-size: var(--font-title);
+  color: var(--sangyu-primary-400);
+  margin-top: 14rpx;
+}
+
+.footer-area {
+  margin-top: auto;
+  padding-top: var(--space-lg);
+  text-align: center;
+}
+
+.footer-links {
+  font-size: 30rpx;
+  line-height: 1.6;
+  color: var(--color-primary-foreground);
+  opacity: 0.72;
+  text-decoration: underline;
+  text-underline-offset: 6rpx;
+  display: inline-block;
+  padding: var(--space-sm);
+}
+
+/* 品牌符号图（assets/brand/symbol.png） */
+.brand-mark-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 老人卡视觉加权：更高、主色实边框、主色圆底大图标（老人是主要使用者） */
+.role-card--elder {
+  min-height: 360rpx;
+  border-color: var(--color-primary);
+  border-width: 6rpx;
+  padding: 38rpx 18rpx 30rpx;
+}
+
+.role-card--elder .role-card-title {
+  font-size: 40rpx;
+}
+
+.role-icon--elder {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  margin-right: 0;
+  margin-bottom: 24rpx;
+}
+
+@media (max-width: 360px) {
+  .role-select-page {
+    padding-left: 28rpx;
+    padding-right: 28rpx;
+  }
+
+  .role-cards {
+    gap: 16rpx;
+  }
+
+  .role-card,
+  .role-card--elder {
+    min-height: 330rpx;
+    padding-left: 12rpx;
+    padding-right: 12rpx;
+  }
+
+  .role-card-title,
+  .role-card--elder .role-card-title {
+    font-size: 36rpx;
+  }
+
+  .role-card-desc {
+    font-size: 26rpx;
+  }
+}
+
+/* 长者+拐杖图标：圆头 + 半圆身 + 倒 U 手杖（44rpx 体系，currentColor） */
+.ico-elder::before {
+  width: 13rpx;
+  height: 13rpx;
+  border-radius: 50%;
+  left: 9rpx;
+  top: 5rpx;
+}
+
+.ico-elder::after {
+  width: 23rpx;
+  height: 12rpx;
+  border-radius: 12rpx 12rpx 0 0;
+  left: 3rpx;
+  top: 23rpx;
+}
+
+.ico-elder-cane {
+  position: absolute;
+  width: 12rpx;
+  height: 24rpx;
+  border: 4rpx solid currentColor;
+  border-bottom: none;
+  border-radius: 12rpx 12rpx 0 0;
+  left: 27rpx;
+  top: 8rpx;
+}
+
+/* 双人守护图标：大小两人交叠（box-shadow 复制缩小） */
+.ico-family::before {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  left: 5rpx;
+  top: 5rpx;
+  box-shadow: 21rpx 5rpx 0 -2rpx currentColor;
+}
+
+.ico-family::after {
+  width: 24rpx;
+  height: 13rpx;
+  border-radius: 12rpx 12rpx 0 0;
+  left: 0;
+  top: 23rpx;
+  box-shadow: 17rpx 3rpx 0 -4rpx currentColor;
+}
+
+/* 品牌图加载失败回退：CSS 环放大 */
+.brand-mark-fallback {
+  width: 88rpx;
+  height: 88rpx;
+  color: var(--color-primary-foreground);
+}

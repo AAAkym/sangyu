@@ -1,0 +1,103 @@
+{
+  "project": {
+    "resolvedLane": "redesign_duplicate_project",
+    "selectedIntentWorkflowRead": true,
+    "contextRequirementsLoaded": [
+      {
+        "path": "intent-workflows/intent-project-mutation/INTENT_WORKFLOW.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "intent-workflows/intent-project-mutation/redesign-page-runtime.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "intent-workflows/intent-project-mutation/redesign-dispatch-contract.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/page-rendering-quality-gate.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      }
+    ],
+    "contextReadScope": "redesign-lane",
+    "validationRunDiscipline": "validate-design-workspace.mjs + validate-finish-readiness.mjs",
+    "lowValueCallWatchdog": {
+      "noProgressNextAction": "run-repair-script"
+    },
+    "sourceProjectPath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban-draft",
+    "duplicateProjectPath": "c:\\Users\\33552\\Desktop\\桑榆\\sangyu-zhiban-draft",
+    "noSourceWriteAssertion": true,
+    "deviceType": "mobile",
+    "miniProgramStyle": true,
+    "skillProvenance": {
+      "name": "solo-design",
+      "version": "2026.08.06.19.15.08",
+      "version_source": "skill-release-manifest.json"
+    },
+    "sharedProjectShellContract": {
+      "navStructure": "4-item bottom nav: home/health/report/sos",
+      "primaryColor": "var(--primary) #B5832E",
+      "typeStack": "Noto Sans SC 18px base, 32px h1, 22px h2",
+      "radiusScale": "4/8/16px",
+      "surfaceModel": "white cards on ivory background, subtle shadows",
+      "mobileNavigation": {
+        "applies": true,
+        "structure": {
+          "canonicalHtmlByKey": {
+            "home": "<nav data-mobile-nav=\"global\" class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\" style=\"padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -2px 12px -4px rgba(61,43,15,0.08)\">\n      <div class=\"nav-inner w-full max-w-md mx-auto grid grid-cols-4 h-full\">\n        <a data-nav-key=\"home\" data-dom-id=\"nav-home\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--primary)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-semibold whitespace-nowrap\">首页</span>\n        </a>\n        <a data-nav-key=\"health\" data-dom-id=\"nav-health\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-medium whitespace-nowrap\">健康</span>\n        </a>\n        <a data-nav-key=\"report\" data-dom-id=\"nav-report\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"9\" y1=\"13\" x2=\"15\" y2=\"13\"/><line x1=\"9\" y1=\"17\" x2=\"15\" y2=\"17\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-medium whitespace-nowrap\">报告</span>\n        </a>\n        <a data-nav-key=\"sos\" data-dom-id=\"nav-sos\" class=\"nav-item nav-sos flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap\" href=\"#\" aria-label=\"一键求助\">\n          <span class=\"nav-sos-circle w-[44px] h-[44px] rounded-full bg-[var(--primary)] flex items-center justify-center text-[var(--primary-foreground)]\" style=\"box-shadow:0 4px 16px -4px rgba(61,43,15,0.10),0 2px 4px -2px rgba(61,43,15,0.06)\">\n            <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>\n          </span>\n          <span class=\"nav-label text-[13px] leading-none font-semibold whitespace-nowrap text-[var(--primary)]\">求助</span>\n        </a>\n      </div>\n    </nav>",
+            "health": "<nav data-mobile-nav=\"global\" class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\" style=\"padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -2px 12px -4px rgba(61,43,15,0.08)\">\n      <div class=\"nav-inner w-full max-w-md mx-auto grid grid-cols-4 h-full\">\n        <a data-nav-key=\"home\" data-dom-id=\"nav-home\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-medium whitespace-nowrap\">首页</span>\n        </a>\n        <a data-nav-key=\"health\" data-dom-id=\"nav-health\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--primary)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-semibold whitespace-nowrap\">健康</span>\n        </a>\n        <a data-nav-key=\"report\" data-dom-id=\"nav-report\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"9\" y1=\"13\" x2=\"15\" y2=\"13\"/><line x1=\"9\" y1=\"17\" x2=\"15\" y2=\"17\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-medium whitespace-nowrap\">报告</span>\n        </a>\n        <a data-nav-key=\"sos\" data-dom-id=\"nav-sos\" class=\"nav-item nav-sos flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap\" href=\"#\" aria-label=\"一键求助\">\n          <span class=\"nav-sos-circle w-[44px] h-[44px] rounded-full bg-[var(--primary)] flex items-center justify-center text-[var(--primary-foreground)]\" style=\"box-shadow:0 4px 16px -4px rgba(61,43,15,0.10),0 2px 4px -2px rgba(61,43,15,0.06)\">\n            <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>\n          </span>\n          <span class=\"nav-label text-[13px] leading-none font-semibold whitespace-nowrap text-[var(--primary)]\">求助</span>\n        </a>\n      </div>\n    </nav>",
+            "report": "<nav data-mobile-nav=\"global\" class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\" style=\"padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -2px 12px -4px rgba(61,43,15,0.08)\">\n      <div class=\"nav-inner w-full max-w-md mx-auto grid grid-cols-4 h-full\">\n        <a data-nav-key=\"home\" data-dom-id=\"nav-home\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-medium whitespace-nowrap\">首页</span>\n        </a>\n        <a data-nav-key=\"health\" data-dom-id=\"nav-health\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-medium whitespace-nowrap\">健康</span>\n        </a>\n        <a data-nav-key=\"report\" data-dom-id=\"nav-report\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--primary)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"9\" y1=\"13\" x2=\"15\" y2=\"13\"/><line x1=\"9\" y1=\"17\" x2=\"15\" y2=\"17\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-semibold whitespace-nowrap\">报告</span>\n        </a>\n        <a data-nav-key=\"sos\" data-dom-id=\"nav-sos\" class=\"nav-item nav-sos flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap\" href=\"#\" aria-label=\"一键求助\">\n          <span class=\"nav-sos-circle w-[44px] h-[44px] rounded-full bg-[var(--primary)] flex items-center justify-center text-[var(--primary-foreground)]\" style=\"box-shadow:0 4px 16px -4px rgba(61,43,15,0.10),0 2px 4px -2px rgba(61,43,15,0.06)\">\n            <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>\n          </span>\n          <span class=\"nav-label text-[13px] leading-none font-semibold whitespace-nowrap text-[var(--primary)]\">求助</span>\n        </a>\n      </div>\n    </nav>",
+            "sos": "<nav data-mobile-nav=\"global\" class=\"bottom-nav fixed bottom-0 left-0 right-0 z-40 h-[64px] bg-[var(--card)] border-t border-[var(--border)]\" style=\"padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -2px 12px -4px rgba(61,43,15,0.08)\">\n      <div class=\"nav-inner w-full max-w-md mx-auto grid grid-cols-4 h-full\">\n        <a data-nav-key=\"home\" data-dom-id=\"nav-home\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-medium whitespace-nowrap\">首页</span>\n        </a>\n        <a data-nav-key=\"health\" data-dom-id=\"nav-health\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-medium whitespace-nowrap\">健康</span>\n        </a>\n        <a data-nav-key=\"report\" data-dom-id=\"nav-report\" class=\"nav-item flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap text-[var(--muted-foreground)]\" href=\"#\">\n          <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"9\" y1=\"13\" x2=\"15\" y2=\"13\"/><line x1=\"9\" y1=\"17\" x2=\"15\" y2=\"17\"/></svg>\n          <span class=\"nav-label text-[13px] leading-none font-medium whitespace-nowrap\">报告</span>\n        </a>\n        <a data-nav-key=\"sos\" data-dom-id=\"nav-sos\" class=\"nav-item nav-sos flex flex-col items-center justify-center gap-1 px-1 h-full whitespace-nowrap\" href=\"#\" aria-label=\"一键求助\">\n          <span class=\"nav-sos-circle w-[44px] h-[44px] rounded-full bg-[var(--primary)] flex items-center justify-center text-[var(--primary-foreground)]\" style=\"box-shadow:0 4px 16px -4px rgba(61,43,15,0.10),0 2px 4px -2px rgba(61,43,15,0.06)\">\n            <svg class=\"w-6 h-6 shrink-0\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>\n          </span>\n          <span class=\"nav-label text-[13px] leading-none font-semibold whitespace-nowrap text-[var(--primary)]\">求助</span>\n        </a>\n      </div>\n    </nav>"
+          }
+        }
+      }
+    }
+  },
+  "pages": [
+    {
+      "htmlSrc": "pages/role-select.html",
+      "mobileNavigationApplies": false,
+      "mobileNavigationOmitReason": "role selection page has no bottom nav"
+    },
+    {
+      "htmlSrc": "pages/elder-home.html",
+      "mobileNavigationApplies": true,
+      "mobileNavigationActiveKey": "home"
+    },
+    {
+      "htmlSrc": "pages/family-home.html",
+      "mobileNavigationApplies": true,
+      "mobileNavigationActiveKey": "home"
+    },
+    {
+      "htmlSrc": "pages/elder-sos.html",
+      "mobileNavigationApplies": true,
+      "mobileNavigationActiveKey": "sos"
+    },
+    {
+      "htmlSrc": "pages/health-data.html",
+      "mobileNavigationApplies": true,
+      "mobileNavigationActiveKey": "health"
+    },
+    {
+      "htmlSrc": "pages/voice-companion.html",
+      "mobileNavigationApplies": true,
+      "mobileNavigationActiveKey": "home"
+    },
+    {
+      "htmlSrc": "pages/health-report.html",
+      "mobileNavigationApplies": true,
+      "mobileNavigationActiveKey": "report"
+    }
+  ]
+}

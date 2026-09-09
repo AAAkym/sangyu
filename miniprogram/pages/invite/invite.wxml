@@ -1,0 +1,20 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">邀请家属</view>
+  <view class="placeholder">把 6 位邀请码告诉家属，家属在「绑定老人」页输入即可建立监护关系。邀请码 10 分钟内有效。</view>
+
+  <view wx:if="{{code}}" class="entry invite-box">
+    <view class="invite-code">{{code}}</view>
+    <view class="invite-countdown">有效期剩余 {{remainingText}}</view>
+    <button class="invite-btn" bindtap="onGenerateTap">重新生成</button>
+  </view>
+
+  <view wx:elif="{{expired}}" class="entry">
+    <view class="invite-expired">邀请码已过期，可重新生成</view>
+    <button class="invite-btn" bindtap="onGenerateTap">重新生成</button>
+  </view>
+
+  <view wx:else class="entry">
+    <view class="entry__desc">当前没有有效邀请码</view>
+    <button class="invite-btn" loading="{{generating}}" bindtap="onGenerateTap">生成邀请码</button>
+  </view>
+</view>

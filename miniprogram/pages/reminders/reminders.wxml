@@ -1,0 +1,58 @@
+<view class="page {{fontClass}}">
+  <view class="page-title">用药提醒</view>
+  <view class="placeholder">本功能仅为日程时间提醒，不涉及任何用药指导；具体用药请遵医嘱。</view>
+
+  <view wx:if="{{role === 'family'}}" class="entry">
+    <view class="entry__title">添加提醒（给老人）</view>
+    <picker mode="time" value="{{form.time}}" bindchange="onTimeChange">
+      <view class="rm-field">提醒时间：{{form.time}}（点击选择）</view>
+    </picker>
+    <input
+      class="rm-input"
+      placeholder="提醒标题（如：晨间服药提醒）"
+      maxlength="30"
+      value="{{form.title}}"
+      bindinput="onTitleInput"
+    />
+    <input
+      class="rm-input"
+      placeholder="备注（可选，50 字内）"
+      maxlength="50"
+      value="{{form.note}}"
+      bindinput="onNoteInput"
+    />
+    <button class="rm-btn" loading="{{creating}}" bindtap="onCreateTap">添加提醒</button>
+  </view>
+
+  <view wx:if="{{!list.length}}" class="placeholder">
+    {{loading ? '加载中…' : (role === 'family' ? '暂无提醒，可在上方添加。' : '暂无提醒，家人可为您添加。')}}
+  </view>
+
+  <view class="entry rm-item" wx:for="{{list}}" wx:key="id">
+    <view class="rm-row">
+      <view class="rm-time"><view class="ico ico-clock"></view> {{item.time}}</view>
+      <view
+        wx:if="{{role === 'elder' && !item.takenToday}}"
+        class="rm-taken-btn"
+        data-id="{{item.id}}"
+        catchtap="onTakenTap"
+      >已服用</view>
+      <view
+        wx:if="{{item.takenToday}}"
+        class="rm-taken-badge rm-taken-badge--done"
+      >今日已服用 ✓</view>
+      <view
+        wx:elif="{{role === 'family'}}"
+        class="rm-taken-badge"
+      >今日未服用</view>
+      <view
+        wx:if="{{role === 'family'}}"
+        class="rm-del"
+        data-id="{{item.id}}"
+        catchtap="onDeleteTap"
+      >删除</view>
+    </view>
+    <view class="entry__title">{{item.title}}</view>
+    <view wx:if="{{item.note}}" class="entry__desc">{{item.note}}</view>
+  </view>
+</view>

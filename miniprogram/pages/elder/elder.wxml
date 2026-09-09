@@ -1,0 +1,97 @@
+<view class="page {{fontClass}}">
+  <!-- 品牌色 Hero：问候 + 设备状态 + 长辈模式（设计稿 elder-home） -->
+  <view class="hero">
+    <view class="hero-bar">
+      <view class="brand"><image class="brand-logo" src="/assets/brand/symbol-white.png" mode="aspectFit" aria-label="桑榆智伴标志" /> 桑榆智伴</view>
+      <view class="hero-actions">
+        <view class="gear-btn" bindtap="onSettingsTap" aria-label="设置与退出登录">
+          <view class="gear-line"></view>
+          <view class="gear-line"></view>
+          <view class="gear-line"></view>
+        </view>
+        <view class="speak-btn" bindtap="onSpeakTap" aria-label="语音播报使用说明"><view class="ico ico-wave"></view></view>
+      </view>
+    </view>
+    <view class="hero-greet">
+      <view class="avatar">{{nickName[0]}}</view>
+      <view class="greet-text">
+        <view class="greeting-name">{{greeting}}，{{nickName}}</view>
+        <view class="greeting-date">{{greetDate}}</view>
+        <view wx:if="{{deviceTag}}" class="device-status">
+          <view class="status-dot" style="background-color: {{deviceTag.color}}"></view>
+          <view class="status-text">{{deviceTag.text}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="hero-pills">
+      <view class="pill">✓ 长辈模式已开启</view>
+    </view>
+  </view>
+
+  <view class="body-content">
+    <!-- 下次陪伴提醒（左侧琥珀强调条，数据来自老人名下预约） -->
+    <view class="reminder-card">
+      <view class="accent-strip"></view>
+      <view class="reminder-content">
+        <view class="reminder-label">下次陪伴</view>
+        <view class="reminder-title">{{nextAppt ? nextAppt.type : '暂无安排'}}</view>
+        <view class="reminder-meta"><text class="time">{{nextAppt ? nextAppt.detail : '可到「预约服务」中预约'}}</text></view>
+      </view>
+      <view class="reminder-icon"><view class="ico ico-person"></view></view>
+    </view>
+
+    <!-- 快捷操作：SOS 实体红键 + 常用入口（按住 1 秒确认逻辑保留） -->
+    <button
+      class="sos-btn {{sosPressing ? 'sos-btn--pressing' : ''}}"
+      hover-class="none"
+      bind:touchstart="onSOSStart"
+      bind:touchend="onSOSEnd"
+      bind:touchcancel="onSOSEnd"
+    >
+      <view class="sos-icon"><view class="ico ico-phone"></view></view>
+      <view class="sos-text">
+        <view class="sos-label">一键求助</view>
+        <view class="sos-desc">紧急时按下，联系家人</view>
+      </view>
+    </button>
+    <view class="sos-hint">{{sosHint}}</view>
+
+    <view class="qa-grid">
+      <view class="qa-card" data-url="/pages/voice/voice" bindtap="onEntryTap">
+        <view class="qa-icon"><view class="ico ico-lines"></view></view>
+        <view class="qa-label">语音陪伴</view>
+        <view class="qa-desc">和我聊聊天</view>
+      </view>
+      <view class="qa-card" data-url="/pages/health/health" bindtap="onEntryTap">
+        <view class="qa-icon"><view class="ico ico-pulse"></view></view>
+        <view class="qa-label">查看健康</view>
+        <view class="qa-desc">今日指标</view>
+      </view>
+      <view class="qa-card" data-url="/pages/appointment/appointment" bindtap="onEntryTap">
+        <view class="qa-icon"><view class="ico ico-box"></view></view>
+        <view class="qa-label">预约服务</view>
+        <view class="qa-desc">家政送餐</view>
+      </view>
+      <view class="qa-card" data-url="/pages/invite/invite" bindtap="onEntryTap">
+        <view class="qa-icon"><view class="ico ico-person"></view></view>
+        <view class="qa-label">邀请家属</view>
+        <view class="qa-desc">家人来绑定</view>
+      </view>
+      <view class="qa-card" data-url="/pages/reminders/reminders" bindtap="onEntryTap">
+        <view class="qa-icon"><view class="ico ico-clock"></view></view>
+        <view class="qa-label">用药提醒</view>
+        <view class="qa-desc">按时提醒</view>
+      </view>
+      <view class="qa-card" data-url="/pages/messages/messages" bindtap="onEntryTap">
+        <view class="qa-icon"><view class="ico ico-lines"></view></view>
+        <view class="qa-label">家人留言</view>
+        <view class="qa-desc">{{unreadMsg > 0 ? '未读 ' + unreadMsg + ' 条' : '看看家人说的话'}}</view>
+      </view>
+      <view class="qa-card" data-url="/pages/contacts/contacts" bindtap="onEntryTap">
+        <view class="qa-icon"><view class="ico ico-alert"></view></view>
+        <view class="qa-label">紧急联系人</view>
+        <view class="qa-desc">一键拨号</view>
+      </view>
+    </view>
+  </view>
+</view>
